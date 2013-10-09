@@ -10,7 +10,7 @@ namespace Movies
         private static MySqlConnection conn;
 
         // Idempotently open a database connection
-        private static void connect()
+        public static MySqlConnection connect()
         {
             if (conn == null)
             {
@@ -22,15 +22,13 @@ namespace Movies
                 // Don't show a messagebox because the error is already shown to the user.
                 Application.Exit();
             }
-
+            return conn;
         }
 
         // Run an SQL query on a specific MySQL table
         public static DataTable query(String sql, String table_name)
         {
-            // Often a no-op
-            connect();
-            MySqlDataAdapter adapter = new MySqlDataAdapter(sql, conn);
+            MySqlDataAdapter adapter = new MySqlDataAdapter(sql, connect());
             DataSet set = new DataSet();
             adapter.Fill(set, table_name);
             return set.Tables[table_name];

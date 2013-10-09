@@ -8,19 +8,12 @@ using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using MySql.Data.MySqlClient;
+using Movies;
 
 namespace movies_database_homepage
 {
     public partial class loginpage : Form
     {
-        public String s = "server=localhost;User Id=root;database=moviedb";
-        public MySqlConnection conn;
-       // public MySqlDataReader mrdr;
-        public MySqlDataAdapter my_data_adapter;
-        public DataSet my_dataset;
-        public DataTable my_data_table;
-       // SqlDataReader rd;
-
         String called_button;
         public loginpage(String called_button)
         {
@@ -47,8 +40,6 @@ namespace movies_database_homepage
                     splitContainer1.Panel2.Enabled = true;
                     splitContainer1.Panel1.Enabled = false;
                 }
-                conn = new MySqlConnection(s);
-                conn.Open();
             }
             catch (Exception ex)
             {
@@ -67,65 +58,49 @@ namespace movies_database_homepage
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void cancelButton_Click(object sender, EventArgs e)
         {
             mainpage f1 = new mainpage();
             f1.Show();
             this.Hide();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void cancelRegisterButton_Click(object sender, EventArgs e)
         {
             mainpage f1 = new mainpage();
             f1.Show();
             this.Hide();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void registerButton_Click(object sender, EventArgs e)
         {
             try 
             {
-                String str;
-                if (maleRadioButton.Checked)
-                {
-                    str = maleRadioButton.Text;
-                }
-                else
-                {
-                    str = femaleRadioButton.Text;
-                }
-                String sql = "INSERT INTO `person`(`Fname`, `Lname`, `SSN`, `gender`) VALUES ('" + firstNameTextBox.Text + "','" + lastNameTextBox.Text + "','" + ssnTextBox.Text + "','" + str + "')";
+                String gender = maleRadioButton.Checked ? "Male" : "Female";
+                String sql = "INSERT INTO `person`(`Fname`, `Lname`, `SSN`, `gender`) VALUES ('" + firstNameTextBox.Text + "','" + lastNameTextBox.Text + "','" + ssnTextBox.Text + "','" + gender + "')";
                 String sql1 = "INSERT INTO `user`(`username`, `password`, `SSN`) VALUES ('" + registerUsernameTextBox.Text + "','" + registerPasswordTextBox.Text + "','" + ssnTextBox.Text + "')";
-                my_data_adapter = new MySqlDataAdapter();
-                my_data_adapter.InsertCommand = new MySqlCommand(sql, conn);
+                MySqlDataAdapter my_data_adapter = new MySqlDataAdapter();
+                my_data_adapter.InsertCommand = new MySqlCommand(sql, Util.connect());
                 //my_data_adapter.InsertCommand = new MySqlCommand(sql1, conn);
-                if (conn.State == ConnectionState.Open)
+                if(registerPasswordTextBox.Text.Equals(confirmRegisterPasswordTextBox.Text))
                 {
-                    if(registerPasswordTextBox.Text.Equals(confirmRegisterPasswordTextBox.Text))
-                    {
-                        my_data_adapter.InsertCommand.ExecuteNonQuery();
-                        my_data_adapter.InsertCommand = new MySqlCommand(sql1, conn);
-                        my_data_adapter.InsertCommand.ExecuteNonQuery();
-                        MessageBox.Show("user registered");
-                        firstNameTextBox.Clear();
-                        lastNameTextBox.Clear();
-                        ssnTextBox.Clear();
-                        registerUsernameTextBox.Clear();
-                        registerPasswordTextBox.Clear();
-                        confirmRegisterPasswordTextBox.Clear();
-                        maleRadioButton.Checked = false;
-                        femaleRadioButton.Checked = false;
-                        splitContainer1.Panel1.Enabled = true;
-                        splitContainer1.Panel2.Enabled = false;
-                    }else
-                    {
-                        MessageBox.Show("Passwords do not match");
-                    }
-                    
-                }
-                else
+                    my_data_adapter.InsertCommand.ExecuteNonQuery();
+                    my_data_adapter.InsertCommand = new MySqlCommand(sql1, Util.connect());
+                    my_data_adapter.InsertCommand.ExecuteNonQuery();
+                    MessageBox.Show("User registered.");
+                    firstNameTextBox.Clear();
+                    lastNameTextBox.Clear();
+                    ssnTextBox.Clear();
+                    registerUsernameTextBox.Clear();
+                    registerPasswordTextBox.Clear();
+                    confirmRegisterPasswordTextBox.Clear();
+                    maleRadioButton.Checked = false;
+                    femaleRadioButton.Checked = false;
+                    splitContainer1.Panel1.Enabled = true;
+                    splitContainer1.Panel2.Enabled = false;
+                }else
                 {
-                    MessageBox.Show("User did not register");
+                    MessageBox.Show("Passwords do not match");
                 }
             }
             catch(Exception ex)
@@ -135,7 +110,7 @@ namespace movies_database_homepage
            
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void loginButton_Click(object sender, EventArgs e)
         {
             try 
             {

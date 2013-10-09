@@ -31,8 +31,8 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.passwordTextBox = new System.Windows.Forms.TextBox();
             this.usernameTextBox = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.cancelButton = new System.Windows.Forms.Button();
+            this.loginButton = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -46,8 +46,8 @@
             this.ssnTextBox = new System.Windows.Forms.TextBox();
             this.lastNameTextBox = new System.Windows.Forms.TextBox();
             this.firstNameTextBox = new System.Windows.Forms.TextBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.cancelRegisterbutton = new System.Windows.Forms.Button();
+            this.registerButton = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -72,8 +72,8 @@
             // 
             this.splitContainer1.Panel1.Controls.Add(this.passwordTextBox);
             this.splitContainer1.Panel1.Controls.Add(this.usernameTextBox);
-            this.splitContainer1.Panel1.Controls.Add(this.button2);
-            this.splitContainer1.Panel1.Controls.Add(this.button1);
+            this.splitContainer1.Panel1.Controls.Add(this.cancelButton);
+            this.splitContainer1.Panel1.Controls.Add(this.loginButton);
             this.splitContainer1.Panel1.Controls.Add(this.label3);
             this.splitContainer1.Panel1.Controls.Add(this.label2);
             this.splitContainer1.Panel1.Controls.Add(this.label1);
@@ -89,8 +89,8 @@
             this.splitContainer1.Panel2.Controls.Add(this.ssnTextBox);
             this.splitContainer1.Panel2.Controls.Add(this.lastNameTextBox);
             this.splitContainer1.Panel2.Controls.Add(this.firstNameTextBox);
-            this.splitContainer1.Panel2.Controls.Add(this.button4);
-            this.splitContainer1.Panel2.Controls.Add(this.button3);
+            this.splitContainer1.Panel2.Controls.Add(this.cancelRegisterbutton);
+            this.splitContainer1.Panel2.Controls.Add(this.registerButton);
             this.splitContainer1.Panel2.Controls.Add(this.label10);
             this.splitContainer1.Panel2.Controls.Add(this.label9);
             this.splitContainer1.Panel2.Controls.Add(this.label8);
@@ -103,40 +103,40 @@
             this.splitContainer1.SplitterDistance = 374;
             this.splitContainer1.TabIndex = 0;
             // 
-            // textBox2
+            // passwordTextBox
             // 
             this.passwordTextBox.Location = new System.Drawing.Point(120, 203);
-            this.passwordTextBox.Name = "textBox2";
+            this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.PasswordChar = '*';
             this.passwordTextBox.Size = new System.Drawing.Size(161, 20);
             this.passwordTextBox.TabIndex = 6;
             // 
-            // textBox1
+            // usernameTextBox
             // 
             this.usernameTextBox.Location = new System.Drawing.Point(120, 157);
-            this.usernameTextBox.Name = "textBox1";
+            this.usernameTextBox.Name = "usernameTextBox";
             this.usernameTextBox.Size = new System.Drawing.Size(161, 20);
             this.usernameTextBox.TabIndex = 5;
             // 
-            // button2
+            // cancelButton
             // 
-            this.button2.Location = new System.Drawing.Point(184, 265);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Cancel";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.cancelButton.Location = new System.Drawing.Point(184, 265);
+            this.cancelButton.Name = "cancelButton";
+            this.cancelButton.Size = new System.Drawing.Size(75, 23);
+            this.cancelButton.TabIndex = 4;
+            this.cancelButton.Text = "Cancel";
+            this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
-            // button1
+            // loginButton
             // 
-            this.button1.Location = new System.Drawing.Point(27, 265);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Login";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.loginButton.Location = new System.Drawing.Point(27, 265);
+            this.loginButton.Name = "loginButton";
+            this.loginButton.Size = new System.Drawing.Size(75, 23);
+            this.loginButton.TabIndex = 3;
+            this.loginButton.Text = "Login";
+            this.loginButton.UseVisualStyleBackColor = true;
+            this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
             // 
             // label3
             // 
@@ -175,22 +175,22 @@
             this.groupBox1.TabIndex = 18;
             this.groupBox1.TabStop = false;
             // 
-            // radioButton2
+            // femaleRadioButton
             // 
             this.femaleRadioButton.AutoSize = true;
             this.femaleRadioButton.Location = new System.Drawing.Point(7, 39);
-            this.femaleRadioButton.Name = "radioButton2";
+            this.femaleRadioButton.Name = "femaleRadioButton";
             this.femaleRadioButton.Size = new System.Drawing.Size(59, 17);
             this.femaleRadioButton.TabIndex = 1;
             this.femaleRadioButton.TabStop = true;
             this.femaleRadioButton.Text = "Female";
             this.femaleRadioButton.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // maleRadioButton
             // 
             this.maleRadioButton.AutoSize = true;
             this.maleRadioButton.Location = new System.Drawing.Point(7, 11);
-            this.maleRadioButton.Name = "radioButton1";
+            this.maleRadioButton.Name = "maleRadioButton";
             this.maleRadioButton.Size = new System.Drawing.Size(48, 17);
             this.maleRadioButton.TabIndex = 0;
             this.maleRadioButton.TabStop = true;
@@ -206,70 +206,70 @@
             this.label11.TabIndex = 17;
             this.label11.Text = "Gender";
             // 
-            // textBox8
+            // confirmRegisterPasswordTextBox
             // 
             this.confirmRegisterPasswordTextBox.Location = new System.Drawing.Point(256, 329);
-            this.confirmRegisterPasswordTextBox.Name = "textBox8";
+            this.confirmRegisterPasswordTextBox.Name = "confirmRegisterPasswordTextBox";
             this.confirmRegisterPasswordTextBox.PasswordChar = '*';
             this.confirmRegisterPasswordTextBox.Size = new System.Drawing.Size(100, 20);
             this.confirmRegisterPasswordTextBox.TabIndex = 16;
             // 
-            // textBox7
+            // registerPasswordTextBox
             // 
             this.registerPasswordTextBox.Location = new System.Drawing.Point(256, 298);
-            this.registerPasswordTextBox.Name = "textBox7";
+            this.registerPasswordTextBox.Name = "registerPasswordTextBox";
             this.registerPasswordTextBox.PasswordChar = '*';
             this.registerPasswordTextBox.Size = new System.Drawing.Size(100, 20);
             this.registerPasswordTextBox.TabIndex = 15;
             // 
-            // textBox6
+            // registerUsernameTextBox
             // 
             this.registerUsernameTextBox.Location = new System.Drawing.Point(256, 262);
-            this.registerUsernameTextBox.Name = "textBox6";
+            this.registerUsernameTextBox.Name = "registerUsernameTextBox";
             this.registerUsernameTextBox.Size = new System.Drawing.Size(100, 20);
             this.registerUsernameTextBox.TabIndex = 14;
             // 
-            // textBox5
+            // ssnTextBox
             // 
             this.ssnTextBox.Location = new System.Drawing.Point(256, 229);
             this.ssnTextBox.MaxLength = 10;
-            this.ssnTextBox.Name = "textBox5";
+            this.ssnTextBox.Name = "ssnTextBox";
             this.ssnTextBox.Size = new System.Drawing.Size(100, 20);
             this.ssnTextBox.TabIndex = 13;
             // 
-            // textBox4
+            // lastNameTextBox
             // 
             this.lastNameTextBox.Location = new System.Drawing.Point(256, 191);
-            this.lastNameTextBox.Name = "textBox4";
+            this.lastNameTextBox.Name = "lastNameTextBox";
             this.lastNameTextBox.Size = new System.Drawing.Size(100, 20);
             this.lastNameTextBox.TabIndex = 12;
             // 
-            // textBox3
+            // firstNameTextBox
             // 
             this.firstNameTextBox.Location = new System.Drawing.Point(256, 154);
-            this.firstNameTextBox.Name = "textBox3";
+            this.firstNameTextBox.Name = "firstNameTextBox";
             this.firstNameTextBox.Size = new System.Drawing.Size(100, 20);
             this.firstNameTextBox.TabIndex = 11;
             // 
-            // button4
+            // cancelRegisterbutton
             // 
-            this.button4.Location = new System.Drawing.Point(281, 453);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 10;
-            this.button4.Text = "cancel";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.cancelRegisterbutton.Location = new System.Drawing.Point(281, 453);
+            this.cancelRegisterbutton.Name = "cancelRegisterbutton";
+            this.cancelRegisterbutton.Size = new System.Drawing.Size(75, 23);
+            this.cancelRegisterbutton.TabIndex = 10;
+            this.cancelRegisterbutton.Text = "cancel";
+            this.cancelRegisterbutton.UseVisualStyleBackColor = true;
+            this.cancelRegisterbutton.Click += new System.EventHandler(this.cancelRegisterButton_Click);
             // 
-            // button3
+            // registerButton
             // 
-            this.button3.Location = new System.Drawing.Point(116, 453);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 9;
-            this.button3.Text = "Register";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.registerButton.Location = new System.Drawing.Point(116, 453);
+            this.registerButton.Name = "registerButton";
+            this.registerButton.Size = new System.Drawing.Size(75, 23);
+            this.registerButton.TabIndex = 9;
+            this.registerButton.Text = "Register";
+            this.registerButton.UseVisualStyleBackColor = true;
+            this.registerButton.Click += new System.EventHandler(this.registerButton_Click);
             // 
             // label10
             // 
@@ -342,7 +342,7 @@
             this.ClientSize = new System.Drawing.Size(984, 512);
             this.Controls.Add(this.splitContainer1);
             this.Name = "loginpage";
-            this.Text = "Loginpage";
+            this.Text = "Login";
             this.Load += new System.EventHandler(this.Form2_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
@@ -359,16 +359,16 @@
         #endregion
 
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button cancelButton;
+        private System.Windows.Forms.Button loginButton;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox passwordTextBox;
         private System.Windows.Forms.TextBox usernameTextBox;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button cancelRegisterbutton;
+        private System.Windows.Forms.Button registerButton;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
