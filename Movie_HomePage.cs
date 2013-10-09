@@ -49,8 +49,8 @@ namespace Movies
 
                 my_data_adapter.Fill(my_dataset, "movie");
                 my_data_table = my_dataset.Tables["movie"];
-
-                DataRow dr = my_data_table.Rows[0];
+                DataRow dr = Util.query("Select * from movie where filmID = " + FilmId, "movie").Rows[0];
+                //DataRow dr = my_data_table.Rows[0];
 
                 String title = dr.ItemArray[1].ToString();
                 String year = dr.ItemArray[2].ToString();

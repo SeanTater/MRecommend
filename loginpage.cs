@@ -86,46 +86,46 @@ namespace movies_database_homepage
             try 
             {
                 String str;
-                if (radioButton1.Checked)
+                if (maleRadioButton.Checked)
                 {
-                    str = radioButton1.Text;
+                    str = maleRadioButton.Text;
                 }
                 else
                 {
-                    str = radioButton2.Text;
+                    str = femaleRadioButton.Text;
                 }
-                String sql = "INSERT INTO `person`(`Fname`, `Lname`, `SSN`, `gender`) VALUES ('" + textBox3.Text + "','" + textBox4.Text + "','" + textBox5.Text + "','" + str + "')";
-                String sql1 = "INSERT INTO `user`(`username`, `password`, `SSN`) VALUES ('" + textBox6.Text + "','" + textBox7.Text + "','" + textBox5.Text + "')";
+                String sql = "INSERT INTO `person`(`Fname`, `Lname`, `SSN`, `gender`) VALUES ('" + firstNameTextBox.Text + "','" + lastNameTextBox.Text + "','" + ssnTextBox.Text + "','" + str + "')";
+                String sql1 = "INSERT INTO `user`(`username`, `password`, `SSN`) VALUES ('" + registerUsernameTextBox.Text + "','" + registerPasswordTextBox.Text + "','" + ssnTextBox.Text + "')";
                 my_data_adapter = new MySqlDataAdapter();
                 my_data_adapter.InsertCommand = new MySqlCommand(sql, conn);
                 //my_data_adapter.InsertCommand = new MySqlCommand(sql1, conn);
                 if (conn.State == ConnectionState.Open)
                 {
-                    if(textBox7.Text.Equals(textBox8.Text))
+                    if(registerPasswordTextBox.Text.Equals(confirmRegisterPasswordTextBox.Text))
                     {
                         my_data_adapter.InsertCommand.ExecuteNonQuery();
                         my_data_adapter.InsertCommand = new MySqlCommand(sql1, conn);
                         my_data_adapter.InsertCommand.ExecuteNonQuery();
                         MessageBox.Show("user registered");
-                        textBox3.Clear();
-                        textBox4.Clear();
-                        textBox5.Clear();
-                        textBox6.Clear();
-                        textBox7.Clear();
-                        textBox8.Clear();
-                        radioButton1.Checked = false;
-                        radioButton2.Checked = false;
+                        firstNameTextBox.Clear();
+                        lastNameTextBox.Clear();
+                        ssnTextBox.Clear();
+                        registerUsernameTextBox.Clear();
+                        registerPasswordTextBox.Clear();
+                        confirmRegisterPasswordTextBox.Clear();
+                        maleRadioButton.Checked = false;
+                        femaleRadioButton.Checked = false;
                         splitContainer1.Panel1.Enabled = true;
                         splitContainer1.Panel2.Enabled = false;
                     }else
                     {
-                        MessageBox.Show("passwords do not match");
+                        MessageBox.Show("Passwords do not match");
                     }
                     
                 }
                 else
                 {
-                    MessageBox.Show("user did not register");
+                    MessageBox.Show("User did not register");
                 }
             }
             catch(Exception ex)
@@ -139,28 +139,29 @@ namespace movies_database_homepage
         {
             try 
             {
-                DataTable table = Movies.Util.query("SELECT * FROM `user` WHERE Username='"+textBox1.Text+"'", "users");
-                if (table.Rows.Count > 0)
+                DataRowCollection users = Movies.Util.query("SELECT * FROM `user` WHERE Username='"+usernameTextBox.Text+"'", "users").Rows;
+
+                if (users.Count > 0)
                 {
-                    DataRow dr = table.Rows[0];
-                    if(dr[2].Equals(textBox2.Text))
+                    DataRow user = users[0];
+                    if(user["Password"].Equals(passwordTextBox.Text))
                     {
-                        MessageBox.Show("Welcome "+dr[1]+" ");
-                        Movies.UserHomepage uh = new Movies.UserHomepage(dr[1].ToString());
+                        MessageBox.Show("Welcome "+user["Username"]+" ");
+                        Movies.UserHomepage uh = new Movies.UserHomepage(user["Username"].ToString());
                         uh.Show();
                         this.Close();
 
                     }else
                     {
                         MessageBox.Show("Wrong password");
-                        textBox2.Clear();
+                        passwordTextBox.Clear();
                     }
                 }
                 else 
                 {
                     MessageBox.Show("Username not found");
-                    textBox1.Clear();
-                    textBox2.Clear();
+                    usernameTextBox.Clear();
+                    passwordTextBox.Clear();
                 }
             }catch(Exception ex)
             {

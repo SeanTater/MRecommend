@@ -9,7 +9,7 @@ namespace Movies
     {
         private static MySqlConnection conn;
 
-        // Indempotently open a database connection
+        // Idempotently open a database connection
         private static void connect()
         {
             if (conn == null)
@@ -18,7 +18,11 @@ namespace Movies
                 conn.Open();
             }
             if (conn.State != ConnectionState.Open)
-                MessageBox.Show("Connection to database was lost.");
+            {
+                // Don't show a messagebox because the error is already shown to the user.
+                Application.Exit();
+            }
+
         }
 
         // Run an SQL query on a specific MySQL table

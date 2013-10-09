@@ -29,23 +29,23 @@
         private void InitializeComponent()
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.passwordTextBox = new System.Windows.Forms.TextBox();
+            this.usernameTextBox = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.femaleRadioButton = new System.Windows.Forms.RadioButton();
+            this.maleRadioButton = new System.Windows.Forms.RadioButton();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.confirmRegisterPasswordTextBox = new System.Windows.Forms.TextBox();
+            this.registerPasswordTextBox = new System.Windows.Forms.TextBox();
+            this.registerUsernameTextBox = new System.Windows.Forms.TextBox();
+            this.ssnTextBox = new System.Windows.Forms.TextBox();
+            this.lastNameTextBox = new System.Windows.Forms.TextBox();
+            this.firstNameTextBox = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
@@ -70,8 +70,8 @@
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.textBox2);
-            this.splitContainer1.Panel1.Controls.Add(this.textBox1);
+            this.splitContainer1.Panel1.Controls.Add(this.passwordTextBox);
+            this.splitContainer1.Panel1.Controls.Add(this.usernameTextBox);
             this.splitContainer1.Panel1.Controls.Add(this.button2);
             this.splitContainer1.Panel1.Controls.Add(this.button1);
             this.splitContainer1.Panel1.Controls.Add(this.label3);
@@ -83,12 +83,12 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.groupBox1);
             this.splitContainer1.Panel2.Controls.Add(this.label11);
-            this.splitContainer1.Panel2.Controls.Add(this.textBox8);
-            this.splitContainer1.Panel2.Controls.Add(this.textBox7);
-            this.splitContainer1.Panel2.Controls.Add(this.textBox6);
-            this.splitContainer1.Panel2.Controls.Add(this.textBox5);
-            this.splitContainer1.Panel2.Controls.Add(this.textBox4);
-            this.splitContainer1.Panel2.Controls.Add(this.textBox3);
+            this.splitContainer1.Panel2.Controls.Add(this.confirmRegisterPasswordTextBox);
+            this.splitContainer1.Panel2.Controls.Add(this.registerPasswordTextBox);
+            this.splitContainer1.Panel2.Controls.Add(this.registerUsernameTextBox);
+            this.splitContainer1.Panel2.Controls.Add(this.ssnTextBox);
+            this.splitContainer1.Panel2.Controls.Add(this.lastNameTextBox);
+            this.splitContainer1.Panel2.Controls.Add(this.firstNameTextBox);
             this.splitContainer1.Panel2.Controls.Add(this.button4);
             this.splitContainer1.Panel2.Controls.Add(this.button3);
             this.splitContainer1.Panel2.Controls.Add(this.label10);
@@ -105,18 +105,18 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(120, 203);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.PasswordChar = '*';
-            this.textBox2.Size = new System.Drawing.Size(161, 20);
-            this.textBox2.TabIndex = 6;
+            this.passwordTextBox.Location = new System.Drawing.Point(120, 203);
+            this.passwordTextBox.Name = "textBox2";
+            this.passwordTextBox.PasswordChar = '*';
+            this.passwordTextBox.Size = new System.Drawing.Size(161, 20);
+            this.passwordTextBox.TabIndex = 6;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(120, 157);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(161, 20);
-            this.textBox1.TabIndex = 5;
+            this.usernameTextBox.Location = new System.Drawing.Point(120, 157);
+            this.usernameTextBox.Name = "textBox1";
+            this.usernameTextBox.Size = new System.Drawing.Size(161, 20);
+            this.usernameTextBox.TabIndex = 5;
             // 
             // button2
             // 
@@ -167,8 +167,8 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.radioButton2);
-            this.groupBox1.Controls.Add(this.radioButton1);
+            this.groupBox1.Controls.Add(this.femaleRadioButton);
+            this.groupBox1.Controls.Add(this.maleRadioButton);
             this.groupBox1.Location = new System.Drawing.Point(256, 370);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(241, 62);
@@ -177,25 +177,25 @@
             // 
             // radioButton2
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(7, 39);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(59, 17);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Female";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.femaleRadioButton.AutoSize = true;
+            this.femaleRadioButton.Location = new System.Drawing.Point(7, 39);
+            this.femaleRadioButton.Name = "radioButton2";
+            this.femaleRadioButton.Size = new System.Drawing.Size(59, 17);
+            this.femaleRadioButton.TabIndex = 1;
+            this.femaleRadioButton.TabStop = true;
+            this.femaleRadioButton.Text = "Female";
+            this.femaleRadioButton.UseVisualStyleBackColor = true;
             // 
             // radioButton1
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(7, 11);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(48, 17);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Male";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.maleRadioButton.AutoSize = true;
+            this.maleRadioButton.Location = new System.Drawing.Point(7, 11);
+            this.maleRadioButton.Name = "radioButton1";
+            this.maleRadioButton.Size = new System.Drawing.Size(48, 17);
+            this.maleRadioButton.TabIndex = 0;
+            this.maleRadioButton.TabStop = true;
+            this.maleRadioButton.Text = "Male";
+            this.maleRadioButton.UseVisualStyleBackColor = true;
             // 
             // label11
             // 
@@ -208,48 +208,48 @@
             // 
             // textBox8
             // 
-            this.textBox8.Location = new System.Drawing.Point(256, 329);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.PasswordChar = '*';
-            this.textBox8.Size = new System.Drawing.Size(100, 20);
-            this.textBox8.TabIndex = 16;
+            this.confirmRegisterPasswordTextBox.Location = new System.Drawing.Point(256, 329);
+            this.confirmRegisterPasswordTextBox.Name = "textBox8";
+            this.confirmRegisterPasswordTextBox.PasswordChar = '*';
+            this.confirmRegisterPasswordTextBox.Size = new System.Drawing.Size(100, 20);
+            this.confirmRegisterPasswordTextBox.TabIndex = 16;
             // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(256, 298);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.PasswordChar = '*';
-            this.textBox7.Size = new System.Drawing.Size(100, 20);
-            this.textBox7.TabIndex = 15;
+            this.registerPasswordTextBox.Location = new System.Drawing.Point(256, 298);
+            this.registerPasswordTextBox.Name = "textBox7";
+            this.registerPasswordTextBox.PasswordChar = '*';
+            this.registerPasswordTextBox.Size = new System.Drawing.Size(100, 20);
+            this.registerPasswordTextBox.TabIndex = 15;
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(256, 262);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
-            this.textBox6.TabIndex = 14;
+            this.registerUsernameTextBox.Location = new System.Drawing.Point(256, 262);
+            this.registerUsernameTextBox.Name = "textBox6";
+            this.registerUsernameTextBox.Size = new System.Drawing.Size(100, 20);
+            this.registerUsernameTextBox.TabIndex = 14;
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(256, 229);
-            this.textBox5.MaxLength = 10;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 13;
+            this.ssnTextBox.Location = new System.Drawing.Point(256, 229);
+            this.ssnTextBox.MaxLength = 10;
+            this.ssnTextBox.Name = "textBox5";
+            this.ssnTextBox.Size = new System.Drawing.Size(100, 20);
+            this.ssnTextBox.TabIndex = 13;
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(256, 191);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 12;
+            this.lastNameTextBox.Location = new System.Drawing.Point(256, 191);
+            this.lastNameTextBox.Name = "textBox4";
+            this.lastNameTextBox.Size = new System.Drawing.Size(100, 20);
+            this.lastNameTextBox.TabIndex = 12;
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(256, 154);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 11;
+            this.firstNameTextBox.Location = new System.Drawing.Point(256, 154);
+            this.firstNameTextBox.Name = "textBox3";
+            this.firstNameTextBox.Size = new System.Drawing.Size(100, 20);
+            this.firstNameTextBox.TabIndex = 11;
             // 
             // button4
             // 
@@ -364,8 +364,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox passwordTextBox;
+        private System.Windows.Forms.TextBox usernameTextBox;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
@@ -375,15 +375,15 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox confirmRegisterPasswordTextBox;
+        private System.Windows.Forms.TextBox registerPasswordTextBox;
+        private System.Windows.Forms.TextBox registerUsernameTextBox;
+        private System.Windows.Forms.TextBox ssnTextBox;
+        private System.Windows.Forms.TextBox lastNameTextBox;
+        private System.Windows.Forms.TextBox firstNameTextBox;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton femaleRadioButton;
+        private System.Windows.Forms.RadioButton maleRadioButton;
         private System.Windows.Forms.Label label11;
     }
 }
