@@ -33,5 +33,10 @@ namespace Movies
             adapter.Fill(set, table_name);
             return set.Tables[table_name];
         }
+
+        public static void non_query(String sql)
+        {
+            new MySqlCommand(sql, connect()).ExecuteNonQuery();
+        }
     }
 }
