@@ -15,15 +15,9 @@ namespace Movies
     {
         int ssn;
         string searchText;
-        MySqlConnection conn;
-        MySqlDataAdapter da;
-        DataSet ds;
-        DataTable dt;
-        public string s = "server=localhost;User Id=root;database=moviedb";
 
         public SearchResult(string text,int ssn)
         {
-            conn = new MySqlConnection(s);
             searchText = text;
             this.ssn = ssn;
             InitializeComponent();
@@ -39,7 +33,7 @@ namespace Movies
 
         private void SearchResult_Load(object sender, EventArgs e)
         {
-            string film = "SELECT * FROM movie WHERE title LIKE '%" + searchText + "%'";
+            DataRowCollection films = Util.query("SELECT * FROM movie WHERE title LIKE '%" + searchText + "%'", "film").Rows;
             searchBox.Text = searchText;
            
             panel1.Controls.Clear();
@@ -47,13 +41,6 @@ namespace Movies
             try
             {
 
-                conn.Open();
-                da = new MySqlDataAdapter(film, conn);
-                ds = new DataSet();
-                dt = new DataTable();
-                da.Fill(ds, "film");
-                dt = ds.Tables["film"];
-
                 //panel1.ColumnCount = 3;
                 //panel1.RowCount = dt.Rows.Count;
                 //panel1.ColumnStyles.Clear();
@@ -65,16 +52,16 @@ namespace Movies
                 //panel1.AutoSize = false;
 
                 int i = 0;
-                foreach (DataRow dr in dt.Rows)
+                foreach (DataRow film in films)
                 {
                     //DataRow dr = dt.Rows[0];
                     //panel1.RowStyles.Add(new RowStyle(SizeType.AutoSize));
 
-                    string title = dr[1].ToString();
-                    int year = Convert.ToInt32(dr[2]);
-                    float rating = Convert.ToInt32(dr[3]);
-                    String description = dr[4].ToString();
-                    byte[] barrImg = (byte[])dr[5];
+                    string title = film[1].ToString();
+                    int year = Convert.ToInt32(film[2]);
+                    float rating = Convert.ToInt32(film[3]);
+                    String description = film[4].ToString();
+                    byte[] barrImg = (byte[])film[5];
                     MemoryStream mstream = new MemoryStream(barrImg);
                     //movie_image.Image = Image.FromStream(mstream);
 
@@ -119,13 +106,10 @@ namespace Movies
                     //panel1
                     i++;
                 }
-
-                conn.Close();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
-                conn.Close();
             }
 
         }
@@ -133,20 +117,12 @@ namespace Movies
         private void button1_Click(object sender, EventArgs e)
         {
             searchText = searchBox.Text;
-            string film = "SELECT * FROM movie WHERE title LIKE '%" + searchText + "%'";
+            DataRowCollection films = Util.query("SELECT * FROM movie WHERE title LIKE '%" + searchText + "%'", "film").Rows;
 
             panel1.Controls.Clear();
             
             try
             {
-
-                conn.Open();
-                da = new MySqlDataAdapter(film, conn);
-                ds = new DataSet();
-                dt = new DataTable();
-                da.Fill(ds, "film");
-                dt = ds.Tables["film"];
-
                 //panel1.ColumnCount = 3;
                 //panel1.RowCount = dt.Rows.Count;
                 //panel1.ColumnStyles.Clear();
@@ -158,16 +134,16 @@ namespace Movies
                 //panel1.AutoSize = false;
 
                 int i = 0;
-                foreach (DataRow dr in dt.Rows)
+                foreach (DataRow film in films)
                 {
                     //DataRow dr = dt.Rows[0];
                     //panel1.RowStyles.Add(new RowStyle(SizeType.AutoSize));
 
-                    string title = dr[1].ToString();
-                    int year = Convert.ToInt32(dr[2]);
-                    float rating = Convert.ToInt32(dr[3]);
-                    String description = dr[4].ToString();
-                    byte[] barrImg = (byte[])dr[5];
+                    string title = film[1].ToString();
+                    int year = Convert.ToInt32(film[2]);
+                    float rating = Convert.ToInt32(film[3]);
+                    String description = film[4].ToString();
+                    byte[] barrImg = (byte[])film[5];
                     MemoryStream mstream = new MemoryStream(barrImg);
                     //movie_image.Image = Image.FromStream(mstream);
 
@@ -212,31 +188,22 @@ namespace Movies
                     //panel1
                     i++;
                 }
-
-                conn.Close();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
-                conn.Close();
             }
         }
 
         void tlabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             //throw new NotImplementedException();
-            string id;
             string title = e.Link.LinkData.ToString();
 
-            da = new MySqlDataAdapter("SELECT filmID FROM movie WHERE title='" + title + "';", conn);
-            ds = new DataSet();
-            dt = new DataTable();
-            da.Fill(ds, "id");
-            dt = ds.Tables["id"];
-            if (dt.Rows.Count > 0)
+            DataRowCollection ids = Util.query("SELECT filmID FROM movie WHERE title='" + title + "';", "id").Rows;
+            if (ids.Count > 0)
             {
-                DataRow dr = dt.Rows[0];
-                id = dr[0].ToString();
+                string id = ids[0][0].ToString();
                 Movie_HomePage moviePage = new Movie_HomePage(id, ssn.ToString());
                 moviePage.Show();
             }
