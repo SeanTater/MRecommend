@@ -38,70 +38,24 @@ namespace movies_database_homepage
             label1.Visible = true;
             button1.Visible = true;
         }
-        public void display_details(int count)
+        public void display_details(DataTable data_table, int count)
         {
-            switch (count)
-            {
-                case 0:
-                    DataRow dr = my_data_table.Rows[0];
-                    linkLabel1.Visible = true;
-                    linkLabel1.Text = (String)dr[1] + " (" + dr[2] + ")";
-                    display_image_n_desp(0);
-                    // display_details(cnt);
-                    break;
-                case 1:
-                    DataRow dr1 = my_data_table.Rows[1];
-                    linkLabel2.Visible = true;
-                    linkLabel2.Text = (String)dr1[1] + " (" + dr1[2] + ")";
-                    break;
-                case 2:
-                    DataRow dr2 = my_data_table.Rows[2];
-                    linkLabel3.Visible = true;
-                    linkLabel3.Text = (String)dr2[1] + " (" + dr2[2] + ")";
-                    break;
-                case 3:
-                    DataRow dr3 = my_data_table.Rows[3];
-                    linkLabel4.Visible = true;
-                    linkLabel4.Text = (String)dr3[1] + " (" + dr3[2] + ")";
-                    break;
-                case 4:
-                    DataRow dr4 = my_data_table.Rows[4];
-                    linkLabel5.Visible = true;
-                    linkLabel5.Text = (String)dr4[1] + " (" + dr4[2] + ")";
-                    break;
-                case 5:
-                    DataRow dr5 = my_data_table.Rows[5];
-                    linkLabel6.Visible = true;
-                    linkLabel6.Text = (String)dr5[1] + " (" + dr5[2] + ")";
-                    break;
-                case 6:
-                    DataRow dr6 = my_data_table.Rows[6];
-                    linkLabel7.Visible = true;
-                    linkLabel7.Text = (String)dr6[1] + " (" + dr6[2] + ")";
-                    break;
-                case 7:
-                    DataRow dr7 = my_data_table.Rows[7];
-                    linkLabel8.Visible = true;
-                    linkLabel8.Text = (String)dr7[1] + " (" + dr7[2] + ")";
-                    break;
-                case 8:
-                    DataRow dr8 = my_data_table.Rows[8];
-                    linkLabel9.Visible = true;
-                    linkLabel9.Text = (String)dr8[1] + " (" + dr8[2] + ")";
-                    break;
-                case 9:
-                    DataRow dr9 = my_data_table.Rows[9];
-                    linkLabel10.Visible = true;
-                    linkLabel10.Text = (String)dr9[1] + " (" + dr9[2] + ")";
-                    break;
-            }
-
+            DataRow movie = data_table.Rows[count];
+            link_labels[count].Visible = true;
+            link_labels[count].Text = (String)movie[1] + " (" + movie[2] + ")";
+            if (count == 0)
+                display_image_n_desp(0);
         }
 
         public movies_search_display(int search_type=0, String search_data="")
         {
             this.search_type = search_type;
             this.searched_data = search_data;
+            InitializeComponent();
+        }
+
+        private void Form3_Load(object sender, EventArgs e)
+        {
             link_labels = new List<LinkLabel>() {
                 linkLabel1,
                 linkLabel2,
@@ -114,11 +68,6 @@ namespace movies_database_homepage
                 linkLabel9,
                 linkLabel10
             };
-            InitializeComponent();
-        }
-
-        private void Form3_Load(object sender, EventArgs e)
-        {
             try 
             {
                 String sql;
@@ -150,7 +99,7 @@ namespace movies_database_homepage
                         {
                             while ((my_data_table.Rows.Count - cnt) > 0)
                             {
-                                display_details(cnt);
+                                display_details(my_data_table, cnt);
                                 cnt++;
                             }
                         }
@@ -186,7 +135,7 @@ namespace movies_database_homepage
                         {
                             while ((my_data_table.Rows.Count - cnt1) > 0)
                             {
-                                display_details(cnt1);
+                                display_details(my_data_table, cnt1);
                                 cnt1++;
                             }
                         }
@@ -221,7 +170,7 @@ namespace movies_database_homepage
                         {
                             while ((my_data_table.Rows.Count - cnt2) > 0)
                             {
-                                display_details(cnt2);
+                                display_details(my_data_table, cnt2);
                                 cnt2++;
                             }
                         }
