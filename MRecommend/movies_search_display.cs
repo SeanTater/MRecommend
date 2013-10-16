@@ -9,6 +9,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using MySql.Data.MySqlClient;
+using Movies;
 
 namespace movies_database_homepage
 {
@@ -17,14 +18,15 @@ namespace movies_database_homepage
         public DataRow current;
         public int search_type;
         public String searched_data;
-        public String s = "server=localhost;User Id=root;database=moviedb";
-        public MySqlConnection conn;
         public MySqlDataAdapter my_data_adapter;
         public DataSet my_dataset;
         public DataTable my_data_table;
+        private List<LinkLabel> link_labels;
+
 
         public void display_image_n_desp(int count)
         {
+            
             DataRow dr_new = my_data_table.Rows[count];
             current = dr_new;
             byte[] image_bytes = (byte[])dr_new[5];
@@ -45,7 +47,7 @@ namespace movies_database_homepage
                     linkLabel1.Visible = true;
                     linkLabel1.Text = (String)dr[1] + " (" + dr[2] + ")";
                     display_image_n_desp(0);
-                   // display_details(cnt);
+                    // display_details(cnt);
                     break;
                 case 1:
                     DataRow dr1 = my_data_table.Rows[1];
@@ -93,17 +95,25 @@ namespace movies_database_homepage
                     linkLabel10.Text = (String)dr9[1] + " (" + dr9[2] + ")";
                     break;
             }
-            
+
         }
 
-        public movies_search_display(int search_type,String search_data)
+        public movies_search_display(int search_type=0, String search_data="")
         {
             this.search_type = search_type;
             this.searched_data = search_data;
-            InitializeComponent();
-        }
-        public movies_search_display()
-        {
+            link_labels = new List<LinkLabel>() {
+                linkLabel1,
+                linkLabel2,
+                linkLabel3,
+                linkLabel4,
+                linkLabel5,
+                linkLabel6,
+                linkLabel7,
+                linkLabel8,
+                linkLabel9,
+                linkLabel10
+            };
             InitializeComponent();
         }
 
@@ -112,18 +122,9 @@ namespace movies_database_homepage
             try 
             {
                 String sql;
-                conn = new MySqlConnection(s);
-                conn.Open();
-                linkLabel1.Visible = false;
-                linkLabel2.Visible = false;
-                linkLabel3.Visible = false;
-                linkLabel4.Visible = false;
-                linkLabel5.Visible = false;
-                linkLabel6.Visible = false;
-                linkLabel7.Visible = false;
-                linkLabel8.Visible = false;
-                linkLabel9.Visible = false;
-                linkLabel10.Visible = false;
+                foreach (LinkLabel label in link_labels) {
+                    label.Visible = false;
+                }
                 pictureBox1.Visible = false;
                 label1.Visible = false;
                 button1.Visible = false;
@@ -133,7 +134,7 @@ namespace movies_database_homepage
                         label6.Text = "Movies";
                         sql = "SELECT * FROM `movie` WHERE Title='" + searched_data + "'";
                         int cnt = 0;
-                        my_data_adapter = new MySqlDataAdapter(sql, conn);
+                        my_data_adapter = new MySqlDataAdapter(sql, Util.connect());
                         my_dataset = new DataSet();
                         my_data_table = new DataTable();
                         my_data_adapter.Fill(my_dataset, "movie_by_names");
@@ -168,7 +169,7 @@ namespace movies_database_homepage
                         {
                             sql = "SELECT DISTINCT m.* FROM person p,actor a,movie m WHERE (p.Fname='" + name[0] + "' AND p.SSN=a.SSN AND a.filmID=m.filmID)OR(p.Lname='" + name[0] + "' AND p.SSN=a.SSN AND a.filmID=m.filmID)";
                         }
-                        my_data_adapter = new MySqlDataAdapter(sql, conn);
+                        my_data_adapter = new MySqlDataAdapter(sql, Util.connect());
                         my_dataset = new DataSet();
                         my_data_table = new DataTable();
                         my_data_adapter.Fill(my_dataset, "movie_by_actors");
@@ -204,7 +205,7 @@ namespace movies_database_homepage
                         {
                             sql = "SELECT DISTINCT m.* FROM person p,director a,movie m WHERE (p.Fname='" + name1[0] + "' AND p.SSN=d.SSN AND d.filmID=m.filmID)OR(p.Lname='" + name1[0] + "' AND p.SSN=d.SSN AND d.filmID=m.filmID)";
                         }
-                        my_data_adapter = new MySqlDataAdapter(sql, conn);
+                        my_data_adapter = new MySqlDataAdapter(sql, Util.connect());
                         my_dataset = new DataSet();
                         my_data_table = new DataTable();
                         my_data_adapter.Fill(my_dataset, "movie_by_directors");
