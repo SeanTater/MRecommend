@@ -220,7 +220,6 @@
             this.Controls.Add(this.form_title);
             this.Name = "movies_search_display";
             this.Text = "movies search page";
-            this.Load += new System.EventHandler(this.init);
             ((System.ComponentModel.ISupportInitialize)(this.cover_image)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
