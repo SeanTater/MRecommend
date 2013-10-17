@@ -61,16 +61,16 @@ namespace movies_database_homepage
         private void Form3_Load(object sender, EventArgs e)
         {
             display_slots = new List<Slot>() {
-                new Slot(linkLabel1, null),
-                new Slot(linkLabel2, null),
-                new Slot(linkLabel3, null),
-                new Slot(linkLabel4, null),
-                new Slot(linkLabel5, null),
-                new Slot(linkLabel6, null),
-                new Slot(linkLabel7, null),
-                new Slot(linkLabel8, null),
-                new Slot(linkLabel9, null),
-                new Slot(linkLabel10, null)
+                new Slot(display_slot_00, null),
+                new Slot(display_slot_01, null),
+                new Slot(display_slot_02, null),
+                new Slot(display_slot_03, null),
+                new Slot(display_slot_04, null),
+                new Slot(display_slot_05, null),
+                new Slot(display_slot_06, null),
+                new Slot(display_slot_07, null),
+                new Slot(display_slot_08, null),
+                new Slot(display_slot_09, null)
             };
             try 
             {
@@ -83,33 +83,33 @@ namespace movies_database_homepage
                 button1.Visible = false;
                 DataRowCollection movies;
                 if (search_type == 0) {
-                    label6.Text = "Movies";
-                    movies = Util.query("SELECT * FROM `movie` WHERE Title LIKE '%" + searched_data + "%'", "movie_by_names").Rows;
+                    form_title.Text = String.Format("Search for movies named {0}", searched_data);
+                    movies = Util.query(String.Format("SELECT * FROM `movie` WHERE Title LIKE '%{0}%'", searched_data), "movie_by_names").Rows;
                         
                 } else if (search_type == 1) {
-                    label6.Text = "Actors";
+                    form_title.Text = String.Format("Search for movies with {0}", searched_data);
                     String[] name=new String[2];
                     name = searched_data.Split(' ');
                     if (name.Length == 2)
                     {
-                        sql = "SELECT DISTINCT m.* FROM person p,actor a, movie m WHERE p.Fname LIKE '%" + name[0] + "%' AND p.Lname LIKE '%" + name[1] + "%' AND p.SSN=a.SSN AND a.filmID=m.filmID";
+                        sql = String.Format("SELECT DISTINCT m.* FROM person p,actor a, movie m WHERE p.Fname LIKE '%{0}%' AND p.Lname LIKE '%{1}%' AND p.SSN=a.SSN AND a.filmID=m.filmID", name[0], name[1]);
                     }
                     else 
                     {
-                        sql = "SELECT DISTINCT m.* FROM person p,actor a,movie m WHERE (p.Fname LIKE '%" + name[0] + "%' AND p.SSN=a.SSN AND a.filmID=m.filmID)OR(p.Lname LIKE '%" + name[0] + "%' AND p.SSN=a.SSN AND a.filmID=m.filmID)";
+                        sql = String.Format("SELECT DISTINCT m.* FROM person p,actor a,movie m WHERE (p.Fname LIKE '%{0}%' AND p.SSN=a.SSN AND a.filmID=m.filmID)OR(p.Lname LIKE '%{0}%' AND p.SSN=a.SSN AND a.filmID=m.filmID)", name[0]);
                     }
                     movies = Util.query(sql, "movie_by_actors").Rows; 
                 } else {
-                    label6.Text = "Directors";
+                    form_title.Text = String.Format("Search for movies directed by {0}", searched_data);
                     String[] name1=new String[2];
                     name1 = searched_data.Split(' ');
                     if (name1.Length == 2)
                     {
-                        sql = "SELECT DISTINCT m.* FROM person p,director d, movie m WHERE p.Fname LIKE '%" + name1[0] + "%' AND p.Lname LIKE '%" + name1[1] + "%' AND p.SSN=d.SSN AND d.filmID=m.filmID";
+                        sql = String.Format("SELECT DISTINCT m.* FROM person p,director d, movie m WHERE p.Fname LIKE '%{0}%' AND p.Lname LIKE '%{1}%' AND p.SSN=d.SSN AND d.filmID=m.filmID", name1[0], name1[1]);
                     }
                     else 
                     {
-                        sql = "SELECT DISTINCT m.* FROM person p,director a,movie m WHERE (p.Fname LIKE '%" + name1[0] + "%' AND p.SSN=d.SSN AND d.filmID=m.filmID)OR(p.Lname LIKE '%" + name1[0] + "%' AND p.SSN=d.SSN AND d.filmID=m.filmID)";
+                        sql = String.Format("SELECT DISTINCT m.* FROM person p,director a,movie m WHERE (p.Fname LIKE '%{0}%' AND p.SSN=d.SSN AND d.filmID=m.filmID)OR(p.Lname LIKE '%{0}%' AND p.SSN=d.SSN AND d.filmID=m.filmID)", name1[0]);
                     }
                     movies = Util.query(sql, "movie_by_directors").Rows;
                 }
