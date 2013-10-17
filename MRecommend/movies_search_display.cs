@@ -84,7 +84,7 @@ namespace movies_database_homepage
                 DataRowCollection movies;
                 if (search_type == 0) {
                     label6.Text = "Movies";
-                    movies = Util.query("SELECT * FROM `movie` WHERE Title='" + searched_data + "'", "movie_by_names").Rows;
+                    movies = Util.query("SELECT * FROM `movie` WHERE Title LIKE '%" + searched_data + "%'", "movie_by_names").Rows;
                         
                 } else if (search_type == 1) {
                     label6.Text = "Actors";
@@ -92,11 +92,11 @@ namespace movies_database_homepage
                     name = searched_data.Split(' ');
                     if (name.Length == 2)
                     {
-                        sql = "SELECT DISTINCT m.* FROM person p,actor a, movie m WHERE p.Fname='" + name[0] + "' AND p.Lname='" + name[1] + "' AND p.SSN=a.SSN AND a.filmID=m.filmID";
+                        sql = "SELECT DISTINCT m.* FROM person p,actor a, movie m WHERE p.Fname LIKE '%" + name[0] + "%' AND p.Lname LIKE '%" + name[1] + "%' AND p.SSN=a.SSN AND a.filmID=m.filmID";
                     }
                     else 
                     {
-                        sql = "SELECT DISTINCT m.* FROM person p,actor a,movie m WHERE (p.Fname='" + name[0] + "' AND p.SSN=a.SSN AND a.filmID=m.filmID)OR(p.Lname='" + name[0] + "' AND p.SSN=a.SSN AND a.filmID=m.filmID)";
+                        sql = "SELECT DISTINCT m.* FROM person p,actor a,movie m WHERE (p.Fname LIKE '%" + name[0] + "%' AND p.SSN=a.SSN AND a.filmID=m.filmID)OR(p.Lname LIKE '%" + name[0] + "%' AND p.SSN=a.SSN AND a.filmID=m.filmID)";
                     }
                     movies = Util.query(sql, "movie_by_actors").Rows; 
                 } else {
@@ -105,20 +105,18 @@ namespace movies_database_homepage
                     name1 = searched_data.Split(' ');
                     if (name1.Length == 2)
                     {
-                        sql = "SELECT DISTINCT m.* FROM person p,director d, movie m WHERE p.Fname='" + name1[0] + "' AND p.Lname='" + name1[1] + "' AND p.SSN=d.SSN AND d.filmID=m.filmID";
+                        sql = "SELECT DISTINCT m.* FROM person p,director d, movie m WHERE p.Fname LIKE '%" + name1[0] + "%' AND p.Lname LIKE '%" + name1[1] + "%' AND p.SSN=d.SSN AND d.filmID=m.filmID";
                     }
                     else 
                     {
-                        sql = "SELECT DISTINCT m.* FROM person p,director a,movie m WHERE (p.Fname='" + name1[0] + "' AND p.SSN=d.SSN AND d.filmID=m.filmID)OR(p.Lname='" + name1[0] + "' AND p.SSN=d.SSN AND d.filmID=m.filmID)";
+                        sql = "SELECT DISTINCT m.* FROM person p,director a,movie m WHERE (p.Fname LIKE '%" + name1[0] + "%' AND p.SSN=d.SSN AND d.filmID=m.filmID)OR(p.Lname LIKE '%" + name1[0] + "%' AND p.SSN=d.SSN AND d.filmID=m.filmID)";
                     }
                     movies = Util.query(sql, "movie_by_directors").Rows;
                 }
                 if (movies.Count == 0)
                 {
                     MessageBox.Show("Your search did not match any movies.");
-                    movies_database_homepage.mainpage mp = new mainpage();
-                    mp.Show();
-                    this.Hide();
+                    this.Close();
                 }
                 else
                 {
