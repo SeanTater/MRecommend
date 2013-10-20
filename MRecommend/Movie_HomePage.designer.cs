@@ -58,7 +58,6 @@
             this.movie_name.Name = "movie_name";
             this.movie_name.Size = new System.Drawing.Size(0, 25);
             this.movie_name.TabIndex = 1;
-            this.movie_name.Click += new System.EventHandler(this.movie_name_Click);
             // 
             // genrePanel
             // 
@@ -113,7 +112,6 @@
             this.descriptionTB.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.descriptionTB.Size = new System.Drawing.Size(345, 42);
             this.descriptionTB.TabIndex = 8;
-            this.descriptionTB.TextChanged += new System.EventHandler(this.description_TextChanged);
             // 
             // label2
             // 
@@ -155,7 +153,6 @@
             this.ReviewsPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 115F));
             this.ReviewsPanel.Size = new System.Drawing.Size(576, 116);
             this.ReviewsPanel.TabIndex = 15;
-            this.ReviewsPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.ReviewsPanel_Paint);
             // 
             // label1
             // 
