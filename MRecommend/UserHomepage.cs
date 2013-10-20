@@ -24,7 +24,6 @@ namespace Movies
         String popular;
         String recommended;
         String Preferences;
-        String listOfAllMovies;
         public string s = "server=localhost;User Id=root;database=moviedb";
         MySqlConnection conn;
         MySqlDataAdapter da;
@@ -57,7 +56,6 @@ namespace Movies
             popular = "SELECT  DISTINCT m.title FROM movie m,recommend r WHERE m.filmID=r.filmID AND Avg_rating>=7.5 GROUP BY m.title HAVING COUNT(*)>=2";
             recommended = "SELECT DISTINCT m.title FROM movie m,recommend r WHERE m.filmID=r.filmID AND r.SSN IN (SELECT l1.SSN FROM Likes l1,Likes l2 Where l1.genre=l2.genre AND l2.SSN = " + ssn + " AND l1.SSN < l2.SSN)";
             Preferences = "Select genre FROM Likes WHERE SSN = " + ssn;
-            listOfAllMovies = "Select distinct title from movie";
             InitializeComponent();
 
 
@@ -217,29 +215,14 @@ namespace Movies
 
 
 
-
-                    //code for auto complete feature starts here
-                    da = new MySqlDataAdapter(listOfAllMovies, conn);
-                    ds = new DataSet();
-                    dt = new DataTable();
-                    da.Fill(ds, "allMovies");
-                    dt = ds.Tables["allMovies"];
+                    // Movie Name Autocompletion
+                    DataRowCollection movies = Util.query("SELECT DISTINCT title FROM movie").Rows;
                     allmovies = new AutoCompleteStringCollection();
-                    if (dt.Rows.Count > 0)
+                    foreach (DataRow movie in movies)
                     {
-
-                        foreach (DataRow dr in dt.Rows)
-                        {
-                            string title = dr[0].ToString();
-                            allmovies.Add(title);
-
-                        }
+                        allmovies.Add(movie[0].ToString());
                     }
                     searchBox.AutoCompleteCustomSource = allmovies;
-                    //code for auto complete feature ends here
-
-
-
 
                 }
                 if (conn.State != ConnectionState.Closed)
