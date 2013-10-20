@@ -8,12 +8,6 @@ namespace Movies
 {
     public partial class Movie_HomePage : Form
     {
-        public String s = "server=localhost;User Id=root;database=moviedb";
-        public MySqlDataAdapter my_data_adapter;
-        MySqlConnection conn;
-        public DataSet my_dataset;
-        public DataTable my_data_table;
-        public MySqlDataReader mrdr;
         String filmId = "";//will be dynamic
         String loggedInUserSSN = ""; //will be dynamic
         bool screenLoaded = false;
@@ -31,14 +25,14 @@ namespace Movies
         public void populateMovieHomepage(String FilmId, String SSN)
         {
             //Fetch details of the movie from the database
-            DataRow dr = Util.query("SELECT * FROM movie WHERE filmID = " + FilmId).Rows[0];
+            DataRow movie_row = Util.query("SELECT * FROM movie WHERE filmID = " + FilmId).Rows[0];
 
-            String title = dr[1].ToString();
-            String year = dr[2].ToString();
-            String rating = dr[3].ToString();
-            String description = dr[4].ToString();
+            String title = movie_row[1].ToString();
+            String year = movie_row[2].ToString();
+            String rating = movie_row[3].ToString();
+            String description = movie_row[4].ToString();
 
-            byte[] barrImg = (byte[])dr[5];
+            byte[] barrImg = (byte[])movie_row[5];
             MemoryStream mstream = new MemoryStream(barrImg);
             movie_image.Image = Image.FromStream(mstream);
             movie_name.Text = title;
@@ -180,7 +174,6 @@ namespace Movies
         public void fetchTheatresPlayingIn()
         {
             DataRowCollection theaters = Util.query(String.Format("SELECT name FROM theater,(SELECT DISTINCT TID FROM now_playing WHERE filmid='{0}') as temp WHERE theater.tid=temp.tid", filmId)).Rows;
-            for (int i = 0; i < my_data_table.Rows.Count; i++)
             foreach (DataRow theater in theaters)
             {
                 String theaterName = theater[0].ToString();
