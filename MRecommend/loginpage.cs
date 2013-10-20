@@ -10,7 +10,7 @@ using System.Data.SqlClient;
 using MySql.Data.MySqlClient;
 using Movies;
 
-namespace movies_database_homepage
+namespace Movies
 {
     public partial class loginpage : Form
     {

@@ -287,7 +287,7 @@ namespace Movies
 
         private void signOutButtonClick(object sender, EventArgs e)
         {
-            movies_database_homepage.mainpage mp = new movies_database_homepage.mainpage();
+            Movies.mainpage mp = new Movies.mainpage();
             mp.Show();
             this.Hide();
         }

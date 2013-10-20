@@ -1,4 +1,4 @@
-﻿namespace movies_database_homepage
+﻿namespace Movies
 {
     partial class loginpage
     {

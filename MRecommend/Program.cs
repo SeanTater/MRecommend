@@ -15,7 +15,7 @@ namespace Movies
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new movies_database_homepage.mainpage());
+            Application.Run(new Movies.mainpage());
         }
     }
 }
