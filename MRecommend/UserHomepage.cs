@@ -24,8 +24,6 @@ namespace Movies
         String popular;
         String recommended;
         String Preferences;
-        public string s = "server=localhost;User Id=root;database=moviedb";
-        MySqlConnection conn;
         MySqlDataAdapter da;
         DataSet ds;
         DataTable dt;
@@ -50,8 +48,6 @@ namespace Movies
             {
                 MessageBox.Show(ex.ToString());
             }
-
-            reviews = "Select m.title,r.Rating,r.Text FROM movie m,movie_review r WHERE m.filmID=r.filmID AND SSN=" + ssn;
             //popular = "Select title from movie m,genre g where m.filmID=g.filmID AND g.genre IN (Select genre FROM Likes WHERE SSN = (SELECT SSN FROM user WHERE username='" + Username + "')) AND Avg_rating>=7.5 AND title IN (SELECT m.title FROM movie m,recommend r WHERE m.filmID=r.filmID GROUP BY m.title HAVING COUNT(*)>=5)";
             popular = "SELECT  DISTINCT m.title FROM movie m,recommend r WHERE m.filmID=r.filmID AND Avg_rating>=7.5 GROUP BY m.title HAVING COUNT(*)>=2";
             recommended = "SELECT DISTINCT m.title FROM movie m,recommend r WHERE m.filmID=r.filmID AND r.SSN IN (SELECT l1.SSN FROM Likes l1,Likes l2 Where l1.genre=l2.genre AND l2.SSN = " + ssn + " AND l1.SSN < l2.SSN)";
@@ -242,130 +238,85 @@ namespace Movies
             panel2.Controls.Clear();
             panel2.AutoScroll = true;
             panel2.BackColor = Color.WhiteSmoke;
-
-            da = new MySqlDataAdapter(reviews, conn);
-            ds = new DataSet();
-            dt = new DataTable();
-            da.Fill(ds, "rev");
-            dt = ds.Tables["rev"];
-            if (dt.Rows.Count > 0)
+            DataRowCollection ratings = Util.query("Select m.title,r.Rating,r.Text FROM movie m,movie_review r WHERE m.filmID=r.filmID AND SSN=" + ssn).Rows;
+            int i = 0;
+            //Point loc = new Point(5,5);
+            foreach (DataRow rating in ratings)
             {
-                int i = 0;
-                //Point loc = new Point(5,5);
-                foreach (DataRow dr in dt.Rows)
-                {
-                    string title = dr[0].ToString();
-                    string rating = dr[1].ToString();
-                    string text = dr[2].ToString();
-                    FlowLayoutPanel flp = new FlowLayoutPanel();
-                    panel2.Controls.Add(flp);
-                    flp.Name = title;
-                    flp.Location = new Point(flp.Location.X, 20 * i);
+                string title = rating[0].ToString();
+                string rating = rating[1].ToString();
+                string text = rating[2].ToString();
+                FlowLayoutPanel flp = new FlowLayoutPanel();
+                panel2.Controls.Add(flp);
+                flp.Name = title;
+                flp.Location = new Point(flp.Location.X, 20 * i);
 
-                    LinkLabel t = new LinkLabel();
-                    Label r = new Label();
-                    Label txt = new Label();
-                    LinkLabel delete = new LinkLabel();
+                LinkLabel t = new LinkLabel();
+                Label r = new Label();
+                Label txt = new Label();
+                LinkLabel delete = new LinkLabel();
 
-                    flp.Controls.Add(t);
-                    flp.Controls.Add(r);
-                    flp.Controls.Add(txt);
-                    flp.Controls.Add(delete);
+                flp.Controls.Add(t);
+                flp.Controls.Add(r);
+                flp.Controls.Add(txt);
+                flp.Controls.Add(delete);
 
-                    t.Text = title;
-                    r.Text = "   " + rating; r.ForeColor = Color.Red;
-                    txt.Text = "   " + text;
-                    delete.Text = "  Delete";
+                t.Text = title;
+                r.Text = "   " + rating; r.ForeColor = Color.Red;
+                txt.Text = "   " + text;
+                delete.Text = "  Delete";
 
-                    t.Links.Add(0, t.Text.Length, t.Text);
-                    t.LinkClicked += new LinkLabelLinkClickedEventHandler(l_LinkClicked);
+                t.Links.Add(0, t.Text.Length, t.Text);
+                t.LinkClicked += new LinkLabelLinkClickedEventHandler(l_LinkClicked);
 
-                    delete.Links.Add(2, delete.Text.Length, t.Text);
-                    delete.LinkClicked += new LinkLabelLinkClickedEventHandler(delete_LinkClicked);
+                delete.Links.Add(2, delete.Text.Length, t.Text);
+                delete.LinkClicked += new LinkLabelLinkClickedEventHandler(delete_LinkClicked);
 
-                    delete.AutoSize = true;
-                    t.AutoSize = true;
-                    r.AutoSize = true;
-                    txt.AutoSize = true;
-                    //flp.Text = title;
-                    //flp.AutoSize = true;
-                    flp.Height = 16;
-                    flp.Width = 450;
-                    //foreach (Control c in flp.Controls)
-                    //{
+                delete.AutoSize = true;
+                t.AutoSize = true;
+                r.AutoSize = true;
+                txt.AutoSize = true;
+                //flp.Text = title;
+                //flp.AutoSize = true;
+                flp.Height = 16;
+                flp.Width = 450;
+                //foreach (Control c in flp.Controls)
+                //{
 
-                    //}
-                    //l.Top = loc;
-                    i++;
-                }
+                //}
+                //l.Top = loc;
+                i++;
             }
         }
 
         void delete_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             string title = e.Link.LinkData.ToString();
-            cmd.Connection = conn;
-
-            if (conn.State != ConnectionState.Open)
-                conn.Open();
-            try
+            DataRowCollection films = Util.query(String.Format("SELECT filmID FROM movie WHERE title='{0}';", title)).Rows;
+            if (dt.Rows.Count > 0)
             {
-                da = new MySqlDataAdapter("SELECT filmID FROM movie WHERE title='" + title + "';", conn);
-                ds = new DataSet();
-                dt = new DataTable();
-                da.Fill(ds, "fid");
-                dt = ds.Tables["fid"];
-                if (dt.Rows.Count > 0)
+                int fid = Convert.ToInt32(films[0][0]);
+
+                int rows_affected = Util.non_query(String.Format("DELETE FROM movie_review WHERE SSN={0} AND filmID={1};", ssn, fid));
+                if (rows_affected == 1)
                 {
-                    DataRow dr = dt.Rows[0];
-                    int fid = Convert.ToInt32(dr[0]);
-
-                    cmd.CommandText = "DELETE FROM movie_review WHERE SSN=" + ssn + " AND filmID=" + fid + ";";
-                    if (cmd.ExecuteNonQuery() == 1)
-                    {
-                        MessageBox.Show("Your review for " + title + " has been deleted");
-                        //panel2.Controls.Remove(panel2.Controls.Find(title, true)[0]);
-                        populateReviewPanel();
-                        panel2.Refresh();
-                    }
+                    MessageBox.Show("Your review for " + title + " has been deleted");
+                    //panel2.Controls.Remove(panel2.Controls.Find(title, true)[0]);
+                    populateReviewPanel();
+                    panel2.Refresh();
                 }
-                conn.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-                conn.Close();
             }
         }
 
         void l_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            //throw new NotImplementedException();
-            string id;
             string title = e.Link.LinkData.ToString();
-
-            if (conn.State != ConnectionState.Open)
-                conn.Open();
-            try
+            DataRowCollection films = Util.query(String.Format("SELECT filmID FROM movie WHERE title='{0}';", title)).Rows;
+            if (films.Count > 0)
             {
-                da = new MySqlDataAdapter("SELECT filmID FROM movie WHERE title='" + title + "';", conn);
-                ds = new DataSet();
-                dt = new DataTable();
-                da.Fill(ds, "fid");
-                dt = ds.Tables["fid"];
-                if (dt.Rows.Count > 0)
-                {
-                    DataRow dr = dt.Rows[0];
-                    id = dr[0].ToString();
-                    Movie_HomePage moviePage = new Movie_HomePage(id, ssn.ToString());
-                    moviePage.Show();
-                }
-                conn.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-                conn.Close();
+                String fid = films[0][0].ToString();
+                Movie_HomePage moviePage = new Movie_HomePage(fid, ssn.ToString());
+                moviePage.Show();
             }
         }
 

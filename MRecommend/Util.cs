@@ -34,9 +34,9 @@ namespace Movies
             return set.Tables["a"];
         }
 
-        public static void non_query(String sql)
+        public static int non_query(String sql)
         {
-            new MySqlCommand(sql, connect()).ExecuteNonQuery();
+            return new MySqlCommand(sql, connect()).ExecuteNonQuery();
         }
     }
 }
