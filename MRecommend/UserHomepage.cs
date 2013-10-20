@@ -426,66 +426,25 @@ namespace Movies
             fetchRecommendedMovies();
         }
 
-        public bool updateUserPreferences(CheckBox cb, string genre, bool change)
+        public bool updateUserPreferences(CheckBox cb, string genre, bool liked_in_db)
         {
-            //goto database. if a checkbox is unchecked, remove from the likes table for that user. if it is checked, insert it into the likes 
-            //table for that user
-            cmd.Connection = conn;
-            //try
-            //{
+            // Go to the database.
+            // If a checkbox is unchecked, remove from the likes table for that user.
+            // If it is checked, insert it into the likes table for that user
+            bool requested_status = cb.CheckState == CheckState.Checked;
 
+            // The box matches the current state of the database. Leave it alone.
+            if (requested_status == liked_in_db) return liked_in_db;
 
-            //da = new MySqlDataAdapter("Select * FROM Likes WHERE SSN = " + ssn + " AND genre='" + genre + "';", conn);
-            //ds = new DataSet();
-            //dt = new DataTable();
-            //da.Fill(ds, "like");
-            //dt = ds.Tables["like"];
-            // }
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.ToString());
-            //}
-
-            if (cb.CheckState == CheckState.Checked)
+            if (requested_status)
             {
-                if (!change)
-                {
-                    try
-                    {
-                        if (conn.State != ConnectionState.Open)
-                            conn.Open();
-                        cmd.CommandText = "INSERT INTO Likes(SSN,genre) Values (" + ssn + ",'" + genre + "');";
-                        cmd.ExecuteNonQuery();
-                        //conn.Close();
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.ToString());
-                        //conn.Close();
-                    }
-                }
-                conn.Close();
-                return true;
+                Util.non_query(String.Format("INSERT INTO Likes(SSN,genre) VALUES ({0},'{1}');", ssn, genre));
             }
             else
             {
-                try
-                {
-                    if (conn.State != ConnectionState.Open)
-                        conn.Open();
-                    cmd.CommandText = "DELETE FROM Likes WHERE SSN = " + ssn + " AND genre = '" + genre + "';";
-                    cmd.ExecuteNonQuery();
-
-                    //conn.Close();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.ToString());
-                    //conn.Close();
-                }
-                conn.Close();
-                return false;
+                Util.non_query(String.Format("DELETE FROM Likes WHERE SSN = {0} AND genre = '{1}';", ssn, genre));
             }
+            return requested_status;
         }
 
         public void fetchRecommendedMovies()
