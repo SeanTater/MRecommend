@@ -26,12 +26,12 @@ namespace Movies
         }
 
         // Run an SQL query on a specific MySQL table
-        public static DataTable query(String sql, String table_name)
+        public static DataTable query(String sql)
         {
             MySqlDataAdapter adapter = new MySqlDataAdapter(sql, connect());
             DataSet set = new DataSet();
-            adapter.Fill(set, table_name);
-            return set.Tables[table_name];
+            adapter.Fill(set, "a");
+            return set.Tables["a"];
         }
 
         public static void non_query(String sql)

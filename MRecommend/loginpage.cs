@@ -114,7 +114,7 @@ namespace movies_database_homepage
         {
             try 
             {
-                DataRowCollection users = Movies.Util.query("SELECT * FROM `user` WHERE Username='"+usernameTextBox.Text+"'", "users").Rows;
+                DataRowCollection users = Movies.Util.query("SELECT * FROM `user` WHERE Username='" + usernameTextBox.Text + "'").Rows;
 
                 if (users.Count > 0)
                 {

@@ -44,7 +44,7 @@ namespace Movies
 
             try
             {
-                DataRow dr = Movies.Util.query("Select SSN FROM user WHERE Username='" + Username + "';", "userid").Rows[0];
+                DataRow dr = Movies.Util.query("Select SSN FROM user WHERE Username='" + Username + "';").Rows[0];
                 ssn = Convert.ToInt32(dr[0]);
             }
             catch (Exception ex)
@@ -97,7 +97,7 @@ namespace Movies
             try
             {
                 String genre;
-                DataTable dt = Movies.Util.query(Preferences, "pref");
+                DataTable dt = Movies.Util.query(Preferences);
                 if (dt.Rows.Count > 0)
                 {
                     foreach (DataRow dr in dt.Rows)
@@ -192,7 +192,7 @@ namespace Movies
 
                     //Point loc = new Point(5,5);
                     int i = 0;
-                    foreach (DataRow dr in Movies.Util.query(popular, "pop").Rows)
+                    foreach (DataRow dr in Movies.Util.query(popular).Rows)
                     {
                         string title = dr[0].ToString();
                         LinkLabel l = new LinkLabel();

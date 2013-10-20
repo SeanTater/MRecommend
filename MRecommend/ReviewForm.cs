@@ -29,7 +29,7 @@ namespace Movies
             SSN = _SSN;
 
             InitializeComponent();
-            DataRowCollection ratings = Util.query("SELECT text,rating FROM `movie_review` WHERE filmid = " + filmID + " AND ssn = " + SSN, "movie").Rows;
+            DataRowCollection ratings = Util.query("SELECT text,rating FROM `movie_review` WHERE filmid = " + filmID + " AND ssn = " + SSN).Rows;
           
             if (ratings.Count != 0)
             {

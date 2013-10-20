@@ -33,7 +33,7 @@ namespace Movies
 
         private void SearchResult_Load(object sender, EventArgs e)
         {
-            DataRowCollection films = Util.query("SELECT * FROM movie WHERE title LIKE '%" + searchText + "%'", "film").Rows;
+            DataRowCollection films = Util.query("SELECT * FROM movie WHERE title LIKE '%" + searchText + "%'").Rows;
             searchBox.Text = searchText;
            
             panel1.Controls.Clear();
@@ -117,7 +117,7 @@ namespace Movies
         private void button1_Click(object sender, EventArgs e)
         {
             searchText = searchBox.Text;
-            DataRowCollection films = Util.query("SELECT * FROM movie WHERE title LIKE '%" + searchText + "%'", "film").Rows;
+            DataRowCollection films = Util.query("SELECT * FROM movie WHERE title LIKE '%" + searchText + "%'").Rows;
 
             panel1.Controls.Clear();
             
@@ -200,7 +200,7 @@ namespace Movies
             //throw new NotImplementedException();
             string title = e.Link.LinkData.ToString();
 
-            DataRowCollection ids = Util.query("SELECT filmID FROM movie WHERE title='" + title + "';", "id").Rows;
+            DataRowCollection ids = Util.query("SELECT filmID FROM movie WHERE title='" + title + "';").Rows;
             if (ids.Count > 0)
             {
                 string id = ids[0][0].ToString();

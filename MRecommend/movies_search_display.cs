@@ -44,7 +44,7 @@ namespace movies_database_homepage
         {
             Slot slot = display_slots[slot_index];
             slot.label.Visible = true;
-            slot.label.Text = (String)slot.movie[1] + " (" + slot.movie[2] + ")";
+            slot.label.Text = String.Format("{0} ({1})", slot.movie[1], slot.movie[2]);
             if (slot_index == 0)
                 display_image_n_desp(slot);
         }
@@ -77,7 +77,7 @@ namespace movies_database_homepage
             String[] name = new String[2];
             if (search_type == 0) {
                 form_title.Text = String.Format("Search for movies named {0}", query_string);
-                movies = Util.query(String.Format("SELECT * FROM `movie` WHERE Title LIKE '%{0}%'", query_string), "movie_by_names").Rows;
+                movies = Util.query(String.Format("SELECT * FROM `movie` WHERE Title LIKE '%{0}%'", query_string)).Rows;
                         
             } else if (search_type == 1) {
                 form_title.Text = String.Format("Search for movies with {0}", query_string);
@@ -90,7 +90,7 @@ namespace movies_database_homepage
                 {
                     sql = String.Format("SELECT DISTINCT m.* FROM person p,actor a,movie m WHERE (p.Fname LIKE '%{0}%' AND p.SSN=a.SSN AND a.filmID=m.filmID)OR(p.Lname LIKE '%{0}%' AND p.SSN=a.SSN AND a.filmID=m.filmID)", name[0]);
                 }
-                movies = Util.query(sql, "movie_by_actors").Rows; 
+                movies = Util.query(sql).Rows; 
             } else {
                 form_title.Text = String.Format("Search for movies directed by {0}", query_string);
                 name = query_string.Split(' ');
@@ -102,7 +102,7 @@ namespace movies_database_homepage
                 {
                     sql = String.Format("SELECT DISTINCT m.* FROM person p,director a,movie m WHERE (p.Fname LIKE '%{0}%' AND p.SSN=d.SSN AND d.filmID=m.filmID)OR(p.Lname LIKE '%{0}%' AND p.SSN=d.SSN AND d.filmID=m.filmID)", name[0]);
                 }
-                movies = Util.query(sql, "movie_by_directors").Rows;
+                movies = Util.query(sql).Rows;
             }
             if (movies.Count == 0)
             {

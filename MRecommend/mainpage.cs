@@ -29,7 +29,8 @@ namespace movies_database_homepage
             switch (comboBox1.SelectedIndex)
             { 
                 case 0:
-                    foreach (DataRow dr in Movies.Util.query("SELECT Title from movie", "movie").Rows) {
+                    foreach (DataRow dr in Movies.Util.query("SELECT Title from movie").Rows)
+                    {
                         ac.Add(dr[0].ToString());
                     }
                     textBox1.AutoCompleteMode = AutoCompleteMode.Suggest;
@@ -37,7 +38,7 @@ namespace movies_database_homepage
                     textBox1.AutoCompleteCustomSource = ac;
                     break;
                 case 1:
-                    foreach (DataRow dr in Movies.Util.query( "SELECT Fname,Lname FROM person p,actor a WHERE p.SSN=a.SSN", "actors").Rows) {
+                    foreach (DataRow dr in Movies.Util.query("SELECT Fname,Lname FROM person p,actor a WHERE p.SSN=a.SSN").Rows) {
                             ac1.Add(dr[0].ToString()+" "+dr[1].ToString());
                     }
                     textBox1.AutoCompleteMode = AutoCompleteMode.Suggest;
@@ -45,7 +46,7 @@ namespace movies_database_homepage
                     textBox1.AutoCompleteCustomSource = ac1;
                     break;
                 case 2:
-                    foreach (DataRow dr in Movies.Util.query("SELECT Fname,Lname FROM person p,director d WHERE p.SSN=d.SSN", "directors").Rows)
+                    foreach (DataRow dr in Movies.Util.query("SELECT Fname,Lname FROM person p,director d WHERE p.SSN=d.SSN").Rows)
                     {
                         ac2.Add(dr[0].ToString()+" "+dr[1].ToString());
                     }
@@ -55,7 +56,7 @@ namespace movies_database_homepage
                     break;
             }
 
-            now_playing = Movies.Util.query("SELECT distinct m.filmID,m.Title,m.MoviePoster FROM now_playing np,movie m WHERE np.filmID=m.filmID", "now playing movies");
+            now_playing = Movies.Util.query("SELECT distinct m.filmID,m.Title,m.MoviePoster FROM now_playing np,movie m WHERE np.filmID=m.filmID");
             get_now_playing(0);
             
         }
@@ -193,7 +194,7 @@ namespace movies_database_homepage
                 switch (comboBox1.SelectedIndex)
                 {
                     case 0:
-                        foreach (DataRow dr in Movies.Util.query("SELECT Title FROM movie", "movies").Rows)
+                        foreach (DataRow dr in Movies.Util.query("SELECT Title FROM movie").Rows)
                         {
                             ac.Add(dr[0].ToString());
                         }
@@ -202,7 +203,7 @@ namespace movies_database_homepage
                         textBox1.AutoCompleteCustomSource = ac;
                         break;
                     case 1:
-                        foreach (DataRow dr in Movies.Util.query("SELECT Fname,Lname FROM person p,actor a WHERE p.SSN=a.SSN", "actors").Rows)
+                        foreach (DataRow dr in Movies.Util.query("SELECT Fname,Lname FROM person p,actor a WHERE p.SSN=a.SSN").Rows)
                         {
                             ac1.Add(dr[0].ToString() + " " + dr[1].ToString());
                         }
@@ -211,7 +212,7 @@ namespace movies_database_homepage
                         textBox1.AutoCompleteCustomSource = ac1;
                         break;
                     case 2:
-                        foreach (DataRow dr in Movies.Util.query("SELECT Fname,Lname FROM person p,director d WHERE p.SSN=d.SSN", "actors").Rows)
+                        foreach (DataRow dr in Movies.Util.query("SELECT Fname,Lname FROM person p,director d WHERE p.SSN=d.SSN").Rows)
                         {
                             ac2.Add(dr[0].ToString() + " " + dr[1].ToString());
                         }
