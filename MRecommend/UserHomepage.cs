@@ -23,11 +23,7 @@ namespace Movies
         String reviews;
         String popular;
         String recommended;
-        String Preferences;
-        MySqlDataAdapter da;
-        DataSet ds;
-        DataTable dt;
-        MySqlCommand cmd;
+        String preferences_sql;
         AutoCompleteStringCollection allmovies;
         public UserHomepage()
         {
@@ -37,24 +33,9 @@ namespace Movies
         public UserHomepage(String username)
         {
             this.Username = username;
-            cmd = new MySql.Data.MySqlClient.MySqlCommand();
-
-            try
-            {
-                DataRow dr = Movies.Util.query("Select SSN FROM user WHERE Username='" + Username + "';").Rows[0];
-                ssn = Convert.ToInt32(dr[0]);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-            //popular = "Select title from movie m,genre g where m.filmID=g.filmID AND g.genre IN (Select genre FROM Likes WHERE SSN = (SELECT SSN FROM user WHERE username='" + Username + "')) AND Avg_rating>=7.5 AND title IN (SELECT m.title FROM movie m,recommend r WHERE m.filmID=r.filmID GROUP BY m.title HAVING COUNT(*)>=5)";
-            popular = "SELECT  DISTINCT m.title FROM movie m,recommend r WHERE m.filmID=r.filmID AND Avg_rating>=7.5 GROUP BY m.title HAVING COUNT(*)>=2";
-            recommended = "SELECT DISTINCT m.title FROM movie m,recommend r WHERE m.filmID=r.filmID AND r.SSN IN (SELECT l1.SSN FROM Likes l1,Likes l2 Where l1.genre=l2.genre AND l2.SSN = " + ssn + " AND l1.SSN < l2.SSN)";
-            Preferences = "Select genre FROM Likes WHERE SSN = " + ssn;
+            ssn = Convert.ToInt32(Util.query(String.Format("Select SSN FROM user WHERE Username='{0}';", Username)).Rows[0][0]);
+            preferences_sql = "Select genre FROM Likes WHERE SSN = " + ssn;
             InitializeComponent();
-
-
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -91,10 +72,10 @@ namespace Movies
             try
             {
                 String genre;
-                DataTable dt = Movies.Util.query(Preferences);
-                if (dt.Rows.Count > 0)
+                DataRowCollection preferences = Util.query(preferences_sql).Rows;
+                if (preferences.Count > 0)
                 {
-                    foreach (DataRow dr in dt.Rows)
+                    foreach (DataRow dr in preferences)
                     {
                         genre = dr[0].ToString();
                         if (genre == "Action")
@@ -186,9 +167,10 @@ namespace Movies
 
                     //Point loc = new Point(5,5);
                     int i = 0;
-                    foreach (DataRow dr in Movies.Util.query(popular).Rows)
+                    DataRowCollection popular_movies = Movies.Util.query("SELECT DISTINCT m.title FROM movie m,recommend r WHERE m.filmID=r.filmID AND Avg_rating>=7.5 GROUP BY m.title HAVING COUNT(*)>=2").Rows);
+                    foreach (DataRow movie in popular_movies)
                     {
-                        string title = dr[0].ToString();
+                        string title = movie[0].ToString();
                         LinkLabel l = new LinkLabel();
                         panel3.Controls.Add(l);
                         l.Name = title;
@@ -219,10 +201,7 @@ namespace Movies
                         allmovies.Add(movie[0].ToString());
                     }
                     searchBox.AutoCompleteCustomSource = allmovies;
-
                 }
-                if (conn.State != ConnectionState.Closed)
-                    conn.Close();
             }
 
             catch (Exception ex)
@@ -238,14 +217,14 @@ namespace Movies
             panel2.Controls.Clear();
             panel2.AutoScroll = true;
             panel2.BackColor = Color.WhiteSmoke;
-            DataRowCollection ratings = Util.query("Select m.title,r.Rating,r.Text FROM movie m,movie_review r WHERE m.filmID=r.filmID AND SSN=" + ssn).Rows;
+            DataRowCollection reviews = Util.query("Select m.title,r.Rating,r.Text FROM movie m,movie_review r WHERE m.filmID=r.filmID AND SSN=" + ssn).Rows;
             int i = 0;
             //Point loc = new Point(5,5);
-            foreach (DataRow rating in ratings)
+            foreach (DataRow review in reviews)
             {
-                string title = rating[0].ToString();
-                string rating = rating[1].ToString();
-                string text = rating[2].ToString();
+                string title = review[0].ToString();
+                string rating = review[1].ToString();
+                string text = review[2].ToString();
                 FlowLayoutPanel flp = new FlowLayoutPanel();
                 panel2.Controls.Add(flp);
                 flp.Name = title;
@@ -293,7 +272,7 @@ namespace Movies
         {
             string title = e.Link.LinkData.ToString();
             DataRowCollection films = Util.query(String.Format("SELECT filmID FROM movie WHERE title='{0}';", title)).Rows;
-            if (dt.Rows.Count > 0)
+            if (films.Count > 0)
             {
                 int fid = Convert.ToInt32(films[0][0]);
 
@@ -449,58 +428,43 @@ namespace Movies
 
         public void fetchRecommendedMovies()
         {
+            // Fetch the recommended movies for a user based on likes
             panel4.BackColor = Color.WhiteSmoke;
-            //this method will fetch the recommended movies for a user based on likes
-            try
+            while (panel4.Controls.Count > 0)
             {
-                while (panel4.Controls.Count > 0)
-                {
-                    panel4.Controls.RemoveAt(0);
-                }
-                conn.Open();
-                string temp = "SELECT filmID,title from movie WHERE title IN (" + recommended + ")";
-                string rec = "SELECT DISTINCT title FROM (" + temp + ") t, genre g WHERE t.filmID=g.filmID AND genre IN (" + Preferences + ")";
-                //recommended = recommended + " AND genre IN (" + Preferences + ")";
-                MySqlDataAdapter da = new MySqlDataAdapter(rec, conn);
-                DataSet ds = new DataSet();
-                DataTable dt = new DataTable();
-                da.Fill(ds, "recommended");
-                dt = ds.Tables["recommended"];
-                if (dt.Rows.Count > 0)
-                {
-                    int i = 0;
-                    //Point loc = new Point(5,5);
-                    foreach (DataRow dr in dt.Rows)
-                    {
-                        string title = dr[0].ToString();
-                        LinkLabel l = new LinkLabel();
-                        panel4.Controls.Add(l);
-                        l.Name = "rectitle" + i;
-                        l.Location = new Point(l.Location.X, 18 * i);
-                        //l.Height = 12;
-                        //l.Width = 150;
-                        //l.Location 
-                        //loc += 5;
-                        //loc.Y += l.Height + 5;
-                        l.Text = title;
-                        l.AutoSize = true;
-
-                        l.Links.Add(0, l.Text.Length, l.Text);
-                        l.LinkClicked += new LinkLabelLinkClickedEventHandler(l_LinkClicked);
-
-                        //l.Top = loc;
-                        i++;
-                    }
-
-                    panel4.Refresh();
-                }
+                panel4.Controls.RemoveAt(0);
             }
-            catch (Exception ex)
+            // TODO: Examine whether four nested queries are really necessary
+            string recommended = "SELECT DISTINCT m.title FROM movie m,recommend r WHERE m.filmID=r.filmID AND r.SSN IN (SELECT l1.SSN FROM Likes l1,Likes l2 Where l1.genre=l2.genre AND l2.SSN = " + ssn + " AND l1.SSN < l2.SSN)";
+            string temp = "SELECT filmID,title from movie WHERE title IN (" + recommended + ")";
+            string rec = "SELECT DISTINCT title FROM (" + temp + ") t, genre g WHERE t.filmID=g.filmID AND genre IN (" + preferences_sql + ")";
+
+            DataRowCollection titles = Util.query(rec).Rows;
+            int i = 0;
+
+            foreach (DataRow movie in titles)
             {
-                MessageBox.Show(ex.ToString());
-                conn.Close();
+                string title = movie[0].ToString();
+                LinkLabel l = new LinkLabel();
+                panel4.Controls.Add(l);
+                l.Name = "rectitle" + i;
+                l.Location = new Point(l.Location.X, 18 * i);
+                //l.Height = 12;
+                //l.Width = 150;
+                //l.Location 
+                //loc += 5;
+                //loc.Y += l.Height + 5;
+                l.Text = title;
+                l.AutoSize = true;
+
+                l.Links.Add(0, l.Text.Length, l.Text);
+                l.LinkClicked += new LinkLabelLinkClickedEventHandler(l_LinkClicked);
+
+                //l.Top = loc;
+                i++;
             }
-            conn.Close();
+
+            panel4.Refresh();
         }
 
         private void LinkClicked(LinkLabel ll)
