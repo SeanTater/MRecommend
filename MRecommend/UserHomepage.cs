@@ -12,20 +12,20 @@ using System.IO;
 
 namespace Movies
 {
+    class Genre
+    {
+        public Genre(string name, bool liked, CheckBox box)
+        {
+            this.name = name;
+            this.liked = liked;
+            this.box = box;
+        }
+        public string name;
+        public bool liked;
+        public CheckBox box;
+    }
     public partial class UserHomepage : Form
     {
-        class Genre
-        {
-            public Genre(string name, bool liked, CheckBox box)
-            {
-                this.name = name;
-                this.liked = liked;
-                this.box = box;
-            }
-            public string name;
-            public bool liked;
-            public CheckBox box;
-        }
         Dictionary<string, Genre> genres;
 
         String Username = "anton";

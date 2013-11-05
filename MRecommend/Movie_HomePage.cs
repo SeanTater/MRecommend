@@ -8,9 +8,9 @@ namespace Movies
 {
     public partial class Movie_HomePage : Form
     {
-        String filmId = "";//will be dynamic
-        String loggedInUserSSN = ""; //will be dynamic
-        bool screenLoaded = false;
+        private String filmId = "";//will be dynamic
+        private String loggedInUserSSN = ""; //will be dynamic
+        private bool screenLoaded = false;
         public Movie_HomePage(String filmUID, String UserSSN)
         {
             
@@ -188,14 +188,14 @@ namespace Movies
         {
             DataRowCollection films_now_playing = Util.query(String.Format("SELECT date,time FROM now_playing WHERE filmid='{0}' AND tid=(SELECT tid FROM theater WHERE name ='{1}')", filmId, (sender as LinkLabel).Text)).Rows;
             ShowTimeAndDatePanel popUp = new ShowTimeAndDatePanel();
-
+            //Form popUp = new Form();
             foreach (DataRow film in films_now_playing)
             {
                 String date = film[0].ToString().Split(' ')[0];
                 String time = film[1].ToString();
 
                 Label temp = new Label();
-                temp.Text = String.Format("Show {0} : Date: {1}  Time: {2}", i+1, date, time);
+                temp.Text = String.Format("Date: {0}  Time: {1}", date, time);
                 temp.AutoSize = true;
                 TableLayoutPanel tpanel = (TableLayoutPanel)popUp.Controls[1];
                 tpanel.Controls.Add(temp);

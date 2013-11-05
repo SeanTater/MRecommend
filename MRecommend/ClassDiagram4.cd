@@ -8,16 +8,16 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Movies.mainpage" Collapsed="true">
-    <Position X="0.5" Y="1.5" Width="1.5" />
+    <Position X="0.5" Y="1.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAYjAAACAgABAQAACAAAQSAMA4AAAAEHQOAYBAAAA=</HashCode>
       <FileName>mainpage.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Movies.Movie_HomePage" Collapsed="true">
-    <Position X="2.25" Y="1.5" Width="1.5" />
+    <Position X="5.75" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAApCQAAIKBAgBECBECIADAjAAQCEBAiEIAIICAKAAA=</HashCode>
+      <HashCode>AAApCQAAICBAgBECBECAABADAAACEBAiEAAIIAAKAAA=</HashCode>
       <FileName>Movie_HomePage.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -35,7 +35,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Movies.Program" Collapsed="true">
-    <Position X="5.75" Y="2.5" Width="1.5" />
+    <Position X="7.75" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
       <FileName>Program.cs</FileName>
@@ -56,7 +56,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Movies.ShowTimeAndDatePanel" Collapsed="true">
-    <Position X="5.75" Y="3.5" Width="1.5" />
+    <Position X="10.25" Y="1" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAAAAAACAgAAAAAACAAAACAAAAAAAAAAAgAAEAAAA=</HashCode>
       <FileName>ShowTimeAndDatePanel.cs</FileName>
@@ -64,83 +64,26 @@
   </Class>
   <Class Name="Movies.UserHomepage" Collapsed="true">
     <Position X="2.25" Y="4.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>AAAQCCCkQCAAABAAAQCAAAACACAEAUAQhAgEAACIAAA=</HashCode>
       <FileName>UserHomepage.cs</FileName>
     </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="genres" />
+    </ShowAsCollectionAssociation>
   </Class>
-  <Class Name="Movies.Util" Collapsed="true">
-    <Position X="5.75" Y="4.5" Width="1.5" />
+  <Class Name="Movies.Util">
+    <Position X="10.5" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAEAAAAAAgAAAAAAAAAQAAAAAAAAIAAAAAAA=</HashCode>
       <FileName>Util.cs</FileName>
     </TypeIdentifier>
-  </Class>
-  <Class Name="Movies.moviedbDataSetTableAdapters.actorTableAdapter" Collapsed="true">
-    <Position X="0.5" Y="0.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Movies.moviedbDataSetTableAdapters.directorTableAdapter" Collapsed="true">
-    <Position X="2.25" Y="0.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Movies.moviedbDataSetTableAdapters.genreTableAdapter" Collapsed="true">
-    <Position X="4" Y="0.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Movies.moviedbDataSetTableAdapters.likesTableAdapter" Collapsed="true">
-    <Position X="5.75" Y="0.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Movies.moviedbDataSetTableAdapters.movieTableAdapter" Collapsed="true">
-    <Position X="0.5" Y="2.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Movies.moviedbDataSetTableAdapters.movie_reviewTableAdapter" Collapsed="true">
-    <Position X="4" Y="1.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Movies.moviedbDataSetTableAdapters.now_playingTableAdapter" Collapsed="true">
-    <Position X="2.25" Y="2.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Movies.moviedbDataSetTableAdapters.personTableAdapter" Collapsed="true">
-    <Position X="4" Y="2.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Movies.moviedbDataSetTableAdapters.recommendTableAdapter" Collapsed="true">
-    <Position X="7.5" Y="2.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Movies.moviedbDataSetTableAdapters.theaterTableAdapter" Collapsed="true">
-    <Position X="0.5" Y="4.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Movies.moviedbDataSetTableAdapters.userTableAdapter" Collapsed="true">
-    <Position X="4" Y="4.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
-    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="conn" />
+    </ShowAsAssociation>
   </Class>
   <Class Name="Movies.moviedbDataSetTableAdapters.TableAdapterManager" Collapsed="true">
     <Position X="7.5" Y="3.5" Width="1.5" />
@@ -159,6 +102,18 @@
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAEAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
     </TypeIdentifier>
+  </Class>
+  <Class Name="Movies.Genre" Collapsed="true">
+    <Position X="5.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAAAAAAAgAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>UserHomepage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MySql.Data.MySqlClient.MySqlConnection" Collapsed="true">
+    <Position X="13" Y="2.5" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
   </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>
