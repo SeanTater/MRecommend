@@ -35,7 +35,7 @@
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.descriptionTB = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.director_label = new System.Windows.Forms.Label();
             this.Actors = new System.Windows.Forms.Label();
             this.actorPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.ReviewsPanel = new System.Windows.Forms.TableLayoutPanel();
@@ -113,15 +113,15 @@
             this.descriptionTB.Size = new System.Drawing.Size(345, 42);
             this.descriptionTB.TabIndex = 8;
             // 
-            // label2
+            // director_label
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(238, 182);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(76, 17);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Director :";
+            this.director_label.AutoSize = true;
+            this.director_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.director_label.Location = new System.Drawing.Point(238, 182);
+            this.director_label.Name = "director_label";
+            this.director_label.Size = new System.Drawing.Size(76, 17);
+            this.director_label.TabIndex = 9;
+            this.director_label.Text = "Director :";
             // 
             // Actors
             // 
@@ -254,7 +254,7 @@
             this.Controls.Add(this.ReviewsPanel);
             this.Controls.Add(this.actorPanel);
             this.Controls.Add(this.Actors);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.director_label);
             this.Controls.Add(this.descriptionTB);
             this.Controls.Add(this.avg_rating);
             this.Controls.Add(this.label1);
@@ -281,7 +281,7 @@
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
         private System.Windows.Forms.TextBox descriptionTB;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label director_label;
         private System.Windows.Forms.Label Actors;
         private System.Windows.Forms.FlowLayoutPanel actorPanel;
         private System.Windows.Forms.TableLayoutPanel ReviewsPanel;

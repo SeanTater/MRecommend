@@ -1,69 +1,210 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="Movies.loginpage" Collapsed="true">
-    <Position X="7.5" Y="0.5" Width="1.5" />
+  <Class Name="Movies.loginpage">
+    <Position X="6.25" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>MAAAAIAgASQhAhABDCCABgADAAAAgRAAICAQAAAAICA=</HashCode>
       <FileName>loginpage.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Movies.mainpage" Collapsed="true">
-    <Position X="0.5" Y="1.25" Width="1.5" />
+  <Class Name="Movies.mainpage">
+    <Position X="11.5" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAYjAAACAgABAQAACAAAQSAMA4AAAAEHQOAYBAAAA=</HashCode>
       <FileName>mainpage.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Movies.Movie_HomePage" Collapsed="true">
-    <Position X="5.75" Y="2.5" Width="1.5" />
+  <Class Name="Movies.Movie_HomePage">
+    <Position X="4.5" Y="3" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAApCQAAICBAgBECBECAABADAAACEBAiEAAIIAAKAAA=</HashCode>
+      <HashCode>AAApCQAAICBAwBECBECAABADAAACEBAiEAAIIAAKAAA=</HashCode>
       <FileName>Movie_HomePage.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Movies.moviedbDataSet" Collapsed="true">
-    <Position X="5.75" Y="1.5" Width="1.5" />
+  <Class Name="Movies.moviedbDataSet">
+    <Position X="2.5" Y="4.25" Width="1.5" />
+    <NestedTypes>
+      <Delegate Name="Movies.moviedbDataSet.personRowChangeEventHandler" Collapsed="true">
+        <TypeIdentifier />
+      </Delegate>
+      <Class Name="Movies.moviedbDataSet.movieRowChangeEvent" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="Movies.moviedbDataSet.movie_reviewDataTable" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="Movies.moviedbDataSet.now_playingRowChangeEvent" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="Movies.moviedbDataSet.recommendRowChangeEvent" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="Movies.moviedbDataSet.now_playingDataTable" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="Movies.moviedbDataSet.movie_reviewRowChangeEvent" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="Movies.moviedbDataSet.genreRowChangeEvent" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="Movies.moviedbDataSet.theaterRow" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="Movies.moviedbDataSet.userRow" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="Movies.moviedbDataSet.personRowChangeEvent" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Delegate Name="Movies.moviedbDataSet.movieRowChangeEventHandler" Collapsed="true">
+        <TypeIdentifier />
+      </Delegate>
+      <Class Name="Movies.moviedbDataSet.theaterRowChangeEvent" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="Movies.moviedbDataSet.genreRow" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="Movies.moviedbDataSet.genreDataTable" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="Movies.moviedbDataSet.recommendDataTable" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Delegate Name="Movies.moviedbDataSet.recommendRowChangeEventHandler" Collapsed="true">
+        <TypeIdentifier />
+      </Delegate>
+      <Delegate Name="Movies.moviedbDataSet.theaterRowChangeEventHandler" Collapsed="true">
+        <TypeIdentifier />
+      </Delegate>
+      <Delegate Name="Movies.moviedbDataSet.userRowChangeEventHandler" Collapsed="true">
+        <TypeIdentifier />
+      </Delegate>
+      <Delegate Name="Movies.moviedbDataSet.genreRowChangeEventHandler" Collapsed="true">
+        <TypeIdentifier />
+      </Delegate>
+      <Delegate Name="Movies.moviedbDataSet.actorRowChangeEventHandler" Collapsed="true">
+        <TypeIdentifier />
+      </Delegate>
+      <Class Name="Movies.moviedbDataSet.directorRowChangeEvent" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="Movies.moviedbDataSet.userRowChangeEvent" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="Movies.moviedbDataSet.recommendRow" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Delegate Name="Movies.moviedbDataSet.movie_reviewRowChangeEventHandler" Collapsed="true">
+        <TypeIdentifier />
+      </Delegate>
+      <Class Name="Movies.moviedbDataSet.actorRow" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Delegate Name="Movies.moviedbDataSet.directorRowChangeEventHandler" Collapsed="true">
+        <TypeIdentifier />
+      </Delegate>
+      <Class Name="Movies.moviedbDataSet.actorDataTable" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Delegate Name="Movies.moviedbDataSet.now_playingRowChangeEventHandler" Collapsed="true">
+        <TypeIdentifier />
+      </Delegate>
+      <Class Name="Movies.moviedbDataSet.directorRow" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="Movies.moviedbDataSet.theaterDataTable" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="Movies.moviedbDataSet.movie_reviewRow" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="Movies.moviedbDataSet.personRow" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="Movies.moviedbDataSet.likesRow" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="Movies.moviedbDataSet.now_playingRow" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="Movies.moviedbDataSet.likesRowChangeEvent" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="Movies.moviedbDataSet.personDataTable" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Delegate Name="Movies.moviedbDataSet.likesRowChangeEventHandler" Collapsed="true">
+        <TypeIdentifier />
+      </Delegate>
+      <Class Name="Movies.moviedbDataSet.actorRowChangeEvent" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="Movies.moviedbDataSet.directorDataTable" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="Movies.moviedbDataSet.likesDataTable" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="Movies.moviedbDataSet.movieRow" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="Movies.moviedbDataSet.userDataTable" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="Movies.moviedbDataSet.movieDataTable" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+    </NestedTypes>
     <TypeIdentifier>
       <HashCode>FAEEgAEAAwEQAEpEJdARQCQCAAoSSBiQgAAKAWGQDTE=</HashCode>
     </TypeIdentifier>
   </Class>
-  <Class Name="Movies.movies_search_display" Collapsed="true">
-    <Position X="7.5" Y="1.5" Width="1.5" />
+  <Class Name="Movies.movies_search_display">
+    <Position X="8" Y="3.75" Width="1.5" />
+    <NestedTypes>
+      <Class Name="Movies.movies_search_display.Slot" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>movies_search_display.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
     <TypeIdentifier>
       <HashCode>gAAAAIAAACCAAAAABACAACACgAAAACACAAAAAAgIAAA=</HashCode>
       <FileName>movies_search_display.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Movies.Program" Collapsed="true">
-    <Position X="7.75" Y="2.5" Width="1.5" />
+  <Class Name="Movies.Program">
+    <Position X="13.25" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
       <FileName>Program.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Movies.write_update_reviewForm" Collapsed="true">
-    <Position X="7.5" Y="4.5" Width="1.5" />
+  <Class Name="Movies.write_update_reviewForm">
+    <Position X="15" Y="8.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>EAAAAAAAACAKABAAAACBAAACJAAAAAACAAAEEAAAAAA=</HashCode>
       <FileName>ReviewForm.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Movies.SearchResult" Collapsed="true">
-    <Position X="2.25" Y="3.5" Width="1.5" />
+  <Class Name="Movies.SearchResult">
+    <Position X="15" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ABAAAgAAACEAABAAAACAAAQCAAAYAAAQBEAAAQAAAAA=</HashCode>
       <FileName>SearchResult.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Movies.ShowTimeAndDatePanel" Collapsed="true">
-    <Position X="10.25" Y="1" Width="1.5" />
+  <Class Name="Movies.ShowTimeAndDatePanel">
+    <Position X="9.75" Y="6" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAAAAAACAgAAAAAACAAAACAAAAAAAAAAAgAAEAAAA=</HashCode>
       <FileName>ShowTimeAndDatePanel.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Movies.UserHomepage" Collapsed="true">
-    <Position X="2.25" Y="4.5" Width="1.5" />
+  <Class Name="Movies.UserHomepage">
+    <Position X="0.5" Y="1" Width="1.5" />
     <Compartments>
       <Compartment Name="Nested Types" Collapsed="false" />
     </Compartments>
@@ -76,7 +217,7 @@
     </ShowAsCollectionAssociation>
   </Class>
   <Class Name="Movies.Util">
-    <Position X="10.5" Y="2.5" Width="1.5" />
+    <Position X="2.25" Y="1.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAEAAAAAAgAAAAAAAAAQAAAAAAAAIAAAAAAA=</HashCode>
       <FileName>Util.cs</FileName>
@@ -85,33 +226,42 @@
       <Field Name="conn" />
     </ShowAsAssociation>
   </Class>
-  <Class Name="Movies.moviedbDataSetTableAdapters.TableAdapterManager" Collapsed="true">
-    <Position X="7.5" Y="3.5" Width="1.5" />
+  <Class Name="Movies.moviedbDataSetTableAdapters.TableAdapterManager">
+    <Position X="13.25" Y="5" Width="1.5" />
+    <NestedTypes>
+      <Enum Name="Movies.moviedbDataSetTableAdapters.TableAdapterManager.UpdateOrderOption" Collapsed="true">
+        <TypeIdentifier />
+      </Enum>
+      <Class Name="Movies.moviedbDataSetTableAdapters.TableAdapterManager.SelfReferenceComparer" Collapsed="true">
+        <TypeIdentifier />
+        <Lollipop Position="0.2" />
+      </Class>
+    </NestedTypes>
     <TypeIdentifier>
       <HashCode>gQAAEiAAMABABAEBRAAEMIAoGCACgIAAABSAAAABDBY=</HashCode>
     </TypeIdentifier>
   </Class>
-  <Class Name="Movies.Properties.Resources" Collapsed="true">
-    <Position X="0.5" Y="3.5" Width="1.5" />
+  <Class Name="Movies.Properties.Resources">
+    <Position X="6.25" Y="1" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
     </TypeIdentifier>
   </Class>
-  <Class Name="Movies.Properties.Settings" Collapsed="true">
-    <Position X="4" Y="3.5" Width="1.5" />
+  <Class Name="Movies.Properties.Settings">
+    <Position X="9.75" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAEAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
   <Class Name="Movies.Genre" Collapsed="true">
-    <Position X="5.25" Y="4.5" Width="1.5" />
+    <Position X="2.25" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAABAAAAAAAgAAAAAEAAAAAAAAAAAAAAA=</HashCode>
       <FileName>UserHomepage.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MySql.Data.MySqlClient.MySqlConnection" Collapsed="true">
-    <Position X="13" Y="2.5" Width="1.5" />
+    <Position X="4.5" Y="1.75" Width="1.5" />
     <TypeIdentifier />
     <Lollipop Position="0.2" />
   </Class>
