@@ -25,7 +25,7 @@ namespace Movies
             SSN = _SSN;
 
             InitializeComponent();
-            DataRowCollection ratings = Util.query("SELECT text,rating FROM `movie_review` WHERE filmid = " + filmID + " AND ssn = " + SSN).Rows;
+            DataRowCollection ratings = ORM.query("SELECT text,rating FROM `movie_review` WHERE filmid = " + filmID + " AND ssn = " + SSN).Rows;
           
             if (ratings.Count != 0)
             {
@@ -57,7 +57,7 @@ namespace Movies
                 {
                     SQL = "INSERT INTO `movie_review`(`filmID`, `SSN`, `Text`, `Rating`) VALUES (" + filmID + "," + SSN + ",'" + review + "'," + rating + ")";
                 }
-                Util.non_query(SQL);
+                ORM.non_query(SQL);
 
                 this.Dispose();
 

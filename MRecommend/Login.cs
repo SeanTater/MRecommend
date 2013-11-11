@@ -80,12 +80,12 @@ namespace Movies
                 String sql = "INSERT INTO `person`(`Fname`, `Lname`, `SSN`, `gender`) VALUES ('" + first_name_textbox.Text + "','" + last_name_textbox.Text + "','" + ssn_textbox.Text + "','" + gender + "')";
                 String sql1 = "INSERT INTO `user`(`username`, `password`, `SSN`) VALUES ('" + register_username_textbox.Text + "','" + register_password_textbox.Text + "','" + ssn_textbox.Text + "')";
                 MySqlDataAdapter my_data_adapter = new MySqlDataAdapter();
-                my_data_adapter.InsertCommand = new MySqlCommand(sql, Util.connect());
+                my_data_adapter.InsertCommand = new MySqlCommand(sql, ORM.connect());
                 //my_data_adapter.InsertCommand = new MySqlCommand(sql1, conn);
                 if(register_password_textbox.Text.Equals(confirm_register_password_textbox.Text))
                 {
                     my_data_adapter.InsertCommand.ExecuteNonQuery();
-                    my_data_adapter.InsertCommand = new MySqlCommand(sql1, Util.connect());
+                    my_data_adapter.InsertCommand = new MySqlCommand(sql1, ORM.connect());
                     my_data_adapter.InsertCommand.ExecuteNonQuery();
                     MessageBox.Show("User registered.");
                     first_name_textbox.Clear();
@@ -114,7 +114,7 @@ namespace Movies
         {
             try 
             {
-                DataRowCollection users = Movies.Util.query("SELECT * FROM `user` WHERE Username='" + username_textbox.Text + "'").Rows;
+                DataRowCollection users = Movies.ORM.query("SELECT * FROM `user` WHERE Username='" + username_textbox.Text + "'").Rows;
 
                 if (users.Count > 0)
                 {

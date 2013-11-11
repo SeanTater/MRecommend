@@ -77,7 +77,7 @@ namespace Movies
             String[] name = new String[2];
             if (search_type == 0) {
                 form_title.Text = String.Format("Search for movies named {0}", query_string);
-                movies = Util.query(String.Format("SELECT * FROM `movie` WHERE Title LIKE '%{0}%'", query_string)).Rows;
+                movies = ORM.query(String.Format("SELECT * FROM `movie` WHERE Title LIKE '%{0}%'", query_string)).Rows;
                         
             } else if (search_type == 1) {
                 form_title.Text = String.Format("Search for movies with {0}", query_string);
@@ -90,7 +90,7 @@ namespace Movies
                 {
                     sql = String.Format("SELECT DISTINCT m.* FROM person p,actor a,movie m WHERE (p.Fname LIKE '%{0}%' AND p.SSN=a.SSN AND a.filmID=m.filmID)OR(p.Lname LIKE '%{0}%' AND p.SSN=a.SSN AND a.filmID=m.filmID)", name[0]);
                 }
-                movies = Util.query(sql).Rows; 
+                movies = ORM.query(sql).Rows; 
             } else {
                 form_title.Text = String.Format("Search for movies directed by {0}", query_string);
                 name = query_string.Split(' ');
@@ -102,7 +102,7 @@ namespace Movies
                 {
                     sql = String.Format("SELECT DISTINCT m.* FROM person p,director a,movie m WHERE (p.Fname LIKE '%{0}%' AND p.SSN=d.SSN AND d.filmID=m.filmID)OR(p.Lname LIKE '%{0}%' AND p.SSN=d.SSN AND d.filmID=m.filmID)", name[0]);
                 }
-                movies = Util.query(sql).Rows;
+                movies = ORM.query(sql).Rows;
             }
             if (movies.Count == 0)
             {

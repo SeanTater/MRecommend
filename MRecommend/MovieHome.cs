@@ -25,7 +25,7 @@ namespace Movies
         public void populateMovieHomepage(String FilmId, String SSN)
         {
             //Fetch details of the movie from the database
-            DataRow movie_row = Util.query("SELECT * FROM movie WHERE filmID = " + FilmId).Rows[0];
+            DataRow movie_row = ORM.query("SELECT * FROM movie WHERE filmID = " + FilmId).Rows[0];
 
             String title = movie_row[1].ToString();
             String year = movie_row[2].ToString();
@@ -44,7 +44,7 @@ namespace Movies
 
             this.Text = String.Format("{0} - {1}", title, year);
 
-            DataRowCollection directors = Util.query(String.Format("SELECT fname,lname FROM `person` WHERE SSN IN (Select SSN from director where filmid = {0})", FilmId)).Rows;
+            DataRowCollection directors = ORM.query(String.Format("SELECT fname,lname FROM `person` WHERE SSN IN (Select SSN from director where filmid = {0})", FilmId)).Rows;
 
             foreach (DataRow director_row in directors)
             {
@@ -59,7 +59,7 @@ namespace Movies
             directorPanel.BorderStyle = BorderStyle.FixedSingle;
 
 
-            DataRowCollection genres = Util.query(String.Format("SELECT DISTINCT genre FROM `genre` WHERE filmid = {0}", FilmId)).Rows;
+            DataRowCollection genres = ORM.query(String.Format("SELECT DISTINCT genre FROM `genre` WHERE filmid = {0}", FilmId)).Rows;
             foreach (DataRow genre_row in genres)
             {
                 String genre = genre_row[0].ToString();
@@ -72,7 +72,7 @@ namespace Movies
             genrePanel.BorderStyle = BorderStyle.FixedSingle;
 
 
-            DataRowCollection actors = Util.query(String.Format("SELECT fname,lname FROM `person` ,actor Where person.SSN = actor.SSN AND actor.filmid = {0}", FilmId)).Rows;
+            DataRowCollection actors = ORM.query(String.Format("SELECT fname,lname FROM `person` ,actor Where person.SSN = actor.SSN AND actor.filmid = {0}", FilmId)).Rows;
             foreach (DataRow actor_row in actors)
             {
                 String fname = actor_row[0].ToString();
@@ -87,7 +87,7 @@ namespace Movies
             actorPanel.BorderStyle = BorderStyle.FixedSingle;
 
 
-            DataRowCollection reviews = Util.query(String.Format("SELECT fname,lname,text,rating FROM `movie_review`,person WHERE filmid = {0} AND person.ssn = movie_review.ssn", FilmId)).Rows;
+            DataRowCollection reviews = ORM.query(String.Format("SELECT fname,lname,text,rating FROM `movie_review`,person WHERE filmid = {0} AND person.ssn = movie_review.ssn", FilmId)).Rows;
             float avgRating = 0;
             int panel_row = 0;
             foreach (DataRow review_row in reviews)
@@ -139,7 +139,7 @@ namespace Movies
             else
             {
 
-                DataRowCollection ratings = Util.query(String.Format("SELECT rating FROM `movie_review` WHERE filmid = {0} AND ssn={1}", FilmId, loggedInUserSSN)).Rows;
+                DataRowCollection ratings = ORM.query(String.Format("SELECT rating FROM `movie_review` WHERE filmid = {0} AND ssn={1}", FilmId, loggedInUserSSN)).Rows;
                 if (ratings.Count != 0)
                 {
                     your_rating_textbox.Text = ratings[0][0].ToString();
@@ -165,7 +165,7 @@ namespace Movies
                 recommend_checkbox.Visible = true;
                 create_review_label.Visible = true;
 
-                DataRowCollection recommends = Util.query(String.Format("SELECT SSN FROM recommend WHERE filmid={0} AND SSN={1}", filmId, loggedInUserSSN)).Rows;
+                DataRowCollection recommends = ORM.query(String.Format("SELECT SSN FROM recommend WHERE filmid={0} AND SSN={1}", filmId, loggedInUserSSN)).Rows;
                 recommend_checkbox.Checked = recommends.Count > 0;
             }
             fetchTheatresPlayingIn();
@@ -173,7 +173,7 @@ namespace Movies
 
         public void fetchTheatresPlayingIn()
         {
-            DataRowCollection theaters = Util.query(String.Format("SELECT name FROM theater,(SELECT DISTINCT TID FROM now_playing WHERE filmid='{0}') as temp WHERE theater.tid=temp.tid", filmId)).Rows;
+            DataRowCollection theaters = ORM.query(String.Format("SELECT name FROM theater,(SELECT DISTINCT TID FROM now_playing WHERE filmid='{0}') as temp WHERE theater.tid=temp.tid", filmId)).Rows;
             foreach (DataRow theater in theaters)
             {
                 String theaterName = theater[0].ToString();
@@ -186,7 +186,7 @@ namespace Movies
 
         void t_Click(object sender, EventArgs e)
         {
-            DataRowCollection films_now_playing = Util.query(String.Format("SELECT date,time FROM now_playing WHERE filmid='{0}' AND tid=(SELECT tid FROM theater WHERE name ='{1}')", filmId, (sender as LinkLabel).Text)).Rows;
+            DataRowCollection films_now_playing = ORM.query(String.Format("SELECT date,time FROM now_playing WHERE filmid='{0}' AND tid=(SELECT tid FROM theater WHERE name ='{1}')", filmId, (sender as LinkLabel).Text)).Rows;
             ShowTimeAndDatePanel popUp = new ShowTimeAndDatePanel();
             //Form popUp = new Form();
             foreach (DataRow film in films_now_playing)
@@ -215,11 +215,11 @@ namespace Movies
             if (screenLoaded) {
                 if (recommend_checkbox.Checked)
                 {
-                    Util.non_query(String.Format("INSERT INTO `recommend`(`SSN`, `filmid`) VALUES ({0},{1})", loggedInUserSSN, filmId));
+                    ORM.non_query(String.Format("INSERT INTO `recommend`(`SSN`, `filmid`) VALUES ({0},{1})", loggedInUserSSN, filmId));
                 }
                 else
                 {
-                    Util.non_query(String.Format("DELETE FROM recommend WHERE SSN={0} AND filmid={1}",loggedInUserSSN, filmId));
+                    ORM.non_query(String.Format("DELETE FROM recommend WHERE SSN={0} AND filmid={1}",loggedInUserSSN, filmId));
                 }
             }
         }

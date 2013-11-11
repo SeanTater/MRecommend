@@ -29,7 +29,7 @@ namespace Movies
             switch (search_type_combobox.SelectedIndex)
             { 
                 case 0:
-                    foreach (DataRow dr in Movies.Util.query("SELECT Title from movie").Rows)
+                    foreach (DataRow dr in Movies.ORM.query("SELECT Title from movie").Rows)
                     {
                         ac.Add(dr[0].ToString());
                     }
@@ -38,7 +38,7 @@ namespace Movies
                     search_textbox.AutoCompleteCustomSource = ac;
                     break;
                 case 1:
-                    foreach (DataRow dr in Movies.Util.query("SELECT Fname,Lname FROM person p,actor a WHERE p.SSN=a.SSN").Rows) {
+                    foreach (DataRow dr in Movies.ORM.query("SELECT Fname,Lname FROM person p,actor a WHERE p.SSN=a.SSN").Rows) {
                             ac1.Add(dr[0].ToString()+" "+dr[1].ToString());
                     }
                     search_textbox.AutoCompleteMode = AutoCompleteMode.Suggest;
@@ -46,7 +46,7 @@ namespace Movies
                     search_textbox.AutoCompleteCustomSource = ac1;
                     break;
                 case 2:
-                    foreach (DataRow dr in Movies.Util.query("SELECT Fname,Lname FROM person p,director d WHERE p.SSN=d.SSN").Rows)
+                    foreach (DataRow dr in Movies.ORM.query("SELECT Fname,Lname FROM person p,director d WHERE p.SSN=d.SSN").Rows)
                     {
                         ac2.Add(dr[0].ToString()+" "+dr[1].ToString());
                     }
@@ -56,7 +56,7 @@ namespace Movies
                     break;
             }
 
-            now_playing = Movies.Util.query("SELECT distinct m.filmID,m.Title,m.MoviePoster FROM now_playing np,movie m WHERE np.filmID=m.filmID");
+            now_playing = Movies.ORM.query("SELECT distinct m.filmID,m.Title,m.MoviePoster FROM now_playing np,movie m WHERE np.filmID=m.filmID");
             get_now_playing(0);
             
         }
@@ -194,7 +194,7 @@ namespace Movies
                 switch (search_type_combobox.SelectedIndex)
                 {
                     case 0:
-                        foreach (DataRow dr in Movies.Util.query("SELECT Title FROM movie").Rows)
+                        foreach (DataRow dr in Movies.ORM.query("SELECT Title FROM movie").Rows)
                         {
                             ac.Add(dr[0].ToString());
                         }
@@ -203,7 +203,7 @@ namespace Movies
                         search_textbox.AutoCompleteCustomSource = ac;
                         break;
                     case 1:
-                        foreach (DataRow dr in Movies.Util.query("SELECT Fname,Lname FROM person p,actor a WHERE p.SSN=a.SSN").Rows)
+                        foreach (DataRow dr in Movies.ORM.query("SELECT Fname,Lname FROM person p,actor a WHERE p.SSN=a.SSN").Rows)
                         {
                             ac1.Add(dr[0].ToString() + " " + dr[1].ToString());
                         }
@@ -212,7 +212,7 @@ namespace Movies
                         search_textbox.AutoCompleteCustomSource = ac1;
                         break;
                     case 2:
-                        foreach (DataRow dr in Movies.Util.query("SELECT Fname,Lname FROM person p,director d WHERE p.SSN=d.SSN").Rows)
+                        foreach (DataRow dr in Movies.ORM.query("SELECT Fname,Lname FROM person p,director d WHERE p.SSN=d.SSN").Rows)
                         {
                             ac2.Add(dr[0].ToString() + " " + dr[1].ToString());
                         }

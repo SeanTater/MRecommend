@@ -36,7 +36,7 @@ namespace Movies
         public UserHomepage(String username)
         {
             this.Username = username;
-            ssn = Convert.ToInt32(Util.query(String.Format("Select SSN FROM user WHERE Username='{0}';", Username)).Rows[0][0]);
+            ssn = Convert.ToInt32(ORM.query(String.Format("Select SSN FROM user WHERE Username='{0}';", Username)).Rows[0][0]);
             preferences_sql = "Select genre FROM Likes WHERE SSN = " + ssn;
             InitializeComponent();
         }
@@ -78,7 +78,7 @@ namespace Movies
                 cb.CheckedChanged += new System.EventHandler(updateGenreCheckState);
                 genres[name] = new Genre(name, false, cb);
             }
-            DataRowCollection preferences = Util.query(preferences_sql).Rows;
+            DataRowCollection preferences = ORM.query(preferences_sql).Rows;
             if (preferences.Count > 0)
             {
                 foreach (DataRow dr in preferences)
@@ -95,7 +95,7 @@ namespace Movies
 
                 //Point loc = new Point(5,5);
                 int i = 0;
-                DataRowCollection popular_movies = Movies.Util.query("SELECT DISTINCT m.title FROM movie m,recommend r WHERE m.filmID=r.filmID AND Avg_rating>=7.5 GROUP BY m.title HAVING COUNT(*)>=2").Rows;
+                DataRowCollection popular_movies = Movies.ORM.query("SELECT DISTINCT m.title FROM movie m,recommend r WHERE m.filmID=r.filmID AND Avg_rating>=7.5 GROUP BY m.title HAVING COUNT(*)>=2").Rows;
                 foreach (DataRow movie in popular_movies)
                 {
                     string title = movie[0].ToString();
@@ -120,7 +120,7 @@ namespace Movies
                 populateReviewPanel();
 
                 // Movie Name Autocompletion
-                DataRowCollection movies = Util.query("SELECT DISTINCT title FROM movie").Rows;
+                DataRowCollection movies = ORM.query("SELECT DISTINCT title FROM movie").Rows;
                 allmovies = new AutoCompleteStringCollection();
                 foreach (DataRow movie in movies)
                 {
@@ -135,7 +135,7 @@ namespace Movies
             ratings_panel.Controls.Clear();
             ratings_panel.AutoScroll = true;
             ratings_panel.BackColor = Color.WhiteSmoke;
-            DataRowCollection reviews = Util.query("Select m.title,r.Rating,r.Text FROM movie m,movie_review r WHERE m.filmID=r.filmID AND SSN=" + ssn).Rows;
+            DataRowCollection reviews = ORM.query("Select m.title,r.Rating,r.Text FROM movie m,movie_review r WHERE m.filmID=r.filmID AND SSN=" + ssn).Rows;
             int i = 0;
             //Point loc = new Point(5,5);
             foreach (DataRow review in reviews)
@@ -189,12 +189,12 @@ namespace Movies
         void delete_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             string title = e.Link.LinkData.ToString();
-            DataRowCollection films = Util.query(String.Format("SELECT filmID FROM movie WHERE title='{0}';", title)).Rows;
+            DataRowCollection films = ORM.query(String.Format("SELECT filmID FROM movie WHERE title='{0}';", title)).Rows;
             if (films.Count > 0)
             {
                 int fid = Convert.ToInt32(films[0][0]);
 
-                int rows_affected = Util.non_query(String.Format("DELETE FROM movie_review WHERE SSN={0} AND filmID={1};", ssn, fid));
+                int rows_affected = ORM.non_query(String.Format("DELETE FROM movie_review WHERE SSN={0} AND filmID={1};", ssn, fid));
                 if (rows_affected == 1)
                 {
                     MessageBox.Show("Your review for " + title + " has been deleted");
@@ -208,7 +208,7 @@ namespace Movies
         void l_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             string title = e.Link.LinkData.ToString();
-            DataRowCollection films = Util.query(String.Format("SELECT filmID FROM movie WHERE title='{0}';", title)).Rows;
+            DataRowCollection films = ORM.query(String.Format("SELECT filmID FROM movie WHERE title='{0}';", title)).Rows;
             if (films.Count > 0)
             {
                 String fid = films[0][0].ToString();
@@ -235,11 +235,11 @@ namespace Movies
 
             if (requested_status)
             {
-                Util.non_query(String.Format("INSERT INTO Likes(SSN,genre) VALUES ({0},'{1}');", ssn, genre.name));
+                ORM.non_query(String.Format("INSERT INTO Likes(SSN,genre) VALUES ({0},'{1}');", ssn, genre.name));
             }
             else
             {
-                Util.non_query(String.Format("DELETE FROM Likes WHERE SSN = {0} AND genre = '{1}';", ssn, genre.name));
+                ORM.non_query(String.Format("DELETE FROM Likes WHERE SSN = {0} AND genre = '{1}';", ssn, genre.name));
             }
             return requested_status;
         }
@@ -257,7 +257,7 @@ namespace Movies
             string temp = "SELECT filmID,title from movie WHERE title IN (" + recommended + ")";
             string rec = "SELECT DISTINCT title FROM (" + temp + ") t, genre g WHERE t.filmID=g.filmID AND genre IN (" + preferences_sql + ")";
 
-            DataRowCollection titles = Util.query(rec).Rows;
+            DataRowCollection titles = ORM.query(rec).Rows;
             int i = 0;
 
             foreach (DataRow movie in titles)

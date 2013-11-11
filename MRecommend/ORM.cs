@@ -5,7 +5,7 @@ using System;
 
 namespace Movies
 {
-    public static class Util
+    public static class ORM
     {
         private static MySqlConnection conn;
 
