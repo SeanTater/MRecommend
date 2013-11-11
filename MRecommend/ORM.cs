@@ -39,4 +39,17 @@ namespace Movies
             return new MySqlCommand(sql, connect()).ExecuteNonQuery();
         }
     }
+
+    public class DBObject(ORM) {
+        public string name;
+        public string column_names[];
+
+        public static DBObject query(String shortql) {
+            ORM.query(string.Format("SELECT * FROM {0} {1}", name, shortql));
+        }
+    }
+
+    public class Item {
+        
+    }
 }
