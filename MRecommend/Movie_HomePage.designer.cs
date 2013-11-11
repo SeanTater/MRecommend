@@ -36,17 +36,17 @@
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.descriptionTB = new System.Windows.Forms.TextBox();
             this.director_label = new System.Windows.Forms.Label();
-            this.Actors = new System.Windows.Forms.Label();
+            this.actors_label = new System.Windows.Forms.Label();
             this.actorPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.ReviewsPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.reviewLabel = new System.Windows.Forms.LinkLabel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.your_rating_label = new System.Windows.Forms.Label();
+            this.create_review_label = new System.Windows.Forms.LinkLabel();
+            this.your_rating_textbox = new System.Windows.Forms.TextBox();
             this.movie_image = new System.Windows.Forms.PictureBox();
             this.theatrePanel = new System.Windows.Forms.TableLayoutPanel();
-            this.nowPlayingAtText = new System.Windows.Forms.Label();
+            this.now_playing_at_label = new System.Windows.Forms.Label();
             this.directorPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.recommendCB = new System.Windows.Forms.CheckBox();
+            this.recommend_checkbox = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.movie_image)).BeginInit();
             this.SuspendLayout();
             // 
@@ -123,15 +123,15 @@
             this.director_label.TabIndex = 9;
             this.director_label.Text = "Director :";
             // 
-            // Actors
+            // actors_label
             // 
-            this.Actors.AutoSize = true;
-            this.Actors.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Actors.Location = new System.Drawing.Point(241, 214);
-            this.Actors.Name = "Actors";
-            this.Actors.Size = new System.Drawing.Size(64, 17);
-            this.Actors.TabIndex = 11;
-            this.Actors.Text = "Actors :";
+            this.actors_label.AutoSize = true;
+            this.actors_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.actors_label.Location = new System.Drawing.Point(241, 214);
+            this.actors_label.Name = "actors_label";
+            this.actors_label.Size = new System.Drawing.Size(64, 17);
+            this.actors_label.TabIndex = 11;
+            this.actors_label.Text = "Actors :";
             // 
             // actorPanel
             // 
@@ -154,37 +154,37 @@
             this.ReviewsPanel.Size = new System.Drawing.Size(576, 116);
             this.ReviewsPanel.TabIndex = 15;
             // 
-            // label1
+            // your_rating_label
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(452, 84);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(94, 20);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Your Rating";
+            this.your_rating_label.AutoSize = true;
+            this.your_rating_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.your_rating_label.Location = new System.Drawing.Point(452, 84);
+            this.your_rating_label.Name = "your_rating_label";
+            this.your_rating_label.Size = new System.Drawing.Size(94, 20);
+            this.your_rating_label.TabIndex = 4;
+            this.your_rating_label.Text = "Your Rating";
             // 
-            // reviewLabel
+            // create_review_label
             // 
-            this.reviewLabel.AutoSize = true;
-            this.reviewLabel.Location = new System.Drawing.Point(462, 106);
-            this.reviewLabel.Name = "reviewLabel";
-            this.reviewLabel.Size = new System.Drawing.Size(111, 13);
-            this.reviewLabel.TabIndex = 16;
-            this.reviewLabel.TabStop = true;
-            this.reviewLabel.Text = "Write/Update Review";
-            this.reviewLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.reviewLabel_LinkClicked);
+            this.create_review_label.AutoSize = true;
+            this.create_review_label.Location = new System.Drawing.Point(462, 106);
+            this.create_review_label.Name = "create_review_label";
+            this.create_review_label.Size = new System.Drawing.Size(111, 13);
+            this.create_review_label.TabIndex = 16;
+            this.create_review_label.TabStop = true;
+            this.create_review_label.Text = "Write/Update Review";
+            this.create_review_label.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.reviewLabel_LinkClicked);
             // 
-            // textBox1
+            // your_rating_textbox
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.textBox1.Enabled = false;
-            this.textBox1.ForeColor = System.Drawing.Color.White;
-            this.textBox1.Location = new System.Drawing.Point(553, 83);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(30, 20);
-            this.textBox1.TabIndex = 17;
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.your_rating_textbox.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.your_rating_textbox.Enabled = false;
+            this.your_rating_textbox.ForeColor = System.Drawing.Color.White;
+            this.your_rating_textbox.Location = new System.Drawing.Point(553, 83);
+            this.your_rating_textbox.Name = "your_rating_textbox";
+            this.your_rating_textbox.Size = new System.Drawing.Size(30, 20);
+            this.your_rating_textbox.TabIndex = 17;
+            this.your_rating_textbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // movie_image
             // 
@@ -209,16 +209,16 @@
             this.theatrePanel.Size = new System.Drawing.Size(580, 61);
             this.theatrePanel.TabIndex = 18;
             // 
-            // nowPlayingAtText
+            // now_playing_at_label
             // 
-            this.nowPlayingAtText.AutoSize = true;
-            this.nowPlayingAtText.BackColor = System.Drawing.Color.Lavender;
-            this.nowPlayingAtText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nowPlayingAtText.Location = new System.Drawing.Point(12, 404);
-            this.nowPlayingAtText.Name = "nowPlayingAtText";
-            this.nowPlayingAtText.Size = new System.Drawing.Size(93, 13);
-            this.nowPlayingAtText.TabIndex = 19;
-            this.nowPlayingAtText.Text = "Now Playing At";
+            this.now_playing_at_label.AutoSize = true;
+            this.now_playing_at_label.BackColor = System.Drawing.Color.Lavender;
+            this.now_playing_at_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.now_playing_at_label.Location = new System.Drawing.Point(12, 404);
+            this.now_playing_at_label.Name = "now_playing_at_label";
+            this.now_playing_at_label.Size = new System.Drawing.Size(93, 13);
+            this.now_playing_at_label.TabIndex = 19;
+            this.now_playing_at_label.Text = "Now Playing At";
             // 
             // directorPanel
             // 
@@ -228,16 +228,16 @@
             this.directorPanel.Size = new System.Drawing.Size(265, 29);
             this.directorPanel.TabIndex = 20;
             // 
-            // recommendCB
+            // recommend_checkbox
             // 
-            this.recommendCB.AutoSize = true;
-            this.recommendCB.Location = new System.Drawing.Point(513, 0);
-            this.recommendCB.Name = "recommendCB";
-            this.recommendCB.Size = new System.Drawing.Size(86, 17);
-            this.recommendCB.TabIndex = 21;
-            this.recommendCB.Text = "Recommend";
-            this.recommendCB.UseVisualStyleBackColor = true;
-            this.recommendCB.CheckedChanged += new System.EventHandler(this.recommendCB_CheckedChanged);
+            this.recommend_checkbox.AutoSize = true;
+            this.recommend_checkbox.Location = new System.Drawing.Point(513, 0);
+            this.recommend_checkbox.Name = "recommend_checkbox";
+            this.recommend_checkbox.Size = new System.Drawing.Size(86, 17);
+            this.recommend_checkbox.TabIndex = 21;
+            this.recommend_checkbox.Text = "Recommend";
+            this.recommend_checkbox.UseVisualStyleBackColor = true;
+            this.recommend_checkbox.CheckedChanged += new System.EventHandler(this.recommendCB_CheckedChanged);
             // 
             // Movie_HomePage
             // 
@@ -245,19 +245,19 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(595, 487);
-            this.Controls.Add(this.recommendCB);
+            this.Controls.Add(this.recommend_checkbox);
             this.Controls.Add(this.directorPanel);
-            this.Controls.Add(this.nowPlayingAtText);
+            this.Controls.Add(this.now_playing_at_label);
             this.Controls.Add(this.theatrePanel);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.reviewLabel);
+            this.Controls.Add(this.your_rating_textbox);
+            this.Controls.Add(this.create_review_label);
             this.Controls.Add(this.ReviewsPanel);
             this.Controls.Add(this.actorPanel);
-            this.Controls.Add(this.Actors);
+            this.Controls.Add(this.actors_label);
             this.Controls.Add(this.director_label);
             this.Controls.Add(this.descriptionTB);
             this.Controls.Add(this.avg_rating);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.your_rating_label);
             this.Controls.Add(this.avg_rating_progress);
             this.Controls.Add(this.genrePanel);
             this.Controls.Add(this.movie_name);
@@ -282,16 +282,16 @@
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
         private System.Windows.Forms.TextBox descriptionTB;
         private System.Windows.Forms.Label director_label;
-        private System.Windows.Forms.Label Actors;
+        private System.Windows.Forms.Label actors_label;
         private System.Windows.Forms.FlowLayoutPanel actorPanel;
         private System.Windows.Forms.TableLayoutPanel ReviewsPanel;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.LinkLabel reviewLabel;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label your_rating_label;
+        private System.Windows.Forms.LinkLabel create_review_label;
+        private System.Windows.Forms.TextBox your_rating_textbox;
         private System.Windows.Forms.TableLayoutPanel theatrePanel;
-        private System.Windows.Forms.Label nowPlayingAtText;
+        private System.Windows.Forms.Label now_playing_at_label;
         private System.Windows.Forms.FlowLayoutPanel directorPanel;
-        private System.Windows.Forms.CheckBox recommendCB;
+        private System.Windows.Forms.CheckBox recommend_checkbox;
     }
 }
 

@@ -28,328 +28,328 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.passwordTextBox = new System.Windows.Forms.TextBox();
-            this.usernameTextBox = new System.Windows.Forms.TextBox();
-            this.cancelButton = new System.Windows.Forms.Button();
-            this.loginButton = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.login_register_split = new System.Windows.Forms.SplitContainer();
+            this.password_textbox = new System.Windows.Forms.TextBox();
+            this.username_textbox = new System.Windows.Forms.TextBox();
+            this.cancel_button = new System.Windows.Forms.Button();
+            this.login_button = new System.Windows.Forms.Button();
+            this.password_label = new System.Windows.Forms.Label();
+            this.username_label = new System.Windows.Forms.Label();
+            this.login_label = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.femaleRadioButton = new System.Windows.Forms.RadioButton();
-            this.maleRadioButton = new System.Windows.Forms.RadioButton();
-            this.label11 = new System.Windows.Forms.Label();
-            this.confirmRegisterPasswordTextBox = new System.Windows.Forms.TextBox();
-            this.registerPasswordTextBox = new System.Windows.Forms.TextBox();
-            this.registerUsernameTextBox = new System.Windows.Forms.TextBox();
-            this.ssnTextBox = new System.Windows.Forms.TextBox();
-            this.lastNameTextBox = new System.Windows.Forms.TextBox();
-            this.firstNameTextBox = new System.Windows.Forms.TextBox();
-            this.cancelRegisterbutton = new System.Windows.Forms.Button();
-            this.registerButton = new System.Windows.Forms.Button();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
+            this.female_radiobutton = new System.Windows.Forms.RadioButton();
+            this.male_radiobutton = new System.Windows.Forms.RadioButton();
+            this.gender_label = new System.Windows.Forms.Label();
+            this.confirm_register_password_textbox = new System.Windows.Forms.TextBox();
+            this.register_password_textbox = new System.Windows.Forms.TextBox();
+            this.register_username_textbox = new System.Windows.Forms.TextBox();
+            this.ssn_textbox = new System.Windows.Forms.TextBox();
+            this.last_name_textbox = new System.Windows.Forms.TextBox();
+            this.first_name_textbox = new System.Windows.Forms.TextBox();
+            this.cancel_register_button = new System.Windows.Forms.Button();
+            this.register_button = new System.Windows.Forms.Button();
+            this.confirm_register_password_label = new System.Windows.Forms.Label();
+            this.register_password_label = new System.Windows.Forms.Label();
+            this.register_username_label = new System.Windows.Forms.Label();
+            this.ssn_label = new System.Windows.Forms.Label();
+            this.last_name_label = new System.Windows.Forms.Label();
+            this.first_name_label = new System.Windows.Forms.Label();
+            this.register_label = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.login_register_split)).BeginInit();
+            this.login_register_split.Panel1.SuspendLayout();
+            this.login_register_split.Panel2.SuspendLayout();
+            this.login_register_split.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // splitContainer1
+            // login_register_split
             // 
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer1.Name = "splitContainer1";
+            this.login_register_split.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.login_register_split.Location = new System.Drawing.Point(0, 0);
+            this.login_register_split.Name = "login_register_split";
             // 
-            // splitContainer1.Panel1
+            // login_register_split.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.passwordTextBox);
-            this.splitContainer1.Panel1.Controls.Add(this.usernameTextBox);
-            this.splitContainer1.Panel1.Controls.Add(this.cancelButton);
-            this.splitContainer1.Panel1.Controls.Add(this.loginButton);
-            this.splitContainer1.Panel1.Controls.Add(this.label3);
-            this.splitContainer1.Panel1.Controls.Add(this.label2);
-            this.splitContainer1.Panel1.Controls.Add(this.label1);
-            this.splitContainer1.Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel1_Paint);
+            this.login_register_split.Panel1.Controls.Add(this.password_textbox);
+            this.login_register_split.Panel1.Controls.Add(this.username_textbox);
+            this.login_register_split.Panel1.Controls.Add(this.cancel_button);
+            this.login_register_split.Panel1.Controls.Add(this.login_button);
+            this.login_register_split.Panel1.Controls.Add(this.password_label);
+            this.login_register_split.Panel1.Controls.Add(this.username_label);
+            this.login_register_split.Panel1.Controls.Add(this.login_label);
+            this.login_register_split.Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel1_Paint);
             // 
-            // splitContainer1.Panel2
+            // login_register_split.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.groupBox1);
-            this.splitContainer1.Panel2.Controls.Add(this.label11);
-            this.splitContainer1.Panel2.Controls.Add(this.confirmRegisterPasswordTextBox);
-            this.splitContainer1.Panel2.Controls.Add(this.registerPasswordTextBox);
-            this.splitContainer1.Panel2.Controls.Add(this.registerUsernameTextBox);
-            this.splitContainer1.Panel2.Controls.Add(this.ssnTextBox);
-            this.splitContainer1.Panel2.Controls.Add(this.lastNameTextBox);
-            this.splitContainer1.Panel2.Controls.Add(this.firstNameTextBox);
-            this.splitContainer1.Panel2.Controls.Add(this.cancelRegisterbutton);
-            this.splitContainer1.Panel2.Controls.Add(this.registerButton);
-            this.splitContainer1.Panel2.Controls.Add(this.label10);
-            this.splitContainer1.Panel2.Controls.Add(this.label9);
-            this.splitContainer1.Panel2.Controls.Add(this.label8);
-            this.splitContainer1.Panel2.Controls.Add(this.label7);
-            this.splitContainer1.Panel2.Controls.Add(this.label6);
-            this.splitContainer1.Panel2.Controls.Add(this.label5);
-            this.splitContainer1.Panel2.Controls.Add(this.label4);
-            this.splitContainer1.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel2_Paint);
-            this.splitContainer1.Size = new System.Drawing.Size(984, 512);
-            this.splitContainer1.SplitterDistance = 374;
-            this.splitContainer1.TabIndex = 0;
+            this.login_register_split.Panel2.Controls.Add(this.groupBox1);
+            this.login_register_split.Panel2.Controls.Add(this.gender_label);
+            this.login_register_split.Panel2.Controls.Add(this.confirm_register_password_textbox);
+            this.login_register_split.Panel2.Controls.Add(this.register_password_textbox);
+            this.login_register_split.Panel2.Controls.Add(this.register_username_textbox);
+            this.login_register_split.Panel2.Controls.Add(this.ssn_textbox);
+            this.login_register_split.Panel2.Controls.Add(this.last_name_textbox);
+            this.login_register_split.Panel2.Controls.Add(this.first_name_textbox);
+            this.login_register_split.Panel2.Controls.Add(this.cancel_register_button);
+            this.login_register_split.Panel2.Controls.Add(this.register_button);
+            this.login_register_split.Panel2.Controls.Add(this.confirm_register_password_label);
+            this.login_register_split.Panel2.Controls.Add(this.register_password_label);
+            this.login_register_split.Panel2.Controls.Add(this.register_username_label);
+            this.login_register_split.Panel2.Controls.Add(this.ssn_label);
+            this.login_register_split.Panel2.Controls.Add(this.last_name_label);
+            this.login_register_split.Panel2.Controls.Add(this.first_name_label);
+            this.login_register_split.Panel2.Controls.Add(this.register_label);
+            this.login_register_split.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel2_Paint);
+            this.login_register_split.Size = new System.Drawing.Size(984, 512);
+            this.login_register_split.SplitterDistance = 374;
+            this.login_register_split.TabIndex = 0;
             // 
-            // passwordTextBox
+            // password_textbox
             // 
-            this.passwordTextBox.Location = new System.Drawing.Point(120, 203);
-            this.passwordTextBox.Name = "passwordTextBox";
-            this.passwordTextBox.PasswordChar = '*';
-            this.passwordTextBox.Size = new System.Drawing.Size(161, 20);
-            this.passwordTextBox.TabIndex = 6;
+            this.password_textbox.Location = new System.Drawing.Point(120, 203);
+            this.password_textbox.Name = "password_textbox";
+            this.password_textbox.PasswordChar = '*';
+            this.password_textbox.Size = new System.Drawing.Size(161, 20);
+            this.password_textbox.TabIndex = 6;
             // 
-            // usernameTextBox
+            // username_textbox
             // 
-            this.usernameTextBox.Location = new System.Drawing.Point(120, 157);
-            this.usernameTextBox.Name = "usernameTextBox";
-            this.usernameTextBox.Size = new System.Drawing.Size(161, 20);
-            this.usernameTextBox.TabIndex = 5;
+            this.username_textbox.Location = new System.Drawing.Point(120, 157);
+            this.username_textbox.Name = "username_textbox";
+            this.username_textbox.Size = new System.Drawing.Size(161, 20);
+            this.username_textbox.TabIndex = 5;
             // 
-            // cancelButton
+            // cancel_button
             // 
-            this.cancelButton.Location = new System.Drawing.Point(184, 265);
-            this.cancelButton.Name = "cancelButton";
-            this.cancelButton.Size = new System.Drawing.Size(75, 23);
-            this.cancelButton.TabIndex = 4;
-            this.cancelButton.Text = "Cancel";
-            this.cancelButton.UseVisualStyleBackColor = true;
-            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
+            this.cancel_button.Location = new System.Drawing.Point(184, 265);
+            this.cancel_button.Name = "cancel_button";
+            this.cancel_button.Size = new System.Drawing.Size(75, 23);
+            this.cancel_button.TabIndex = 4;
+            this.cancel_button.Text = "Cancel";
+            this.cancel_button.UseVisualStyleBackColor = true;
+            this.cancel_button.Click += new System.EventHandler(this.cancelButton_Click);
             // 
-            // loginButton
+            // login_button
             // 
-            this.loginButton.Location = new System.Drawing.Point(27, 265);
-            this.loginButton.Name = "loginButton";
-            this.loginButton.Size = new System.Drawing.Size(75, 23);
-            this.loginButton.TabIndex = 3;
-            this.loginButton.Text = "Login";
-            this.loginButton.UseVisualStyleBackColor = true;
-            this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
+            this.login_button.Location = new System.Drawing.Point(27, 265);
+            this.login_button.Name = "login_button";
+            this.login_button.Size = new System.Drawing.Size(75, 23);
+            this.login_button.TabIndex = 3;
+            this.login_button.Text = "Login";
+            this.login_button.UseVisualStyleBackColor = true;
+            this.login_button.Click += new System.EventHandler(this.loginButton_Click);
             // 
-            // label3
+            // password_label
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(24, 203);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Password";
+            this.password_label.AutoSize = true;
+            this.password_label.Location = new System.Drawing.Point(24, 203);
+            this.password_label.Name = "password_label";
+            this.password_label.Size = new System.Drawing.Size(53, 13);
+            this.password_label.TabIndex = 2;
+            this.password_label.Text = "Password";
             // 
-            // label2
+            // username_label
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(24, 165);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Username";
+            this.username_label.AutoSize = true;
+            this.username_label.Location = new System.Drawing.Point(24, 165);
+            this.username_label.Name = "username_label";
+            this.username_label.Size = new System.Drawing.Size(55, 13);
+            this.username_label.TabIndex = 1;
+            this.username_label.Text = "Username";
             // 
-            // label1
+            // login_label
             // 
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(114, 67);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(83, 38);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Login";
+            this.login_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.login_label.Location = new System.Drawing.Point(114, 67);
+            this.login_label.Name = "login_label";
+            this.login_label.Size = new System.Drawing.Size(83, 38);
+            this.login_label.TabIndex = 0;
+            this.login_label.Text = "Login";
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.femaleRadioButton);
-            this.groupBox1.Controls.Add(this.maleRadioButton);
+            this.groupBox1.Controls.Add(this.female_radiobutton);
+            this.groupBox1.Controls.Add(this.male_radiobutton);
             this.groupBox1.Location = new System.Drawing.Point(256, 370);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(241, 62);
             this.groupBox1.TabIndex = 18;
             this.groupBox1.TabStop = false;
             // 
-            // femaleRadioButton
+            // female_radiobutton
             // 
-            this.femaleRadioButton.AutoSize = true;
-            this.femaleRadioButton.Location = new System.Drawing.Point(7, 39);
-            this.femaleRadioButton.Name = "femaleRadioButton";
-            this.femaleRadioButton.Size = new System.Drawing.Size(59, 17);
-            this.femaleRadioButton.TabIndex = 1;
-            this.femaleRadioButton.TabStop = true;
-            this.femaleRadioButton.Text = "Female";
-            this.femaleRadioButton.UseVisualStyleBackColor = true;
+            this.female_radiobutton.AutoSize = true;
+            this.female_radiobutton.Location = new System.Drawing.Point(7, 39);
+            this.female_radiobutton.Name = "female_radiobutton";
+            this.female_radiobutton.Size = new System.Drawing.Size(59, 17);
+            this.female_radiobutton.TabIndex = 1;
+            this.female_radiobutton.TabStop = true;
+            this.female_radiobutton.Text = "Female";
+            this.female_radiobutton.UseVisualStyleBackColor = true;
             // 
-            // maleRadioButton
+            // male_radiobutton
             // 
-            this.maleRadioButton.AutoSize = true;
-            this.maleRadioButton.Location = new System.Drawing.Point(7, 11);
-            this.maleRadioButton.Name = "maleRadioButton";
-            this.maleRadioButton.Size = new System.Drawing.Size(48, 17);
-            this.maleRadioButton.TabIndex = 0;
-            this.maleRadioButton.TabStop = true;
-            this.maleRadioButton.Text = "Male";
-            this.maleRadioButton.UseVisualStyleBackColor = true;
+            this.male_radiobutton.AutoSize = true;
+            this.male_radiobutton.Location = new System.Drawing.Point(7, 11);
+            this.male_radiobutton.Name = "male_radiobutton";
+            this.male_radiobutton.Size = new System.Drawing.Size(48, 17);
+            this.male_radiobutton.TabIndex = 0;
+            this.male_radiobutton.TabStop = true;
+            this.male_radiobutton.Text = "Male";
+            this.male_radiobutton.UseVisualStyleBackColor = true;
             // 
-            // label11
+            // gender_label
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(105, 370);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(42, 13);
-            this.label11.TabIndex = 17;
-            this.label11.Text = "Gender";
+            this.gender_label.AutoSize = true;
+            this.gender_label.Location = new System.Drawing.Point(105, 370);
+            this.gender_label.Name = "gender_label";
+            this.gender_label.Size = new System.Drawing.Size(42, 13);
+            this.gender_label.TabIndex = 17;
+            this.gender_label.Text = "Gender";
             // 
-            // confirmRegisterPasswordTextBox
+            // confirm_register_password_textbox
             // 
-            this.confirmRegisterPasswordTextBox.Location = new System.Drawing.Point(256, 329);
-            this.confirmRegisterPasswordTextBox.Name = "confirmRegisterPasswordTextBox";
-            this.confirmRegisterPasswordTextBox.PasswordChar = '*';
-            this.confirmRegisterPasswordTextBox.Size = new System.Drawing.Size(100, 20);
-            this.confirmRegisterPasswordTextBox.TabIndex = 16;
+            this.confirm_register_password_textbox.Location = new System.Drawing.Point(256, 329);
+            this.confirm_register_password_textbox.Name = "confirm_register_password_textbox";
+            this.confirm_register_password_textbox.PasswordChar = '*';
+            this.confirm_register_password_textbox.Size = new System.Drawing.Size(100, 20);
+            this.confirm_register_password_textbox.TabIndex = 16;
             // 
-            // registerPasswordTextBox
+            // register_password_textbox
             // 
-            this.registerPasswordTextBox.Location = new System.Drawing.Point(256, 298);
-            this.registerPasswordTextBox.Name = "registerPasswordTextBox";
-            this.registerPasswordTextBox.PasswordChar = '*';
-            this.registerPasswordTextBox.Size = new System.Drawing.Size(100, 20);
-            this.registerPasswordTextBox.TabIndex = 15;
+            this.register_password_textbox.Location = new System.Drawing.Point(256, 298);
+            this.register_password_textbox.Name = "register_password_textbox";
+            this.register_password_textbox.PasswordChar = '*';
+            this.register_password_textbox.Size = new System.Drawing.Size(100, 20);
+            this.register_password_textbox.TabIndex = 15;
             // 
-            // registerUsernameTextBox
+            // register_username_textbox
             // 
-            this.registerUsernameTextBox.Location = new System.Drawing.Point(256, 262);
-            this.registerUsernameTextBox.Name = "registerUsernameTextBox";
-            this.registerUsernameTextBox.Size = new System.Drawing.Size(100, 20);
-            this.registerUsernameTextBox.TabIndex = 14;
+            this.register_username_textbox.Location = new System.Drawing.Point(256, 262);
+            this.register_username_textbox.Name = "register_username_textbox";
+            this.register_username_textbox.Size = new System.Drawing.Size(100, 20);
+            this.register_username_textbox.TabIndex = 14;
             // 
-            // ssnTextBox
+            // ssn_textbox
             // 
-            this.ssnTextBox.Location = new System.Drawing.Point(256, 229);
-            this.ssnTextBox.MaxLength = 10;
-            this.ssnTextBox.Name = "ssnTextBox";
-            this.ssnTextBox.Size = new System.Drawing.Size(100, 20);
-            this.ssnTextBox.TabIndex = 13;
+            this.ssn_textbox.Location = new System.Drawing.Point(256, 229);
+            this.ssn_textbox.MaxLength = 10;
+            this.ssn_textbox.Name = "ssn_textbox";
+            this.ssn_textbox.Size = new System.Drawing.Size(100, 20);
+            this.ssn_textbox.TabIndex = 13;
             // 
-            // lastNameTextBox
+            // last_name_textbox
             // 
-            this.lastNameTextBox.Location = new System.Drawing.Point(256, 191);
-            this.lastNameTextBox.Name = "lastNameTextBox";
-            this.lastNameTextBox.Size = new System.Drawing.Size(100, 20);
-            this.lastNameTextBox.TabIndex = 12;
+            this.last_name_textbox.Location = new System.Drawing.Point(256, 191);
+            this.last_name_textbox.Name = "last_name_textbox";
+            this.last_name_textbox.Size = new System.Drawing.Size(100, 20);
+            this.last_name_textbox.TabIndex = 12;
             // 
-            // firstNameTextBox
+            // first_name_textbox
             // 
-            this.firstNameTextBox.Location = new System.Drawing.Point(256, 154);
-            this.firstNameTextBox.Name = "firstNameTextBox";
-            this.firstNameTextBox.Size = new System.Drawing.Size(100, 20);
-            this.firstNameTextBox.TabIndex = 11;
+            this.first_name_textbox.Location = new System.Drawing.Point(256, 154);
+            this.first_name_textbox.Name = "first_name_textbox";
+            this.first_name_textbox.Size = new System.Drawing.Size(100, 20);
+            this.first_name_textbox.TabIndex = 11;
             // 
-            // cancelRegisterbutton
+            // cancel_register_button
             // 
-            this.cancelRegisterbutton.Location = new System.Drawing.Point(281, 453);
-            this.cancelRegisterbutton.Name = "cancelRegisterbutton";
-            this.cancelRegisterbutton.Size = new System.Drawing.Size(75, 23);
-            this.cancelRegisterbutton.TabIndex = 10;
-            this.cancelRegisterbutton.Text = "cancel";
-            this.cancelRegisterbutton.UseVisualStyleBackColor = true;
-            this.cancelRegisterbutton.Click += new System.EventHandler(this.cancelRegisterButton_Click);
+            this.cancel_register_button.Location = new System.Drawing.Point(281, 453);
+            this.cancel_register_button.Name = "cancel_register_button";
+            this.cancel_register_button.Size = new System.Drawing.Size(75, 23);
+            this.cancel_register_button.TabIndex = 10;
+            this.cancel_register_button.Text = "cancel";
+            this.cancel_register_button.UseVisualStyleBackColor = true;
+            this.cancel_register_button.Click += new System.EventHandler(this.cancelRegisterButton_Click);
             // 
-            // registerButton
+            // register_button
             // 
-            this.registerButton.Location = new System.Drawing.Point(116, 453);
-            this.registerButton.Name = "registerButton";
-            this.registerButton.Size = new System.Drawing.Size(75, 23);
-            this.registerButton.TabIndex = 9;
-            this.registerButton.Text = "Register";
-            this.registerButton.UseVisualStyleBackColor = true;
-            this.registerButton.Click += new System.EventHandler(this.registerButton_Click);
+            this.register_button.Location = new System.Drawing.Point(116, 453);
+            this.register_button.Name = "register_button";
+            this.register_button.Size = new System.Drawing.Size(75, 23);
+            this.register_button.TabIndex = 9;
+            this.register_button.Text = "Register";
+            this.register_button.UseVisualStyleBackColor = true;
+            this.register_button.Click += new System.EventHandler(this.registerButton_Click);
             // 
-            // label10
+            // confirm_register_password_label
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(102, 332);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(89, 13);
-            this.label10.TabIndex = 8;
-            this.label10.Text = "Retype password";
+            this.confirm_register_password_label.AutoSize = true;
+            this.confirm_register_password_label.Location = new System.Drawing.Point(102, 332);
+            this.confirm_register_password_label.Name = "confirm_register_password_label";
+            this.confirm_register_password_label.Size = new System.Drawing.Size(89, 13);
+            this.confirm_register_password_label.TabIndex = 8;
+            this.confirm_register_password_label.Text = "Retype password";
             // 
-            // label9
+            // register_password_label
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(102, 301);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(53, 13);
-            this.label9.TabIndex = 7;
-            this.label9.Text = "Password";
+            this.register_password_label.AutoSize = true;
+            this.register_password_label.Location = new System.Drawing.Point(102, 301);
+            this.register_password_label.Name = "register_password_label";
+            this.register_password_label.Size = new System.Drawing.Size(53, 13);
+            this.register_password_label.TabIndex = 7;
+            this.register_password_label.Text = "Password";
             // 
-            // label8
+            // register_username_label
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(102, 265);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(55, 13);
-            this.label8.TabIndex = 4;
-            this.label8.Text = "Username";
+            this.register_username_label.AutoSize = true;
+            this.register_username_label.Location = new System.Drawing.Point(102, 265);
+            this.register_username_label.Name = "register_username_label";
+            this.register_username_label.Size = new System.Drawing.Size(55, 13);
+            this.register_username_label.TabIndex = 4;
+            this.register_username_label.Text = "Username";
             // 
-            // label7
+            // ssn_label
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(102, 232);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(29, 13);
-            this.label7.TabIndex = 3;
-            this.label7.Text = "SSN";
+            this.ssn_label.AutoSize = true;
+            this.ssn_label.Location = new System.Drawing.Point(102, 232);
+            this.ssn_label.Name = "ssn_label";
+            this.ssn_label.Size = new System.Drawing.Size(29, 13);
+            this.ssn_label.TabIndex = 3;
+            this.ssn_label.Text = "SSN";
             // 
-            // label6
+            // last_name_label
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(102, 194);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(58, 13);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "Last Name";
+            this.last_name_label.AutoSize = true;
+            this.last_name_label.Location = new System.Drawing.Point(102, 194);
+            this.last_name_label.Name = "last_name_label";
+            this.last_name_label.Size = new System.Drawing.Size(58, 13);
+            this.last_name_label.TabIndex = 2;
+            this.last_name_label.Text = "Last Name";
             // 
-            // label5
+            // first_name_label
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(102, 157);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(57, 13);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "First Name";
+            this.first_name_label.AutoSize = true;
+            this.first_name_label.Location = new System.Drawing.Point(102, 157);
+            this.first_name_label.Name = "first_name_label";
+            this.first_name_label.Size = new System.Drawing.Size(57, 13);
+            this.first_name_label.TabIndex = 1;
+            this.first_name_label.Text = "First Name";
             // 
-            // label4
+            // register_label
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(201, 67);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(116, 31);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Register";
+            this.register_label.AutoSize = true;
+            this.register_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.register_label.Location = new System.Drawing.Point(201, 67);
+            this.register_label.Name = "register_label";
+            this.register_label.Size = new System.Drawing.Size(116, 31);
+            this.register_label.TabIndex = 0;
+            this.register_label.Text = "Register";
             // 
             // loginpage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 512);
-            this.Controls.Add(this.splitContainer1);
+            this.Controls.Add(this.login_register_split);
             this.Name = "loginpage";
             this.Text = "Login";
             this.Load += new System.EventHandler(this.Form2_Load);
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel1.PerformLayout();
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            this.splitContainer1.Panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
+            this.login_register_split.Panel1.ResumeLayout(false);
+            this.login_register_split.Panel1.PerformLayout();
+            this.login_register_split.Panel2.ResumeLayout(false);
+            this.login_register_split.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.login_register_split)).EndInit();
+            this.login_register_split.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -358,32 +358,32 @@
 
         #endregion
 
-        private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.Button cancelButton;
-        private System.Windows.Forms.Button loginButton;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox passwordTextBox;
-        private System.Windows.Forms.TextBox usernameTextBox;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button cancelRegisterbutton;
-        private System.Windows.Forms.Button registerButton;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox confirmRegisterPasswordTextBox;
-        private System.Windows.Forms.TextBox registerPasswordTextBox;
-        private System.Windows.Forms.TextBox registerUsernameTextBox;
-        private System.Windows.Forms.TextBox ssnTextBox;
-        private System.Windows.Forms.TextBox lastNameTextBox;
-        private System.Windows.Forms.TextBox firstNameTextBox;
+        private System.Windows.Forms.SplitContainer login_register_split;
+        private System.Windows.Forms.Button cancel_button;
+        private System.Windows.Forms.Button login_button;
+        private System.Windows.Forms.Label password_label;
+        private System.Windows.Forms.Label username_label;
+        private System.Windows.Forms.Label login_label;
+        private System.Windows.Forms.TextBox password_textbox;
+        private System.Windows.Forms.TextBox username_textbox;
+        private System.Windows.Forms.Label register_label;
+        private System.Windows.Forms.Button cancel_register_button;
+        private System.Windows.Forms.Button register_button;
+        private System.Windows.Forms.Label confirm_register_password_label;
+        private System.Windows.Forms.Label register_password_label;
+        private System.Windows.Forms.Label register_username_label;
+        private System.Windows.Forms.Label ssn_label;
+        private System.Windows.Forms.Label last_name_label;
+        private System.Windows.Forms.Label first_name_label;
+        private System.Windows.Forms.TextBox confirm_register_password_textbox;
+        private System.Windows.Forms.TextBox register_password_textbox;
+        private System.Windows.Forms.TextBox register_username_textbox;
+        private System.Windows.Forms.TextBox ssn_textbox;
+        private System.Windows.Forms.TextBox last_name_textbox;
+        private System.Windows.Forms.TextBox first_name_textbox;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton femaleRadioButton;
-        private System.Windows.Forms.RadioButton maleRadioButton;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.RadioButton female_radiobutton;
+        private System.Windows.Forms.RadioButton male_radiobutton;
+        private System.Windows.Forms.Label gender_label;
     }
 }

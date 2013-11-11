@@ -29,82 +29,82 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainpage));
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.login_register_panel = new System.Windows.Forms.Panel();
+            this.register_button = new System.Windows.Forms.Button();
+            this.login_button = new System.Windows.Forms.Button();
+            this.search_panel = new System.Windows.Forms.Panel();
+            this.search_type_combobox = new System.Windows.Forms.ComboBox();
             this.button3 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.search_textbox = new System.Windows.Forms.TextBox();
+            this.now_playing_panel = new System.Windows.Forms.Panel();
+            this.previous_now_playing_button = new System.Windows.Forms.Button();
+            this.next_now_playing_button = new System.Windows.Forms.Button();
+            this.now_playing_label = new System.Windows.Forms.Label();
+            this.movie_cover_3 = new System.Windows.Forms.PictureBox();
+            this.movie_cover_2 = new System.Windows.Forms.PictureBox();
+            this.movie_cover_1 = new System.Windows.Forms.PictureBox();
+            this.movie_cover_0 = new System.Windows.Forms.PictureBox();
+            this.welcome_label = new System.Windows.Forms.Label();
+            this.login_register_panel.SuspendLayout();
+            this.search_panel.SuspendLayout();
+            this.now_playing_panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.movie_cover_3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.movie_cover_2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.movie_cover_1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.movie_cover_0)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel1
+            // login_register_panel
             // 
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Location = new System.Drawing.Point(12, 54);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(871, 33);
-            this.panel1.TabIndex = 0;
+            this.login_register_panel.Controls.Add(this.register_button);
+            this.login_register_panel.Controls.Add(this.login_button);
+            this.login_register_panel.Location = new System.Drawing.Point(12, 54);
+            this.login_register_panel.Name = "login_register_panel";
+            this.login_register_panel.Size = new System.Drawing.Size(871, 33);
+            this.login_register_panel.TabIndex = 0;
             // 
-            // button2
+            // register_button
             // 
-            this.button2.Location = new System.Drawing.Point(781, 7);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Register";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.register_button.Location = new System.Drawing.Point(781, 7);
+            this.register_button.Name = "register_button";
+            this.register_button.Size = new System.Drawing.Size(75, 23);
+            this.register_button.TabIndex = 1;
+            this.register_button.Text = "Register";
+            this.register_button.UseVisualStyleBackColor = true;
+            this.register_button.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button1
+            // login_button
             // 
-            this.button1.Location = new System.Drawing.Point(681, 7);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Login";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.login_button.Location = new System.Drawing.Point(681, 7);
+            this.login_button.Name = "login_button";
+            this.login_button.Size = new System.Drawing.Size(75, 23);
+            this.login_button.TabIndex = 0;
+            this.login_button.Text = "Login";
+            this.login_button.UseVisualStyleBackColor = true;
+            this.login_button.Click += new System.EventHandler(this.button1_Click);
             // 
-            // panel2
+            // search_panel
             // 
-            this.panel2.Controls.Add(this.comboBox1);
-            this.panel2.Controls.Add(this.button3);
-            this.panel2.Controls.Add(this.textBox1);
-            this.panel2.Location = new System.Drawing.Point(12, 93);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(871, 60);
-            this.panel2.TabIndex = 1;
+            this.search_panel.Controls.Add(this.search_type_combobox);
+            this.search_panel.Controls.Add(this.button3);
+            this.search_panel.Controls.Add(this.search_textbox);
+            this.search_panel.Location = new System.Drawing.Point(12, 93);
+            this.search_panel.Name = "search_panel";
+            this.search_panel.Size = new System.Drawing.Size(871, 60);
+            this.search_panel.TabIndex = 1;
             // 
-            // comboBox1
+            // search_type_combobox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.search_type_combobox.FormattingEnabled = true;
+            this.search_type_combobox.Items.AddRange(new object[] {
             "Movies",
             "Actor",
             "Director"});
-            this.comboBox1.Location = new System.Drawing.Point(666, 19);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 2;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.search_type_combobox.Location = new System.Drawing.Point(666, 19);
+            this.search_type_combobox.Name = "search_type_combobox";
+            this.search_type_combobox.Size = new System.Drawing.Size(121, 21);
+            this.search_type_combobox.TabIndex = 2;
+            this.search_type_combobox.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // button3
             // 
@@ -116,158 +116,158 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // textBox1
+            // search_textbox
             // 
-            this.textBox1.Location = new System.Drawing.Point(22, 20);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(631, 20);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.search_textbox.Location = new System.Drawing.Point(22, 20);
+            this.search_textbox.Name = "search_textbox";
+            this.search_textbox.Size = new System.Drawing.Size(631, 20);
+            this.search_textbox.TabIndex = 0;
+            this.search_textbox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // panel3
+            // now_playing_panel
             // 
-            this.panel3.Controls.Add(this.button5);
-            this.panel3.Controls.Add(this.button4);
-            this.panel3.Controls.Add(this.label2);
-            this.panel3.Controls.Add(this.pictureBox4);
-            this.panel3.Controls.Add(this.pictureBox3);
-            this.panel3.Controls.Add(this.pictureBox2);
-            this.panel3.Controls.Add(this.pictureBox1);
-            this.panel3.Location = new System.Drawing.Point(12, 159);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(838, 354);
-            this.panel3.TabIndex = 2;
+            this.now_playing_panel.Controls.Add(this.previous_now_playing_button);
+            this.now_playing_panel.Controls.Add(this.next_now_playing_button);
+            this.now_playing_panel.Controls.Add(this.now_playing_label);
+            this.now_playing_panel.Controls.Add(this.movie_cover_3);
+            this.now_playing_panel.Controls.Add(this.movie_cover_2);
+            this.now_playing_panel.Controls.Add(this.movie_cover_1);
+            this.now_playing_panel.Controls.Add(this.movie_cover_0);
+            this.now_playing_panel.Location = new System.Drawing.Point(12, 159);
+            this.now_playing_panel.Name = "now_playing_panel";
+            this.now_playing_panel.Size = new System.Drawing.Size(838, 354);
+            this.now_playing_panel.TabIndex = 2;
             // 
-            // label2
+            // previous_now_playing_button
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(30, 13);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(131, 25);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Now Playing";
+            this.previous_now_playing_button.Location = new System.Drawing.Point(645, 328);
+            this.previous_now_playing_button.Name = "previous_now_playing_button";
+            this.previous_now_playing_button.Size = new System.Drawing.Size(75, 23);
+            this.previous_now_playing_button.TabIndex = 6;
+            this.previous_now_playing_button.Text = "Previous";
+            this.previous_now_playing_button.UseVisualStyleBackColor = true;
+            this.previous_now_playing_button.Click += new System.EventHandler(this.button5_Click);
             // 
-            // pictureBox4
+            // next_now_playing_button
             // 
-            this.pictureBox4.ErrorImage = null;
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(645, 61);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(190, 256);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 3;
-            this.pictureBox4.TabStop = false;
-            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
+            this.next_now_playing_button.Location = new System.Drawing.Point(742, 328);
+            this.next_now_playing_button.Name = "next_now_playing_button";
+            this.next_now_playing_button.Size = new System.Drawing.Size(75, 23);
+            this.next_now_playing_button.TabIndex = 5;
+            this.next_now_playing_button.Text = "next";
+            this.next_now_playing_button.UseVisualStyleBackColor = true;
+            this.next_now_playing_button.Click += new System.EventHandler(this.button4_Click);
             // 
-            // pictureBox3
+            // now_playing_label
             // 
-            this.pictureBox3.ErrorImage = null;
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(432, 61);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(190, 256);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 2;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
+            this.now_playing_label.AutoSize = true;
+            this.now_playing_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.now_playing_label.Location = new System.Drawing.Point(30, 13);
+            this.now_playing_label.Name = "now_playing_label";
+            this.now_playing_label.Size = new System.Drawing.Size(131, 25);
+            this.now_playing_label.TabIndex = 4;
+            this.now_playing_label.Text = "Now Playing";
             // 
-            // pictureBox2
+            // movie_cover_3
             // 
-            this.pictureBox2.ErrorImage = null;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(227, 61);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(190, 256);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            this.movie_cover_3.ErrorImage = null;
+            this.movie_cover_3.Image = ((System.Drawing.Image)(resources.GetObject("movie_cover_3.Image")));
+            this.movie_cover_3.Location = new System.Drawing.Point(645, 61);
+            this.movie_cover_3.Name = "movie_cover_3";
+            this.movie_cover_3.Size = new System.Drawing.Size(190, 256);
+            this.movie_cover_3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.movie_cover_3.TabIndex = 3;
+            this.movie_cover_3.TabStop = false;
+            this.movie_cover_3.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
-            // pictureBox1
+            // movie_cover_2
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(22, 61);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(190, 256);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.movie_cover_2.ErrorImage = null;
+            this.movie_cover_2.Image = ((System.Drawing.Image)(resources.GetObject("movie_cover_2.Image")));
+            this.movie_cover_2.Location = new System.Drawing.Point(432, 61);
+            this.movie_cover_2.Name = "movie_cover_2";
+            this.movie_cover_2.Size = new System.Drawing.Size(190, 256);
+            this.movie_cover_2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.movie_cover_2.TabIndex = 2;
+            this.movie_cover_2.TabStop = false;
+            this.movie_cover_2.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
-            // label1
+            // movie_cover_1
             // 
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(856, 42);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Welcome to Movies database";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.movie_cover_1.ErrorImage = null;
+            this.movie_cover_1.Image = ((System.Drawing.Image)(resources.GetObject("movie_cover_1.Image")));
+            this.movie_cover_1.Location = new System.Drawing.Point(227, 61);
+            this.movie_cover_1.Name = "movie_cover_1";
+            this.movie_cover_1.Size = new System.Drawing.Size(190, 256);
+            this.movie_cover_1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.movie_cover_1.TabIndex = 1;
+            this.movie_cover_1.TabStop = false;
+            this.movie_cover_1.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
-            // button4
+            // movie_cover_0
             // 
-            this.button4.Location = new System.Drawing.Point(742, 328);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 5;
-            this.button4.Text = "next";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.movie_cover_0.Image = ((System.Drawing.Image)(resources.GetObject("movie_cover_0.Image")));
+            this.movie_cover_0.Location = new System.Drawing.Point(22, 61);
+            this.movie_cover_0.Name = "movie_cover_0";
+            this.movie_cover_0.Size = new System.Drawing.Size(190, 256);
+            this.movie_cover_0.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.movie_cover_0.TabIndex = 0;
+            this.movie_cover_0.TabStop = false;
+            this.movie_cover_0.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // button5
+            // welcome_label
             // 
-            this.button5.Location = new System.Drawing.Point(645, 328);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 6;
-            this.button5.Text = "Previous";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.welcome_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.welcome_label.Location = new System.Drawing.Point(12, 9);
+            this.welcome_label.Name = "welcome_label";
+            this.welcome_label.Size = new System.Drawing.Size(856, 42);
+            this.welcome_label.TabIndex = 3;
+            this.welcome_label.Text = "Welcome to Movies database";
+            this.welcome_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // mainpage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(984, 512);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(890, 512);
+            this.Controls.Add(this.welcome_label);
+            this.Controls.Add(this.now_playing_panel);
+            this.Controls.Add(this.search_panel);
+            this.Controls.Add(this.login_register_panel);
             this.Name = "mainpage";
             this.Text = "Mainpage";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.login_register_panel.ResumeLayout(false);
+            this.search_panel.ResumeLayout(false);
+            this.search_panel.PerformLayout();
+            this.now_playing_panel.ResumeLayout(false);
+            this.now_playing_panel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.movie_cover_3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.movie_cover_2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.movie_cover_1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.movie_cover_0)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel login_register_panel;
+        private System.Windows.Forms.Button register_button;
+        private System.Windows.Forms.Button login_button;
+        private System.Windows.Forms.Panel search_panel;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.TextBox search_textbox;
+        private System.Windows.Forms.ComboBox search_type_combobox;
+        private System.Windows.Forms.Panel now_playing_panel;
+        private System.Windows.Forms.PictureBox movie_cover_2;
+        private System.Windows.Forms.PictureBox movie_cover_1;
+        private System.Windows.Forms.PictureBox movie_cover_0;
+        private System.Windows.Forms.Label welcome_label;
+        private System.Windows.Forms.PictureBox movie_cover_3;
+        private System.Windows.Forms.Label now_playing_label;
+        private System.Windows.Forms.Button previous_now_playing_button;
+        private System.Windows.Forms.Button next_now_playing_button;
     }
 }
 

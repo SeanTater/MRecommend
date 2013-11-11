@@ -131,10 +131,10 @@ namespace Movies
             avg_rating_progress.Value = (int)avgRating;
             if (String.IsNullOrEmpty(loggedInUserSSN) || loggedInUserSSN.Equals("0000000"))
             {
-                textBox1.Visible = false;
-                label1.Visible = false;
-                reviewLabel.Visible = false;
-                recommendCB.Visible = false;
+                your_rating_textbox.Visible = false;
+                your_rating_label.Visible = false;
+                create_review_label.Visible = false;
+                recommend_checkbox.Visible = false;
             }
             else
             {
@@ -142,31 +142,31 @@ namespace Movies
                 DataRowCollection ratings = Util.query(String.Format("SELECT rating FROM `movie_review` WHERE filmid = {0} AND ssn={1}", FilmId, loggedInUserSSN)).Rows;
                 if (ratings.Count != 0)
                 {
-                    textBox1.Text = ratings[0][0].ToString();
-                    textBox1.Visible = true;
-                    label1.Visible = true;
+                    your_rating_textbox.Text = ratings[0][0].ToString();
+                    your_rating_textbox.Visible = true;
+                    your_rating_label.Visible = true;
 
                 }
                 else
                 {
-                    textBox1.Visible = false;
-                    label1.Visible = false;
+                    your_rating_textbox.Visible = false;
+                    your_rating_label.Visible = false;
 
                 }
 
             }
             if (String.IsNullOrEmpty(SSN) || SSN.Equals("0000000"))
             {
-                recommendCB.Visible = false;
-                reviewLabel.Visible = false;
+                recommend_checkbox.Visible = false;
+                create_review_label.Visible = false;
             }
             else
             {
-                recommendCB.Visible = true;
-                reviewLabel.Visible = true;
+                recommend_checkbox.Visible = true;
+                create_review_label.Visible = true;
 
                 DataRowCollection recommends = Util.query(String.Format("SELECT SSN FROM recommend WHERE filmid={0} AND SSN={1}", filmId, loggedInUserSSN)).Rows;
-                recommendCB.Checked = recommends.Count > 0;
+                recommend_checkbox.Checked = recommends.Count > 0;
             }
             fetchTheatresPlayingIn();
         }
@@ -213,7 +213,7 @@ namespace Movies
         private void recommendCB_CheckedChanged(object sender, EventArgs e)
         {
             if (screenLoaded) {
-                if (recommendCB.Checked)
+                if (recommend_checkbox.Checked)
                 {
                     Util.non_query(String.Format("INSERT INTO `recommend`(`SSN`, `filmid`) VALUES ({0},{1})", loggedInUserSSN, filmId));
                 }

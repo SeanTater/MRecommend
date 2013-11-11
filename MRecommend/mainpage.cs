@@ -25,34 +25,34 @@ namespace Movies
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            comboBox1.SelectedIndex = 0;
-            switch (comboBox1.SelectedIndex)
+            search_type_combobox.SelectedIndex = 0;
+            switch (search_type_combobox.SelectedIndex)
             { 
                 case 0:
                     foreach (DataRow dr in Movies.Util.query("SELECT Title from movie").Rows)
                     {
                         ac.Add(dr[0].ToString());
                     }
-                    textBox1.AutoCompleteMode = AutoCompleteMode.Suggest;
-                    textBox1.AutoCompleteSource = AutoCompleteSource.CustomSource;
-                    textBox1.AutoCompleteCustomSource = ac;
+                    search_textbox.AutoCompleteMode = AutoCompleteMode.Suggest;
+                    search_textbox.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                    search_textbox.AutoCompleteCustomSource = ac;
                     break;
                 case 1:
                     foreach (DataRow dr in Movies.Util.query("SELECT Fname,Lname FROM person p,actor a WHERE p.SSN=a.SSN").Rows) {
                             ac1.Add(dr[0].ToString()+" "+dr[1].ToString());
                     }
-                    textBox1.AutoCompleteMode = AutoCompleteMode.Suggest;
-                    textBox1.AutoCompleteSource = AutoCompleteSource.CustomSource;
-                    textBox1.AutoCompleteCustomSource = ac1;
+                    search_textbox.AutoCompleteMode = AutoCompleteMode.Suggest;
+                    search_textbox.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                    search_textbox.AutoCompleteCustomSource = ac1;
                     break;
                 case 2:
                     foreach (DataRow dr in Movies.Util.query("SELECT Fname,Lname FROM person p,director d WHERE p.SSN=d.SSN").Rows)
                     {
                         ac2.Add(dr[0].ToString()+" "+dr[1].ToString());
                     }
-                    textBox1.AutoCompleteMode = AutoCompleteMode.Suggest;
-                    textBox1.AutoCompleteSource = AutoCompleteSource.CustomSource;
-                    textBox1.AutoCompleteCustomSource = ac2;
+                    search_textbox.AutoCompleteMode = AutoCompleteMode.Suggest;
+                    search_textbox.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                    search_textbox.AutoCompleteCustomSource = ac2;
                     break;
             }
 
@@ -78,45 +78,45 @@ namespace Movies
                     switch (i)
                     {
                         case 0:
-                            pictureBox1.Image = img;
-                            pictureBox1.Tag = dr[0];
+                            movie_cover_0.Image = img;
+                            movie_cover_0.Tag = dr[0];
                             break;
                         case 1:
-                            pictureBox2.Image = img;
-                            pictureBox2.Tag = dr[0];
+                            movie_cover_1.Image = img;
+                            movie_cover_1.Tag = dr[0];
                             break;
                         case 2:
-                            pictureBox3.Image = img;
-                            pictureBox3.Tag = dr[0];
+                            movie_cover_2.Image = img;
+                            movie_cover_2.Tag = dr[0];
                             break;
                         case 3:
-                            pictureBox4.Image = img;
-                            pictureBox4.Tag = dr[0];
+                            movie_cover_3.Image = img;
+                            movie_cover_3.Tag = dr[0];
                             break;
                     }
                 }
             }
             if (flag)
             {
-                button5.Tag = index + i;
-                button4.Tag = index + i;
+                previous_now_playing_button.Tag = index + i;
+                next_now_playing_button.Tag = index + i;
             }
             if (index + i -8< 0)
             {
-                button5.Enabled = false;
+                previous_now_playing_button.Enabled = false;
             }
             else if (index + i - 8 >= 0)
             {
-                button5.Enabled = true;
+                previous_now_playing_button.Enabled = true;
             
             }
             if(index + i > now_playing.Rows.Count)
             {
-                button4.Enabled = false;
+                next_now_playing_button.Enabled = false;
             }
             else if( index + i <= now_playing.Rows.Count)
             {
-                button4.Enabled = true;
+                next_now_playing_button.Enabled = true;
             }
         }
         private void button1_Click(object sender, EventArgs e)
@@ -135,23 +135,23 @@ namespace Movies
 
         private void button3_Click(object sender, EventArgs e)
         {
-            switch (comboBox1.SelectedIndex)
+            switch (search_type_combobox.SelectedIndex)
             { 
                 case 0:
                     //movies
-                    movies_search_display f3_movies = new movies_search_display(0,textBox1.Text);
+                    movies_search_display f3_movies = new movies_search_display(0,search_textbox.Text);
                     //MessageBox.Show("coming here 1");
                     f3_movies.Show();
                     break;
                 case 1:
                     //actor
-                    movies_search_display f3_actors = new movies_search_display(1, textBox1.Text);
+                    movies_search_display f3_actors = new movies_search_display(1, search_textbox.Text);
                     //MessageBox.Show("coming here 2");
                     f3_actors.Show();
                     break;
                 case 2:
                     //directors
-                    movies_search_display f3_directors = new movies_search_display(2, textBox1.Text);
+                    movies_search_display f3_directors = new movies_search_display(2, search_textbox.Text);
                     //MessageBox.Show("coming here 3");
                     f3_directors.Show();
                     break;
@@ -163,27 +163,27 @@ namespace Movies
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             //go to movies page
-            Movies.Movie_HomePage mh = new Movies.Movie_HomePage(pictureBox1.Tag.ToString(), "0000000");
+            Movies.Movie_HomePage mh = new Movies.Movie_HomePage(movie_cover_0.Tag.ToString(), "0000000");
             mh.Show();
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             //go to movies page
-            Movies.Movie_HomePage mh = new Movies.Movie_HomePage(pictureBox2.Tag.ToString(), "0000000");
+            Movies.Movie_HomePage mh = new Movies.Movie_HomePage(movie_cover_1.Tag.ToString(), "0000000");
             mh.Show();
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
             //go to movies page
-            Movies.Movie_HomePage mh = new Movies.Movie_HomePage(pictureBox3.Tag.ToString(), "0000000");
+            Movies.Movie_HomePage mh = new Movies.Movie_HomePage(movie_cover_2.Tag.ToString(), "0000000");
             mh.Show();
         }
 
         private void pictureBox4_Click(object sender, EventArgs e)
         {
-            Movies.Movie_HomePage mh = new Movies.Movie_HomePage(pictureBox4.Tag.ToString(), "0000000");
+            Movies.Movie_HomePage mh = new Movies.Movie_HomePage(movie_cover_3.Tag.ToString(), "0000000");
             mh.Show();
         }
 
@@ -191,34 +191,34 @@ namespace Movies
         {
             try
             {
-                switch (comboBox1.SelectedIndex)
+                switch (search_type_combobox.SelectedIndex)
                 {
                     case 0:
                         foreach (DataRow dr in Movies.Util.query("SELECT Title FROM movie").Rows)
                         {
                             ac.Add(dr[0].ToString());
                         }
-                        textBox1.AutoCompleteMode = AutoCompleteMode.Suggest;
-                        textBox1.AutoCompleteSource = AutoCompleteSource.CustomSource;
-                        textBox1.AutoCompleteCustomSource = ac;
+                        search_textbox.AutoCompleteMode = AutoCompleteMode.Suggest;
+                        search_textbox.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                        search_textbox.AutoCompleteCustomSource = ac;
                         break;
                     case 1:
                         foreach (DataRow dr in Movies.Util.query("SELECT Fname,Lname FROM person p,actor a WHERE p.SSN=a.SSN").Rows)
                         {
                             ac1.Add(dr[0].ToString() + " " + dr[1].ToString());
                         }
-                        textBox1.AutoCompleteMode = AutoCompleteMode.Suggest;
-                        textBox1.AutoCompleteSource = AutoCompleteSource.CustomSource;
-                        textBox1.AutoCompleteCustomSource = ac1;
+                        search_textbox.AutoCompleteMode = AutoCompleteMode.Suggest;
+                        search_textbox.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                        search_textbox.AutoCompleteCustomSource = ac1;
                         break;
                     case 2:
                         foreach (DataRow dr in Movies.Util.query("SELECT Fname,Lname FROM person p,director d WHERE p.SSN=d.SSN").Rows)
                         {
                             ac2.Add(dr[0].ToString() + " " + dr[1].ToString());
                         }
-                        textBox1.AutoCompleteMode = AutoCompleteMode.Suggest;
-                        textBox1.AutoCompleteSource = AutoCompleteSource.CustomSource;
-                        textBox1.AutoCompleteCustomSource = ac2;
+                        search_textbox.AutoCompleteMode = AutoCompleteMode.Suggest;
+                        search_textbox.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                        search_textbox.AutoCompleteCustomSource = ac2;
                         break;
                 }
             }
@@ -237,7 +237,7 @@ namespace Movies
         {
             try
             {
-                get_now_playing((int)button4.Tag);
+                get_now_playing((int)next_now_playing_button.Tag);
             }
             catch (Exception ex)
             {
@@ -251,7 +251,7 @@ namespace Movies
             try
             {
                // MessageBox.Show("coming here" + (int)button4.Tag);
-                get_now_playing(((int)button4.Tag) - 8);
+                get_now_playing(((int)next_now_playing_button.Tag) - 8);
             }
             catch (Exception ex)
             {
