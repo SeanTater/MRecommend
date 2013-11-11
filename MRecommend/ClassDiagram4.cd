@@ -217,16 +217,6 @@
       <Field Name="genres" />
     </ShowAsCollectionAssociation>
   </Class>
-  <Class Name="Movies.ORM">
-    <Position X="2.25" Y="1.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAEAAAAAAgAAAAAAAAAQAAAAAAAAIAAAAAAA=</HashCode>
-      <FileName>ORM.cs</FileName>
-    </TypeIdentifier>
-    <ShowAsAssociation>
-      <Field Name="conn" />
-    </ShowAsAssociation>
-  </Class>
   <Class Name="Movies.moviedbDataSetTableAdapters.TableAdapterManager">
     <Position X="13.25" Y="5" Width="1.5" />
     <NestedTypes>
@@ -265,6 +255,16 @@
     <Position X="4.5" Y="1.75" Width="1.5" />
     <TypeIdentifier />
     <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Movies.ORM">
+    <Position X="2.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAgAAAAAAAAAQAAAAAAAAIAAAAAAA=</HashCode>
+      <FileName>ORM.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="conn" />
+    </ShowAsAssociation>
   </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>
