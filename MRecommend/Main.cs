@@ -12,13 +12,13 @@ using MySql.Data.MySqlClient;
 
 namespace Movies
 {
-    public partial class mainpage : Form
+    public partial class Main : Form
     {
         public DataTable now_playing;
         AutoCompleteStringCollection ac = new AutoCompleteStringCollection();
         AutoCompleteStringCollection ac1 = new AutoCompleteStringCollection();
         AutoCompleteStringCollection ac2 = new AutoCompleteStringCollection();
-        public mainpage()
+        public Main()
         {
             InitializeComponent();
         }
@@ -121,14 +121,14 @@ namespace Movies
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            loginpage f2 = new loginpage("login");
+            Login f2 = new Login("login");
             f2.Show();
             this.Hide();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            loginpage f2 = new loginpage("register");
+            Login f2 = new Login("register");
             f2.Show();
             this.Hide();
         }
@@ -139,19 +139,19 @@ namespace Movies
             { 
                 case 0:
                     //movies
-                    movies_search_display f3_movies = new movies_search_display(0,search_textbox.Text);
+                    SearchDisplay f3_movies = new SearchDisplay(0,search_textbox.Text);
                     //MessageBox.Show("coming here 1");
                     f3_movies.Show();
                     break;
                 case 1:
                     //actor
-                    movies_search_display f3_actors = new movies_search_display(1, search_textbox.Text);
+                    SearchDisplay f3_actors = new SearchDisplay(1, search_textbox.Text);
                     //MessageBox.Show("coming here 2");
                     f3_actors.Show();
                     break;
                 case 2:
                     //directors
-                    movies_search_display f3_directors = new movies_search_display(2, search_textbox.Text);
+                    SearchDisplay f3_directors = new SearchDisplay(2, search_textbox.Text);
                     //MessageBox.Show("coming here 3");
                     f3_directors.Show();
                     break;
@@ -163,27 +163,27 @@ namespace Movies
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             //go to movies page
-            Movies.Movie_HomePage mh = new Movies.Movie_HomePage(movie_cover_0.Tag.ToString(), "0000000");
+            Movies.MovieHome mh = new Movies.MovieHome(movie_cover_0.Tag.ToString(), "0000000");
             mh.Show();
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             //go to movies page
-            Movies.Movie_HomePage mh = new Movies.Movie_HomePage(movie_cover_1.Tag.ToString(), "0000000");
+            Movies.MovieHome mh = new Movies.MovieHome(movie_cover_1.Tag.ToString(), "0000000");
             mh.Show();
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
             //go to movies page
-            Movies.Movie_HomePage mh = new Movies.Movie_HomePage(movie_cover_2.Tag.ToString(), "0000000");
+            Movies.MovieHome mh = new Movies.MovieHome(movie_cover_2.Tag.ToString(), "0000000");
             mh.Show();
         }
 
         private void pictureBox4_Click(object sender, EventArgs e)
         {
-            Movies.Movie_HomePage mh = new Movies.Movie_HomePage(movie_cover_3.Tag.ToString(), "0000000");
+            Movies.MovieHome mh = new Movies.MovieHome(movie_cover_3.Tag.ToString(), "0000000");
             mh.Show();
         }
 

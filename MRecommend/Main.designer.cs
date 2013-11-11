@@ -1,6 +1,6 @@
 ﻿namespace Movies
 {
-    partial class mainpage
+    partial class Main
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainpage));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.login_register_panel = new System.Windows.Forms.Panel();
             this.register_button = new System.Windows.Forms.Button();
             this.login_button = new System.Windows.Forms.Button();
@@ -225,7 +225,7 @@
             this.welcome_label.Text = "Welcome to Movies database";
             this.welcome_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // mainpage
+            // main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -234,7 +234,7 @@
             this.Controls.Add(this.now_playing_panel);
             this.Controls.Add(this.search_panel);
             this.Controls.Add(this.login_register_panel);
-            this.Name = "mainpage";
+            this.Name = "main";
             this.Text = "Mainpage";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.login_register_panel.ResumeLayout(false);

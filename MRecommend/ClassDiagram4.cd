@@ -1,24 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="Movies.loginpage">
+  <Class Name="Movies.Login">
     <Position X="6.25" Y="3.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>MAAAAIAgASQhAhABDCCABgADAAAAgRAAICAQAAAAICA=</HashCode>
-      <FileName>loginpage.cs</FileName>
+      <HashCode>QAABAIA0QDBACoQCFACAggIGAhAAARgQACQQBAAQIAA=</HashCode>
+      <FileName>Login.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Movies.mainpage">
+  <Class Name="Movies.Main">
     <Position X="11.5" Y="3.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAYjAAACAgABAQAACAAAQSAMA4AAAAEHQOAYBAAAA=</HashCode>
-      <FileName>mainpage.cs</FileName>
+      <HashCode>AhAYYDAQACAgggcAAACAACQSAAAgAAAAAHQeAIAQAAA=</HashCode>
+      <FileName>Main.cs</FileName>
+      <NewMemberFileName>main.cs</NewMemberFileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Movies.Movie_HomePage">
+  <Class Name="Movies.MovieHome">
     <Position X="4.5" Y="3" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAApCQAAICBAwBECBECAABADAAACEBAiEAAIIAAKAAA=</HashCode>
-      <FileName>Movie_HomePage.cs</FileName>
+      <HashCode>AAApCQQAICBQQAGCBECAAgADAAAAEBACAAAIIAAKAIA=</HashCode>
+      <FileName>MovieHome.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Movies.moviedbDataSet">
@@ -161,18 +162,18 @@
       <HashCode>FAEEgAEAAwEQAEpEJdARQCQCAAoSSBiQgAAKAWGQDTE=</HashCode>
     </TypeIdentifier>
   </Class>
-  <Class Name="Movies.movies_search_display">
+  <Class Name="Movies.SearchDisplay">
     <Position X="8" Y="3.75" Width="1.5" />
     <NestedTypes>
-      <Class Name="Movies.movies_search_display.Slot" Collapsed="true">
+      <Class Name="Movies.SearchDisplay.Slot" Collapsed="true">
         <TypeIdentifier>
-          <NewMemberFileName>movies_search_display.cs</NewMemberFileName>
+          <NewMemberFileName>SearchDisplay.cs</NewMemberFileName>
         </TypeIdentifier>
       </Class>
     </NestedTypes>
     <TypeIdentifier>
       <HashCode>gAAAAIAAACCAAAAABACAACACgAAAACACAAAAAAgIAAA=</HashCode>
-      <FileName>movies_search_display.cs</FileName>
+      <FileName>SearchDisplay.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Movies.Program">
@@ -185,14 +186,14 @@
   <Class Name="Movies.write_update_reviewForm">
     <Position X="15" Y="8.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>EAAAAAAAACAKABAAAACBAAACJAAAAAACAAAEEAAAAAA=</HashCode>
+      <HashCode>EAAAAEAAACASAAAAgACAAAACAAgAAAACAAAEkAAAAAA=</HashCode>
       <FileName>ReviewForm.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Movies.SearchResult">
     <Position X="15" Y="3.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ABAAAgAAACEAABAAAACAAAQCAAAYAAAQBEAAAQAAAAA=</HashCode>
+      <HashCode>ABAAAgAIACEAAAAAAACgAAQCIAAAAEAQAGAAAAAAAAA=</HashCode>
       <FileName>SearchResult.cs</FileName>
     </TypeIdentifier>
   </Class>

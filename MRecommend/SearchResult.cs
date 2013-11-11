@@ -34,9 +34,9 @@ namespace Movies
         private void SearchResult_Load(object sender, EventArgs e)
         {
             DataRowCollection films = Util.query("SELECT * FROM movie WHERE title LIKE '%" + searchText + "%'").Rows;
-            searchBox.Text = searchText;
+            search_textbox.Text = searchText;
            
-            panel1.Controls.Clear();
+            search_results_panel.Controls.Clear();
 
             try
             {
@@ -48,7 +48,7 @@ namespace Movies
                 //panel1.RowStyles.Add(new RowStyle(SizeType.AutoSize));
                 //panel1.GrowStyle = TableLayoutPanelGrowStyle.AddRows;
                 //panel1.Padding = new Padding(0, 0, SystemInformation.VerticalScrollBarWidth, 0);
-                panel1.AutoScroll = true;
+                search_results_panel.AutoScroll = true;
                 //panel1.AutoSize = false;
 
                 int i = 0;
@@ -94,7 +94,7 @@ namespace Movies
                     //filmPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowOnly;
 
                     //panel1.ColumnStyles.Add(new ColumnStyle(SizeType.AutoSize));
-                    panel1.Controls.Add(filmPanel);
+                    search_results_panel.Controls.Add(filmPanel);
                     filmPanel.Location = new Point(0, i * 100);
                     //panel1.ColumnStyles.Add(new ColumnStyle(SizeType.AutoSize));
                     //panel1.Controls.Add(tlabel, 1, i);
@@ -116,10 +116,10 @@ namespace Movies
 
         private void button1_Click(object sender, EventArgs e)
         {
-            searchText = searchBox.Text;
+            searchText = search_textbox.Text;
             DataRowCollection films = Util.query("SELECT * FROM movie WHERE title LIKE '%" + searchText + "%'").Rows;
 
-            panel1.Controls.Clear();
+            search_results_panel.Controls.Clear();
             
             try
             {
@@ -130,7 +130,7 @@ namespace Movies
                 //panel1.RowStyles.Add(new RowStyle(SizeType.AutoSize));
                 //panel1.GrowStyle = TableLayoutPanelGrowStyle.AddRows;
                 //panel1.Padding = new Padding(0, 0, SystemInformation.VerticalScrollBarWidth, 0);
-                panel1.AutoScroll = true;
+                search_results_panel.AutoScroll = true;
                 //panel1.AutoSize = false;
 
                 int i = 0;
@@ -176,7 +176,7 @@ namespace Movies
                     //filmPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowOnly;
 
                     //panel1.ColumnStyles.Add(new ColumnStyle(SizeType.AutoSize));
-                    panel1.Controls.Add(filmPanel);
+                    search_results_panel.Controls.Add(filmPanel);
                     filmPanel.Location = new Point(0, i * 100);
                     //panel1.ColumnStyles.Add(new ColumnStyle(SizeType.AutoSize));
                     //panel1.Controls.Add(tlabel, 1, i);
@@ -204,7 +204,7 @@ namespace Movies
             if (ids.Count > 0)
             {
                 string id = ids[0][0].ToString();
-                Movie_HomePage moviePage = new Movie_HomePage(id, ssn.ToString());
+                MovieHome moviePage = new MovieHome(id, ssn.ToString());
                 moviePage.Show();
             }
 

@@ -212,7 +212,7 @@ namespace Movies
             if (films.Count > 0)
             {
                 String fid = films[0][0].ToString();
-                Movie_HomePage moviePage = new Movie_HomePage(fid, ssn.ToString());
+                MovieHome moviePage = new MovieHome(fid, ssn.ToString());
                 moviePage.Show();
             }
         }
@@ -287,7 +287,7 @@ namespace Movies
 
         private void signOutButtonClick(object sender, EventArgs e)
         {
-            Movies.mainpage mp = new Movies.mainpage();
+            Movies.Main mp = new Movies.Main();
             mp.Show();
             this.Hide();
         }

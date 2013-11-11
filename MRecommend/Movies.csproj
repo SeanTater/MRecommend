@@ -70,34 +70,34 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="loginpage.cs">
+    <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="loginpage.designer.cs">
-      <DependentUpon>loginpage.cs</DependentUpon>
+    <Compile Include="Login.designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="mainpage.cs">
+    <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="mainpage.designer.cs">
-      <DependentUpon>mainpage.cs</DependentUpon>
+    <Compile Include="Main.designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
     </Compile>
     <Compile Include="moviedbDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>moviedbDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="movies_search_display.cs">
+    <Compile Include="SearchDisplay.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="movies_search_display.designer.cs">
-      <DependentUpon>movies_search_display.cs</DependentUpon>
+    <Compile Include="SearchDisplay.designer.cs">
+      <DependentUpon>SearchDisplay.cs</DependentUpon>
     </Compile>
-    <Compile Include="Movie_HomePage.cs">
+    <Compile Include="MovieHome.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Movie_HomePage.designer.cs">
-      <DependentUpon>Movie_HomePage.cs</DependentUpon>
+    <Compile Include="MovieHome.designer.cs">
+      <DependentUpon>MovieHome.cs</DependentUpon>
     </Compile>
     <Compile Include="ReviewForm.cs">
       <SubType>Form</SubType>
@@ -126,17 +126,17 @@
       <DependentUpon>UserHomepage.cs</DependentUpon>
     </Compile>
     <Compile Include="Util.cs" />
-    <EmbeddedResource Include="loginpage.resx">
-      <DependentUpon>loginpage.cs</DependentUpon>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="mainpage.resx">
-      <DependentUpon>mainpage.cs</DependentUpon>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="movies_search_display.resx">
-      <DependentUpon>movies_search_display.cs</DependentUpon>
+    <EmbeddedResource Include="SearchDisplay.resx">
+      <DependentUpon>SearchDisplay.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Movie_HomePage.resx">
-      <DependentUpon>Movie_HomePage.cs</DependentUpon>
+    <EmbeddedResource Include="MovieHome.resx">
+      <DependentUpon>MovieHome.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReviewForm.resx">
       <DependentUpon>ReviewForm.cs</DependentUpon>

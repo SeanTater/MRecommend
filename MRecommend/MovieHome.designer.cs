@@ -1,6 +1,6 @@
 ﻿namespace Movies
 {
-    partial class Movie_HomePage
+    partial class MovieHome
     {
         /// <summary>
         /// Required designer variable.
@@ -239,7 +239,7 @@
             this.recommend_checkbox.UseVisualStyleBackColor = true;
             this.recommend_checkbox.CheckedChanged += new System.EventHandler(this.recommendCB_CheckedChanged);
             // 
-            // Movie_HomePage
+            // MovieHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -263,7 +263,7 @@
             this.Controls.Add(this.movie_name);
             this.Controls.Add(this.movie_image);
             this.Controls.Add(this.shapeContainer1);
-            this.Name = "Movie_HomePage";
+            this.Name = "MovieHome";
             this.Text = "Shawshank Redemption";
             ((System.ComponentModel.ISupportInitialize)(this.movie_image)).EndInit();
             this.ResumeLayout(false);

@@ -6,12 +6,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-
-
 using MySql.Data.MySqlClient;
-
 using System.IO;
-
 using System.Data.Odbc;
 
 namespace Movies
@@ -36,8 +32,8 @@ namespace Movies
                 String review = ratings[0][0].ToString();
                 String rating = ratings[0][1].ToString();
 
-                reviewBox.Text = review;
-                ratingSpinner.Value = Convert.ToInt32(rating);
+                review_textbox.Text = review;
+                rating_spinner.Value = Convert.ToInt32(rating);
                 ratingAlreadyExists = true; // just have to update the entry in database on save button click
             } else {
                 ratingAlreadyExists = false;//have to insert a new entry in database on save button click
@@ -50,8 +46,8 @@ namespace Movies
         {
             //insert into database
             try { 
-                int rating = (int) ratingSpinner.Value;
-                String review = reviewBox.Text;
+                int rating = (int) rating_spinner.Value;
+                String review = review_textbox.Text;
 
                 String SQL;
                 if (ratingAlreadyExists) {

@@ -13,7 +13,7 @@ using Movies;
 
 namespace Movies
 {
-    public partial class movies_search_display : Form
+    public partial class SearchDisplay : Form
     {
         private Slot current;
         private class Slot
@@ -49,7 +49,7 @@ namespace Movies
                 display_image_n_desp(slot);
         }
 
-        public movies_search_display(int search_type=0, String query_string="")
+        public SearchDisplay(int search_type=0, String query_string="")
         {
             InitializeComponent();
 
@@ -121,7 +121,7 @@ namespace Movies
 
         private void view_current_movie_details(object sender, EventArgs e)
         {
-            Movies.Movie_HomePage mh = new Movies.Movie_HomePage(current.movie[0].ToString(),"0000000");
+            Movies.MovieHome mh = new Movies.MovieHome(current.movie[0].ToString(),"0000000");
             mh.Show();
         }
 

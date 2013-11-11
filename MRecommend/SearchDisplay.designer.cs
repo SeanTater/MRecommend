@@ -1,6 +1,6 @@
 ﻿namespace Movies
 {
-    partial class movies_search_display
+    partial class SearchDisplay
     {
         /// <summary>
         /// Required designer variable.

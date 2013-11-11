@@ -6,12 +6,12 @@ using System.IO;
 using System.Drawing;
 namespace Movies
 {
-    public partial class Movie_HomePage : Form
+    public partial class MovieHome : Form
     {
         private String filmId = "";//will be dynamic
         private String loggedInUserSSN = ""; //will be dynamic
         private bool screenLoaded = false;
-        public Movie_HomePage(String filmUID, String UserSSN)
+        public MovieHome(String filmUID, String UserSSN)
         {
             
             filmId = filmUID;

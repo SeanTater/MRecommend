@@ -12,16 +12,16 @@ using Movies;
 
 namespace Movies
 {
-    public partial class loginpage : Form
+    public partial class Login : Form
     {
         String called_button;
-        public loginpage(String called_button)
+        public Login(String called_button)
         {
             this.called_button = called_button;
             InitializeComponent();
            
         }
-        public loginpage()
+        public Login()
         {
             InitializeComponent();
         }
@@ -60,14 +60,14 @@ namespace Movies
 
         private void cancelButton_Click(object sender, EventArgs e)
         {
-            mainpage f1 = new mainpage();
+            Main f1 = new Main();
             f1.Show();
             this.Hide();
         }
 
         private void cancelRegisterButton_Click(object sender, EventArgs e)
         {
-            mainpage f1 = new mainpage();
+            Main f1 = new Main();
             f1.Show();
             this.Hide();
         }
