@@ -34,7 +34,7 @@
             this.login_button = new System.Windows.Forms.Button();
             this.search_panel = new System.Windows.Forms.Panel();
             this.search_type_combobox = new System.Windows.Forms.ComboBox();
-            this.button3 = new System.Windows.Forms.Button();
+            this.search_button = new System.Windows.Forms.Button();
             this.search_textbox = new System.Windows.Forms.TextBox();
             this.now_playing_panel = new System.Windows.Forms.Panel();
             this.previous_now_playing_button = new System.Windows.Forms.Button();
@@ -71,7 +71,7 @@
             this.register_button.TabIndex = 1;
             this.register_button.Text = "Register";
             this.register_button.UseVisualStyleBackColor = true;
-            this.register_button.Click += new System.EventHandler(this.button2_Click);
+            this.register_button.Click += new System.EventHandler(this.register);
             // 
             // login_button
             // 
@@ -81,12 +81,12 @@
             this.login_button.TabIndex = 0;
             this.login_button.Text = "Login";
             this.login_button.UseVisualStyleBackColor = true;
-            this.login_button.Click += new System.EventHandler(this.button1_Click);
+            this.login_button.Click += new System.EventHandler(this.login);
             // 
             // search_panel
             // 
             this.search_panel.Controls.Add(this.search_type_combobox);
-            this.search_panel.Controls.Add(this.button3);
+            this.search_panel.Controls.Add(this.search_button);
             this.search_panel.Controls.Add(this.search_textbox);
             this.search_panel.Location = new System.Drawing.Point(12, 93);
             this.search_panel.Name = "search_panel";
@@ -104,17 +104,17 @@
             this.search_type_combobox.Name = "search_type_combobox";
             this.search_type_combobox.Size = new System.Drawing.Size(121, 21);
             this.search_type_combobox.TabIndex = 2;
-            this.search_type_combobox.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.search_type_combobox.SelectedIndexChanged += new System.EventHandler(this.fill_autocomplete);
             // 
-            // button3
+            // search_button
             // 
-            this.button3.Location = new System.Drawing.Point(793, 16);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "Search";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.search_button.Location = new System.Drawing.Point(793, 16);
+            this.search_button.Name = "search_button";
+            this.search_button.Size = new System.Drawing.Size(75, 23);
+            this.search_button.TabIndex = 1;
+            this.search_button.Text = "Search";
+            this.search_button.UseVisualStyleBackColor = true;
+            this.search_button.Click += new System.EventHandler(this.search);
             // 
             // search_textbox
             // 
@@ -122,7 +122,7 @@
             this.search_textbox.Name = "search_textbox";
             this.search_textbox.Size = new System.Drawing.Size(631, 20);
             this.search_textbox.TabIndex = 0;
-            this.search_textbox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.search_textbox.TextChanged += new System.EventHandler(this.fill_autocomplete);
             // 
             // now_playing_panel
             // 
@@ -146,7 +146,7 @@
             this.previous_now_playing_button.TabIndex = 6;
             this.previous_now_playing_button.Text = "Previous";
             this.previous_now_playing_button.UseVisualStyleBackColor = true;
-            this.previous_now_playing_button.Click += new System.EventHandler(this.button5_Click);
+            this.previous_now_playing_button.Click += new System.EventHandler(this.scroll_backward);
             // 
             // next_now_playing_button
             // 
@@ -156,7 +156,7 @@
             this.next_now_playing_button.TabIndex = 5;
             this.next_now_playing_button.Text = "next";
             this.next_now_playing_button.UseVisualStyleBackColor = true;
-            this.next_now_playing_button.Click += new System.EventHandler(this.button4_Click);
+            this.next_now_playing_button.Click += new System.EventHandler(this.scroll_forward);
             // 
             // now_playing_label
             // 
@@ -178,7 +178,7 @@
             this.movie_cover_3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.movie_cover_3.TabIndex = 3;
             this.movie_cover_3.TabStop = false;
-            this.movie_cover_3.Click += new System.EventHandler(this.pictureBox4_Click);
+            this.movie_cover_3.Click += new System.EventHandler(this.select_box_3);
             // 
             // movie_cover_2
             // 
@@ -190,7 +190,7 @@
             this.movie_cover_2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.movie_cover_2.TabIndex = 2;
             this.movie_cover_2.TabStop = false;
-            this.movie_cover_2.Click += new System.EventHandler(this.pictureBox3_Click);
+            this.movie_cover_2.Click += new System.EventHandler(this.select_box_2);
             // 
             // movie_cover_1
             // 
@@ -202,7 +202,7 @@
             this.movie_cover_1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.movie_cover_1.TabIndex = 1;
             this.movie_cover_1.TabStop = false;
-            this.movie_cover_1.Click += new System.EventHandler(this.pictureBox2_Click);
+            this.movie_cover_1.Click += new System.EventHandler(this.select_box_1);
             // 
             // movie_cover_0
             // 
@@ -213,7 +213,7 @@
             this.movie_cover_0.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.movie_cover_0.TabIndex = 0;
             this.movie_cover_0.TabStop = false;
-            this.movie_cover_0.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.movie_cover_0.Click += new System.EventHandler(this.select_box_0);
             // 
             // welcome_label
             // 
@@ -225,7 +225,7 @@
             this.welcome_label.Text = "Welcome to Movies database";
             this.welcome_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // main
+            // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -234,7 +234,7 @@
             this.Controls.Add(this.now_playing_panel);
             this.Controls.Add(this.search_panel);
             this.Controls.Add(this.login_register_panel);
-            this.Name = "main";
+            this.Name = "Main";
             this.Text = "Mainpage";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.login_register_panel.ResumeLayout(false);
@@ -256,7 +256,7 @@
         private System.Windows.Forms.Button register_button;
         private System.Windows.Forms.Button login_button;
         private System.Windows.Forms.Panel search_panel;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button search_button;
         private System.Windows.Forms.TextBox search_textbox;
         private System.Windows.Forms.ComboBox search_type_combobox;
         private System.Windows.Forms.Panel now_playing_panel;

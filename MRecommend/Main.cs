@@ -15,9 +15,9 @@ namespace Movies
     public partial class Main : Form
     {
         public DataTable now_playing;
-        AutoCompleteStringCollection ac = new AutoCompleteStringCollection();
-        AutoCompleteStringCollection ac1 = new AutoCompleteStringCollection();
-        AutoCompleteStringCollection ac2 = new AutoCompleteStringCollection();
+        AutoCompleteStringCollection autocomplete_titles = new AutoCompleteStringCollection();
+        AutoCompleteStringCollection autocomplete_actors = new AutoCompleteStringCollection();
+        AutoCompleteStringCollection autocomplete_directors = new AutoCompleteStringCollection();
         public Main()
         {
             InitializeComponent();
@@ -31,28 +31,28 @@ namespace Movies
                 case 0:
                     foreach (DataRow dr in Movies.ORM.query("SELECT Title from movie").Rows)
                     {
-                        ac.Add(dr[0].ToString());
+                        autocomplete_titles.Add(dr[0].ToString());
                     }
                     search_textbox.AutoCompleteMode = AutoCompleteMode.Suggest;
                     search_textbox.AutoCompleteSource = AutoCompleteSource.CustomSource;
-                    search_textbox.AutoCompleteCustomSource = ac;
+                    search_textbox.AutoCompleteCustomSource = autocomplete_titles;
                     break;
                 case 1:
                     foreach (DataRow dr in Movies.ORM.query("SELECT Fname,Lname FROM person p,actor a WHERE p.SSN=a.SSN").Rows) {
-                            ac1.Add(dr[0].ToString()+" "+dr[1].ToString());
+                            autocomplete_actors.Add(dr[0].ToString()+" "+dr[1].ToString());
                     }
                     search_textbox.AutoCompleteMode = AutoCompleteMode.Suggest;
                     search_textbox.AutoCompleteSource = AutoCompleteSource.CustomSource;
-                    search_textbox.AutoCompleteCustomSource = ac1;
+                    search_textbox.AutoCompleteCustomSource = autocomplete_actors;
                     break;
                 case 2:
                     foreach (DataRow dr in Movies.ORM.query("SELECT Fname,Lname FROM person p,director d WHERE p.SSN=d.SSN").Rows)
                     {
-                        ac2.Add(dr[0].ToString()+" "+dr[1].ToString());
+                        autocomplete_directors.Add(dr[0].ToString()+" "+dr[1].ToString());
                     }
                     search_textbox.AutoCompleteMode = AutoCompleteMode.Suggest;
                     search_textbox.AutoCompleteSource = AutoCompleteSource.CustomSource;
-                    search_textbox.AutoCompleteCustomSource = ac2;
+                    search_textbox.AutoCompleteCustomSource = autocomplete_directors;
                     break;
             }
 
@@ -119,21 +119,21 @@ namespace Movies
                 next_now_playing_button.Enabled = true;
             }
         }
-        private void button1_Click(object sender, EventArgs e)
+        private void login(object sender, EventArgs e)
         {
             Login f2 = new Login("login");
             f2.Show();
             this.Hide();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void register(object sender, EventArgs e)
         {
             Login f2 = new Login("register");
             f2.Show();
             this.Hide();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void search(object sender, EventArgs e)
         {
             switch (search_type_combobox.SelectedIndex)
             { 
@@ -160,34 +160,34 @@ namespace Movies
             }
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void select_box_0(object sender, EventArgs e)
         {
             //go to movies page
             Movies.MovieHome mh = new Movies.MovieHome(movie_cover_0.Tag.ToString(), "0000000");
             mh.Show();
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
+        private void select_box_1(object sender, EventArgs e)
         {
             //go to movies page
             Movies.MovieHome mh = new Movies.MovieHome(movie_cover_1.Tag.ToString(), "0000000");
             mh.Show();
         }
 
-        private void pictureBox3_Click(object sender, EventArgs e)
+        private void select_box_2(object sender, EventArgs e)
         {
             //go to movies page
             Movies.MovieHome mh = new Movies.MovieHome(movie_cover_2.Tag.ToString(), "0000000");
             mh.Show();
         }
 
-        private void pictureBox4_Click(object sender, EventArgs e)
+        private void select_box_3(object sender, EventArgs e)
         {
             Movies.MovieHome mh = new Movies.MovieHome(movie_cover_3.Tag.ToString(), "0000000");
             mh.Show();
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void fill_autocomplete(object sender, EventArgs e)
         {
             try
             {
@@ -196,29 +196,29 @@ namespace Movies
                     case 0:
                         foreach (DataRow dr in Movies.ORM.query("SELECT Title FROM movie").Rows)
                         {
-                            ac.Add(dr[0].ToString());
+                            autocomplete_titles.Add(dr[0].ToString());
                         }
                         search_textbox.AutoCompleteMode = AutoCompleteMode.Suggest;
                         search_textbox.AutoCompleteSource = AutoCompleteSource.CustomSource;
-                        search_textbox.AutoCompleteCustomSource = ac;
+                        search_textbox.AutoCompleteCustomSource = autocomplete_titles;
                         break;
                     case 1:
                         foreach (DataRow dr in Movies.ORM.query("SELECT Fname,Lname FROM person p,actor a WHERE p.SSN=a.SSN").Rows)
                         {
-                            ac1.Add(dr[0].ToString() + " " + dr[1].ToString());
+                            autocomplete_actors.Add(dr[0].ToString() + " " + dr[1].ToString());
                         }
                         search_textbox.AutoCompleteMode = AutoCompleteMode.Suggest;
                         search_textbox.AutoCompleteSource = AutoCompleteSource.CustomSource;
-                        search_textbox.AutoCompleteCustomSource = ac1;
+                        search_textbox.AutoCompleteCustomSource = autocomplete_actors;
                         break;
                     case 2:
                         foreach (DataRow dr in Movies.ORM.query("SELECT Fname,Lname FROM person p,director d WHERE p.SSN=d.SSN").Rows)
                         {
-                            ac2.Add(dr[0].ToString() + " " + dr[1].ToString());
+                            autocomplete_directors.Add(dr[0].ToString() + " " + dr[1].ToString());
                         }
                         search_textbox.AutoCompleteMode = AutoCompleteMode.Suggest;
                         search_textbox.AutoCompleteSource = AutoCompleteSource.CustomSource;
-                        search_textbox.AutoCompleteCustomSource = ac2;
+                        search_textbox.AutoCompleteCustomSource = autocomplete_directors;
                         break;
                 }
             }
@@ -228,12 +228,7 @@ namespace Movies
             }
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button4_Click(object sender, EventArgs e)
+        private void scroll_forward(object sender, EventArgs e)
         {
             try
             {
@@ -246,7 +241,7 @@ namespace Movies
             
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void scroll_backward(object sender, EventArgs e)
         {
             try
             {

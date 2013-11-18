@@ -1,6 +1,6 @@
 ﻿namespace Movies
 {
-    partial class ShowTimeAndDatePanel
+    partial class TimeDatePanel
     {
         /// <summary>
         /// Required designer variable.
@@ -54,16 +54,16 @@
             this.ok_btn.TabIndex = 1;
             this.ok_btn.Text = "Ok";
             this.ok_btn.UseVisualStyleBackColor = true;
-            this.ok_btn.Click += new System.EventHandler(this.ok_btn_Click);
+            this.ok_btn.Click += new System.EventHandler(this.ok);
             // 
-            // ShowTimeAndDatePanel
+            // TimeDatePanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(491, 154);
             this.Controls.Add(this.ok_btn);
             this.Controls.Add(this.date_time_panel);
-            this.Name = "ShowTimeAndDatePanel";
+            this.Name = "TimeDatePanel";
             this.Text = "Movie Schedule";
             this.ResumeLayout(false);
             this.PerformLayout();

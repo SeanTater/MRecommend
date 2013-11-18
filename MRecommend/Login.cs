@@ -58,21 +58,21 @@ namespace Movies
 
         }
 
-        private void cancelButton_Click(object sender, EventArgs e)
+        private void do_cancel(object sender, EventArgs e)
         {
             Main f1 = new Main();
             f1.Show();
             this.Hide();
         }
 
-        private void cancelRegisterButton_Click(object sender, EventArgs e)
+        private void do_cancel_register(object sender, EventArgs e)
         {
             Main f1 = new Main();
             f1.Show();
             this.Hide();
         }
 
-        private void registerButton_Click(object sender, EventArgs e)
+        private void do_register(object sender, EventArgs e)
         {
             try 
             {
@@ -110,7 +110,7 @@ namespace Movies
            
         }
 
-        private void loginButton_Click(object sender, EventArgs e)
+        private void do_login(object sender, EventArgs e)
         {
             try 
             {

@@ -18,11 +18,11 @@ namespace Movies
             loggedInUserSSN = UserSSN;
             InitializeComponent();
             screenLoaded = false;
-            populateMovieHomepage(filmId, loggedInUserSSN);
+            populate(filmId, loggedInUserSSN);
             screenLoaded = true;
         }
 
-        public void populateMovieHomepage(String FilmId, String SSN)
+        public void populate(String FilmId, String SSN)
         {
             //Fetch details of the movie from the database
             DataRow movie_row = ORM.query("SELECT * FROM movie WHERE filmID = " + FilmId).Rows[0];
@@ -168,26 +168,26 @@ namespace Movies
                 DataRowCollection recommends = ORM.query(String.Format("SELECT SSN FROM recommend WHERE filmid={0} AND SSN={1}", filmId, loggedInUserSSN)).Rows;
                 recommend_checkbox.Checked = recommends.Count > 0;
             }
-            fetchTheatresPlayingIn();
+            populate_local_theaters();
         }
 
-        public void fetchTheatresPlayingIn()
+        public void populate_local_theaters()
         {
             DataRowCollection theaters = ORM.query(String.Format("SELECT name FROM theater,(SELECT DISTINCT TID FROM now_playing WHERE filmid='{0}') as temp WHERE theater.tid=temp.tid", filmId)).Rows;
             foreach (DataRow theater in theaters)
             {
                 String theaterName = theater[0].ToString();
-                LinkLabel t = new LinkLabel();
-                t.Click += new EventHandler(t_Click);
-                t.Text = theaterName;
-                theatrePanel.Controls.Add(t);
+                LinkLabel theater_link = new LinkLabel();
+                theater_link.Click += new EventHandler(select_theater);
+                theater_link.Text = theaterName;
+                theatrePanel.Controls.Add(theater_link);
             }
         }
 
-        void t_Click(object sender, EventArgs e)
+        void select_theater(object sender, EventArgs e)
         {
             DataRowCollection films_now_playing = ORM.query(String.Format("SELECT date,time FROM now_playing WHERE filmid='{0}' AND tid=(SELECT tid FROM theater WHERE name ='{1}')", filmId, (sender as LinkLabel).Text)).Rows;
-            ShowTimeAndDatePanel popUp = new ShowTimeAndDatePanel();
+            TimeDatePanel popUp = new TimeDatePanel();
             //Form popUp = new Form();
             foreach (DataRow film in films_now_playing)
             {
@@ -203,14 +203,14 @@ namespace Movies
             popUp.ShowDialog();
         }
 
-        private void reviewLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void review(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            write_update_reviewForm reviewForm = new write_update_reviewForm(filmId, loggedInUserSSN);
+            ReviewEditor reviewForm = new ReviewEditor(filmId, loggedInUserSSN);
             reviewForm.ShowDialog();
 
         }
 
-        private void recommendCB_CheckedChanged(object sender, EventArgs e)
+        private void recommend(object sender, EventArgs e)
         {
             if (screenLoaded) {
                 if (recommend_checkbox.Checked)

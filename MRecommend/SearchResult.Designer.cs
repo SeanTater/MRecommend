@@ -62,7 +62,7 @@
             this.search_button.TabIndex = 28;
             this.search_button.Text = "Go";
             this.search_button.UseVisualStyleBackColor = true;
-            this.search_button.Click += new System.EventHandler(this.button1_Click);
+            this.search_button.Click += new System.EventHandler(this.query);
             // 
             // search_textbox
             // 
@@ -94,7 +94,7 @@
             this.Controls.Add(this.search_textbox);
             this.Name = "SearchResult";
             this.Text = "SearchResult";
-            this.Load += new System.EventHandler(this.SearchResult_Load);
+            this.Load += new System.EventHandler(this.query);
             this.ResumeLayout(false);
             this.PerformLayout();
 

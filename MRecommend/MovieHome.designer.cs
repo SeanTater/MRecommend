@@ -173,7 +173,7 @@
             this.create_review_label.TabIndex = 16;
             this.create_review_label.TabStop = true;
             this.create_review_label.Text = "Write/Update Review";
-            this.create_review_label.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.reviewLabel_LinkClicked);
+            this.create_review_label.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.review);
             // 
             // your_rating_textbox
             // 
@@ -237,7 +237,7 @@
             this.recommend_checkbox.TabIndex = 21;
             this.recommend_checkbox.Text = "Recommend";
             this.recommend_checkbox.UseVisualStyleBackColor = true;
-            this.recommend_checkbox.CheckedChanged += new System.EventHandler(this.recommendCB_CheckedChanged);
+            this.recommend_checkbox.CheckedChanged += new System.EventHandler(this.recommend);
             // 
             // MovieHome
             // 

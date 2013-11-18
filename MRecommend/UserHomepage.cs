@@ -41,7 +41,7 @@ namespace Movies
             InitializeComponent();
         }
 
-        private void search_button_click(object sender, EventArgs e)
+        private void search(object sender, EventArgs e)
         {
 
             string text = searchBox.Text;
@@ -75,7 +75,7 @@ namespace Movies
                 CheckBox cb = new CheckBox();
                 cb.Text = name;
                 genres_panel.Controls.Add(cb);
-                cb.CheckedChanged += new System.EventHandler(updateGenreCheckState);
+                cb.CheckedChanged += new System.EventHandler(like_unlike_genres);
                 genres[name] = new Genre(name, false, cb);
             }
             DataRowCollection preferences = ORM.query(preferences_sql).Rows;
@@ -111,13 +111,13 @@ namespace Movies
                     l.Text = title;
                     l.AutoSize = true;
                     l.Links.Add(0, l.Text.Length, l.Text);
-                    l.LinkClicked += new LinkLabelLinkClickedEventHandler(l_LinkClicked);
+                    l.LinkClicked += new LinkLabelLinkClickedEventHandler(display_movie_by_title);
 
                     //l.Top = loc;
                     i++;
                 }
 
-                populateReviewPanel();
+                populate_reviews();
 
                 // Movie Name Autocompletion
                 DataRowCollection movies = ORM.query("SELECT DISTINCT title FROM movie").Rows;
@@ -130,7 +130,7 @@ namespace Movies
             }
         }
 
-        void populateReviewPanel()
+        void populate_reviews()
         {
             ratings_panel.Controls.Clear();
             ratings_panel.AutoScroll = true;
@@ -151,25 +151,25 @@ namespace Movies
                 LinkLabel t = new LinkLabel();
                 Label r = new Label();
                 Label txt = new Label();
-                LinkLabel delete = new LinkLabel();
+                LinkLabel delete_link = new LinkLabel();
 
                 flp.Controls.Add(t);
                 flp.Controls.Add(r);
                 flp.Controls.Add(txt);
-                flp.Controls.Add(delete);
+                flp.Controls.Add(delete_link);
 
                 t.Text = title;
                 r.Text = "   " + rating; r.ForeColor = Color.Red;
                 txt.Text = "   " + text;
-                delete.Text = "  Delete";
+                delete_link.Text = "  Delete";
 
                 t.Links.Add(0, t.Text.Length, t.Text);
-                t.LinkClicked += new LinkLabelLinkClickedEventHandler(l_LinkClicked);
+                t.LinkClicked += new LinkLabelLinkClickedEventHandler(display_movie_by_title);
 
-                delete.Links.Add(2, delete.Text.Length, t.Text);
-                delete.LinkClicked += new LinkLabelLinkClickedEventHandler(delete_LinkClicked);
+                delete_link.Links.Add(2, delete_link.Text.Length, t.Text);
+                delete_link.LinkClicked += new LinkLabelLinkClickedEventHandler(delete);
 
-                delete.AutoSize = true;
+                delete_link.AutoSize = true;
                 t.AutoSize = true;
                 r.AutoSize = true;
                 txt.AutoSize = true;
@@ -186,7 +186,7 @@ namespace Movies
             }
         }
 
-        void delete_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        void delete(object sender, LinkLabelLinkClickedEventArgs e)
         {
             string title = e.Link.LinkData.ToString();
             DataRowCollection films = ORM.query(String.Format("SELECT filmID FROM movie WHERE title='{0}';", title)).Rows;
@@ -199,13 +199,13 @@ namespace Movies
                 {
                     MessageBox.Show("Your review for " + title + " has been deleted");
                     //panel2.Controls.Remove(panel2.Controls.Find(title, true)[0]);
-                    populateReviewPanel();
+                    populate_reviews();
                     ratings_panel.Refresh();
                 }
             }
         }
 
-        void l_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        void display_movie_by_title(object sender, LinkLabelLinkClickedEventArgs e)
         {
             string title = e.Link.LinkData.ToString();
             DataRowCollection films = ORM.query(String.Format("SELECT filmID FROM movie WHERE title='{0}';", title)).Rows;
@@ -217,13 +217,13 @@ namespace Movies
             }
         }
 
-        private void updateGenreCheckState(object box, EventArgs e)
+        private void like_unlike_genres(object box, EventArgs e)
         {
-            updateUserPreferences(genres[((CheckBox)box).Text]);
-            fetchRecommendedMovies();
+            update_preferences(genres[((CheckBox)box).Text]);
+            populate_recommends();
         }
 
-        private bool updateUserPreferences(Genre genre)
+        private bool update_preferences(Genre genre)
         {
             // Go to the database.
             // If a checkbox is unchecked, remove from the likes table for that user.
@@ -244,7 +244,7 @@ namespace Movies
             return requested_status;
         }
 
-        public void fetchRecommendedMovies()
+        public void populate_recommends()
         {
             // Fetch the recommended movies for a user based on likes
             recommendations_panel.BackColor = Color.WhiteSmoke;
@@ -276,7 +276,7 @@ namespace Movies
                 l.AutoSize = true;
 
                 l.Links.Add(0, l.Text.Length, l.Text);
-                l.LinkClicked += new LinkLabelLinkClickedEventHandler(l_LinkClicked);
+                l.LinkClicked += new LinkLabelLinkClickedEventHandler(display_movie_by_title);
 
                 //l.Top = loc;
                 i++;
@@ -285,7 +285,7 @@ namespace Movies
             recommendations_panel.Refresh();
         }
 
-        private void signOutButtonClick(object sender, EventArgs e)
+        private void logout(object sender, EventArgs e)
         {
             Movies.Main mp = new Movies.Main();
             mp.Show();

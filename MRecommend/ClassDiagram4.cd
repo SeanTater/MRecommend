@@ -1,270 +1,281 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Comment CommentText="These five classes are automatically generated and required by the IDE">
+    <Position X="0.5" Y="8.776" Height="0.75" Width="1.7" />
+  </Comment>
+  <Comment CommentText="ORM is static and used by most of the above classes">
+    <Position X="9.99" Y="6.904" Height="0.75" Width="1.7" />
+  </Comment>
   <Class Name="Movies.Login">
-    <Position X="6.25" Y="3.75" Width="1.5" />
+    <Position X="5.5" Y="2" Width="2.25" />
+    <Members>
+      <Field Name="cancel_button" Hidden="true" />
+      <Field Name="cancel_register_button" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+      <Field Name="confirm_register_password_label" Hidden="true" />
+      <Field Name="confirm_register_password_textbox" Hidden="true" />
+      <Method Name="Dispose" Hidden="true" />
+      <Field Name="female_radiobutton" Hidden="true" />
+      <Field Name="first_name_label" Hidden="true" />
+      <Field Name="first_name_textbox" Hidden="true" />
+      <Method Name="Form2_Load" Hidden="true" />
+      <Field Name="gender_label" Hidden="true" />
+      <Field Name="groupBox1" Hidden="true" />
+      <Method Name="InitializeComponent" Hidden="true" />
+      <Field Name="last_name_label" Hidden="true" />
+      <Field Name="last_name_textbox" Hidden="true" />
+      <Field Name="login_button" Hidden="true" />
+      <Field Name="login_label" Hidden="true" />
+      <Field Name="login_register_split" Hidden="true" />
+      <Field Name="male_radiobutton" Hidden="true" />
+      <Field Name="password_label" Hidden="true" />
+      <Field Name="password_textbox" Hidden="true" />
+      <Field Name="register_button" Hidden="true" />
+      <Field Name="register_label" Hidden="true" />
+      <Field Name="register_password_label" Hidden="true" />
+      <Field Name="register_password_textbox" Hidden="true" />
+      <Field Name="register_username_label" Hidden="true" />
+      <Field Name="register_username_textbox" Hidden="true" />
+      <Method Name="splitContainer1_Panel1_Paint" Hidden="true" />
+      <Method Name="splitContainer1_Panel2_Paint" Hidden="true" />
+      <Field Name="ssn_label" Hidden="true" />
+      <Field Name="ssn_textbox" Hidden="true" />
+      <Field Name="username_label" Hidden="true" />
+      <Field Name="username_textbox" Hidden="true" />
+    </Members>
     <TypeIdentifier>
-      <HashCode>QAABAIA0QDBACoQCFACAggIGAhAAARgQACQQBAAQIAA=</HashCode>
+      <HashCode>QAABAIAUQDDACIQCFACAgiIGAhAAARgQACQAJAAQIAg=</HashCode>
       <FileName>Login.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Movies.Main">
-    <Position X="11.5" Y="3.75" Width="1.5" />
+    <Position X="13" Y="2" Width="2.75" />
+    <Members>
+      <Field Name="components" Hidden="true" />
+      <Method Name="Dispose" Hidden="true" />
+      <Method Name="Form1_Load" Hidden="true" />
+      <Method Name="InitializeComponent" Hidden="true" />
+      <Field Name="login_button" Hidden="true" />
+      <Field Name="login_register_panel" Hidden="true" />
+      <Field Name="movie_cover_0" Hidden="true" />
+      <Field Name="movie_cover_1" Hidden="true" />
+      <Field Name="movie_cover_2" Hidden="true" />
+      <Field Name="movie_cover_3" Hidden="true" />
+      <Field Name="next_now_playing_button" Hidden="true" />
+      <Field Name="now_playing_label" Hidden="true" />
+      <Field Name="now_playing_panel" Hidden="true" />
+      <Field Name="previous_now_playing_button" Hidden="true" />
+      <Field Name="register_button" Hidden="true" />
+      <Field Name="search_button" Hidden="true" />
+      <Field Name="search_panel" Hidden="true" />
+      <Field Name="search_textbox" Hidden="true" />
+      <Field Name="search_type_combobox" Hidden="true" />
+      <Field Name="welcome_label" Hidden="true" />
+    </Members>
     <TypeIdentifier>
-      <HashCode>AhAYYDAQACAgggcAAACAACQSAAAgAAAAAHQeAIAQAAA=</HashCode>
+      <HashCode>AhAYACAQACAAggeABADAAmACAAUAAEAAASQSAAAQEAA=</HashCode>
       <FileName>Main.cs</FileName>
       <NewMemberFileName>main.cs</NewMemberFileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Movies.MovieHome">
-    <Position X="4.5" Y="3" Width="1.5" />
+    <Position X="2.75" Y="2" Width="2.5" />
+    <Members>
+      <Field Name="actorPanel" Hidden="true" />
+      <Field Name="actors_label" Hidden="true" />
+      <Field Name="avg_rating" Hidden="true" />
+      <Field Name="avg_rating_progress" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+      <Field Name="create_review_label" Hidden="true" />
+      <Field Name="descriptionTB" Hidden="true" />
+      <Field Name="director_label" Hidden="true" />
+      <Field Name="directorPanel" Hidden="true" />
+      <Method Name="Dispose" Hidden="true" />
+      <Field Name="genrePanel" Hidden="true" />
+      <Method Name="InitializeComponent" Hidden="true" />
+      <Field Name="lineShape1" Hidden="true" />
+      <Field Name="movie_image" Hidden="true" />
+      <Field Name="movie_name" Hidden="true" />
+      <Field Name="now_playing_at_label" Hidden="true" />
+      <Field Name="recommend_checkbox" Hidden="true" />
+      <Field Name="ReviewsPanel" Hidden="true" />
+      <Field Name="shapeContainer1" Hidden="true" />
+      <Field Name="theatrePanel" Hidden="true" />
+      <Field Name="your_rating_label" Hidden="true" />
+      <Field Name="your_rating_textbox" Hidden="true" />
+    </Members>
     <TypeIdentifier>
-      <HashCode>AAApCQQAICBQQAGCBECAAgADAAAAEBACAAAIIAAKAIA=</HashCode>
+      <HashCode>AAABCQQAACBQQAGCBECQAgEDAAAAEJACAAAIAAgCgIA=</HashCode>
       <FileName>MovieHome.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Movies.moviedbDataSet">
-    <Position X="2.5" Y="4.25" Width="1.5" />
-    <NestedTypes>
-      <Delegate Name="Movies.moviedbDataSet.personRowChangeEventHandler" Collapsed="true">
-        <TypeIdentifier />
-      </Delegate>
-      <Class Name="Movies.moviedbDataSet.movieRowChangeEvent" Collapsed="true">
-        <TypeIdentifier />
-      </Class>
-      <Class Name="Movies.moviedbDataSet.movie_reviewDataTable" Collapsed="true">
-        <TypeIdentifier />
-      </Class>
-      <Class Name="Movies.moviedbDataSet.now_playingRowChangeEvent" Collapsed="true">
-        <TypeIdentifier />
-      </Class>
-      <Class Name="Movies.moviedbDataSet.recommendRowChangeEvent" Collapsed="true">
-        <TypeIdentifier />
-      </Class>
-      <Class Name="Movies.moviedbDataSet.now_playingDataTable" Collapsed="true">
-        <TypeIdentifier />
-      </Class>
-      <Class Name="Movies.moviedbDataSet.movie_reviewRowChangeEvent" Collapsed="true">
-        <TypeIdentifier />
-      </Class>
-      <Class Name="Movies.moviedbDataSet.genreRowChangeEvent" Collapsed="true">
-        <TypeIdentifier />
-      </Class>
-      <Class Name="Movies.moviedbDataSet.theaterRow" Collapsed="true">
-        <TypeIdentifier />
-      </Class>
-      <Class Name="Movies.moviedbDataSet.userRow" Collapsed="true">
-        <TypeIdentifier />
-      </Class>
-      <Class Name="Movies.moviedbDataSet.personRowChangeEvent" Collapsed="true">
-        <TypeIdentifier />
-      </Class>
-      <Delegate Name="Movies.moviedbDataSet.movieRowChangeEventHandler" Collapsed="true">
-        <TypeIdentifier />
-      </Delegate>
-      <Class Name="Movies.moviedbDataSet.theaterRowChangeEvent" Collapsed="true">
-        <TypeIdentifier />
-      </Class>
-      <Class Name="Movies.moviedbDataSet.genreRow" Collapsed="true">
-        <TypeIdentifier />
-      </Class>
-      <Class Name="Movies.moviedbDataSet.genreDataTable" Collapsed="true">
-        <TypeIdentifier />
-      </Class>
-      <Class Name="Movies.moviedbDataSet.recommendDataTable" Collapsed="true">
-        <TypeIdentifier />
-      </Class>
-      <Delegate Name="Movies.moviedbDataSet.recommendRowChangeEventHandler" Collapsed="true">
-        <TypeIdentifier />
-      </Delegate>
-      <Delegate Name="Movies.moviedbDataSet.theaterRowChangeEventHandler" Collapsed="true">
-        <TypeIdentifier />
-      </Delegate>
-      <Delegate Name="Movies.moviedbDataSet.userRowChangeEventHandler" Collapsed="true">
-        <TypeIdentifier />
-      </Delegate>
-      <Delegate Name="Movies.moviedbDataSet.genreRowChangeEventHandler" Collapsed="true">
-        <TypeIdentifier />
-      </Delegate>
-      <Delegate Name="Movies.moviedbDataSet.actorRowChangeEventHandler" Collapsed="true">
-        <TypeIdentifier />
-      </Delegate>
-      <Class Name="Movies.moviedbDataSet.directorRowChangeEvent" Collapsed="true">
-        <TypeIdentifier />
-      </Class>
-      <Class Name="Movies.moviedbDataSet.userRowChangeEvent" Collapsed="true">
-        <TypeIdentifier />
-      </Class>
-      <Class Name="Movies.moviedbDataSet.recommendRow" Collapsed="true">
-        <TypeIdentifier />
-      </Class>
-      <Delegate Name="Movies.moviedbDataSet.movie_reviewRowChangeEventHandler" Collapsed="true">
-        <TypeIdentifier />
-      </Delegate>
-      <Class Name="Movies.moviedbDataSet.actorRow" Collapsed="true">
-        <TypeIdentifier />
-      </Class>
-      <Delegate Name="Movies.moviedbDataSet.directorRowChangeEventHandler" Collapsed="true">
-        <TypeIdentifier />
-      </Delegate>
-      <Class Name="Movies.moviedbDataSet.actorDataTable" Collapsed="true">
-        <TypeIdentifier />
-      </Class>
-      <Delegate Name="Movies.moviedbDataSet.now_playingRowChangeEventHandler" Collapsed="true">
-        <TypeIdentifier />
-      </Delegate>
-      <Class Name="Movies.moviedbDataSet.directorRow" Collapsed="true">
-        <TypeIdentifier />
-      </Class>
-      <Class Name="Movies.moviedbDataSet.theaterDataTable" Collapsed="true">
-        <TypeIdentifier />
-      </Class>
-      <Class Name="Movies.moviedbDataSet.movie_reviewRow" Collapsed="true">
-        <TypeIdentifier />
-      </Class>
-      <Class Name="Movies.moviedbDataSet.personRow" Collapsed="true">
-        <TypeIdentifier />
-      </Class>
-      <Class Name="Movies.moviedbDataSet.likesRow" Collapsed="true">
-        <TypeIdentifier />
-      </Class>
-      <Class Name="Movies.moviedbDataSet.now_playingRow" Collapsed="true">
-        <TypeIdentifier />
-      </Class>
-      <Class Name="Movies.moviedbDataSet.likesRowChangeEvent" Collapsed="true">
-        <TypeIdentifier />
-      </Class>
-      <Class Name="Movies.moviedbDataSet.personDataTable" Collapsed="true">
-        <TypeIdentifier />
-      </Class>
-      <Delegate Name="Movies.moviedbDataSet.likesRowChangeEventHandler" Collapsed="true">
-        <TypeIdentifier />
-      </Delegate>
-      <Class Name="Movies.moviedbDataSet.actorRowChangeEvent" Collapsed="true">
-        <TypeIdentifier />
-      </Class>
-      <Class Name="Movies.moviedbDataSet.directorDataTable" Collapsed="true">
-        <TypeIdentifier />
-      </Class>
-      <Class Name="Movies.moviedbDataSet.likesDataTable" Collapsed="true">
-        <TypeIdentifier />
-      </Class>
-      <Class Name="Movies.moviedbDataSet.movieRow" Collapsed="true">
-        <TypeIdentifier />
-      </Class>
-      <Class Name="Movies.moviedbDataSet.userDataTable" Collapsed="true">
-        <TypeIdentifier />
-      </Class>
-      <Class Name="Movies.moviedbDataSet.movieDataTable" Collapsed="true">
-        <TypeIdentifier />
-      </Class>
-    </NestedTypes>
+  <Class Name="Movies.moviedbDataSet" Collapsed="true">
+    <Position X="0.5" Y="9.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>FAEEgAEAAwEQAEpEJdARQCQCAAoSSBiQgAAKAWGQDTE=</HashCode>
     </TypeIdentifier>
   </Class>
   <Class Name="Movies.SearchDisplay">
-    <Position X="8" Y="3.75" Width="1.5" />
-    <NestedTypes>
-      <Class Name="Movies.SearchDisplay.Slot" Collapsed="true">
-        <TypeIdentifier>
-          <NewMemberFileName>SearchDisplay.cs</NewMemberFileName>
-        </TypeIdentifier>
-      </Class>
-    </NestedTypes>
+    <Position X="8" Y="2" Width="2.5" />
+    <Members>
+      <Field Name="components" Hidden="true" />
+      <Field Name="cover_image" Hidden="true" />
+      <Field Name="current_title" Hidden="true" />
+      <Field Name="display_slot_00" Hidden="true" />
+      <Field Name="display_slot_01" Hidden="true" />
+      <Field Name="display_slot_02" Hidden="true" />
+      <Field Name="display_slot_03" Hidden="true" />
+      <Field Name="display_slot_04" Hidden="true" />
+      <Field Name="display_slot_05" Hidden="true" />
+      <Field Name="display_slot_06" Hidden="true" />
+      <Field Name="display_slot_07" Hidden="true" />
+      <Field Name="display_slot_08" Hidden="true" />
+      <Field Name="display_slot_09" Hidden="true" />
+      <Method Name="Dispose" Hidden="true" />
+      <Field Name="form_title" Hidden="true" />
+      <Method Name="InitializeComponent" Hidden="true" />
+      <Field Name="view_details_button" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>gAAAAIAAACCAAAAABACAACACgAAAACACAAAAAAgIAAA=</HashCode>
       <FileName>SearchDisplay.cs</FileName>
     </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="display_slots" />
+    </ShowAsCollectionAssociation>
   </Class>
   <Class Name="Movies.Program">
-    <Position X="13.25" Y="3.75" Width="1.5" />
+    <Position X="0.5" Y="7.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
       <FileName>Program.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Movies.write_update_reviewForm">
-    <Position X="15" Y="8.25" Width="1.5" />
+  <Class Name="Movies.ReviewEditor">
+    <Position X="16" Y="2" Width="2" />
+    <Members>
+      <Field Name="cancel_review_button" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+      <Method Name="Dispose" Hidden="true" />
+      <Method Name="InitializeComponent" Hidden="true" />
+      <Field Name="rating_label" Hidden="true" />
+      <Field Name="rating_spinner" Hidden="true" />
+      <Field Name="review_label" Hidden="true" />
+      <Field Name="review_textbox" Hidden="true" />
+      <Field Name="save_review_button" Hidden="true" />
+    </Members>
     <TypeIdentifier>
-      <HashCode>EAAAAEAAACASAAAAgACAAAACAAgAAAACAAAEkAAAAAA=</HashCode>
+      <HashCode>EABAAEAAACCQAAAAgACAAAACAAgAAAACAAAEgAAAAAA=</HashCode>
       <FileName>ReviewForm.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Movies.SearchResult">
-    <Position X="15" Y="3.75" Width="1.5" />
+    <Position X="18.25" Y="2" Width="2" />
+    <Members>
+      <Field Name="advanced_search_button" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+      <Method Name="Dispose" Hidden="true" />
+      <Method Name="InitializeComponent" Hidden="true" />
+      <Method Name="panel1_Paint" Hidden="true" />
+      <Field Name="search_button" Hidden="true" />
+      <Field Name="search_label" Hidden="true" />
+      <Field Name="search_results_panel" Hidden="true" />
+      <Field Name="search_textbox" Hidden="true" />
+    </Members>
     <TypeIdentifier>
-      <HashCode>ABAAAgAIACEAAAAAAACgAAQCIAAAAEAQAGAAAAAAAAA=</HashCode>
+      <HashCode>ABAAAAAIACAAQAABAACgAAACIAAAAEAQACAIAAAAAAA=</HashCode>
       <FileName>SearchResult.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Movies.ShowTimeAndDatePanel">
-    <Position X="9.75" Y="6" Width="1.5" />
+  <Class Name="Movies.TimeDatePanel">
+    <Position X="10.75" Y="2" Width="2" />
+    <Members>
+      <Method Name="date_time_panel_Paint" Hidden="true" />
+      <Method Name="Dispose" Hidden="true" />
+      <Method Name="InitializeComponent" Hidden="true" />
+    </Members>
     <TypeIdentifier>
-      <HashCode>AAQAAAAAACAgAAAAAACAAAACAAAAAAAAAAAgAAEAAAA=</HashCode>
+      <HashCode>AAQAAAAAACAgAAAAAACAAAACAAAAAAAAAAAgAAAAAQA=</HashCode>
       <FileName>ShowTimeAndDatePanel.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Movies.UserHomepage">
-    <Position X="0.5" Y="1" Width="1.5" />
+    <Position X="0.5" Y="1.25" Width="2" />
+    <Members>
+      <Field Name="components" Hidden="true" />
+      <Method Name="Dispose" Hidden="true" />
+      <Method Name="Form_Load" Hidden="true" />
+      <Field Name="genres_panel" Hidden="true" />
+      <Method Name="InitializeComponent" Hidden="true" />
+      <Field Name="label1" Hidden="true" />
+      <Field Name="label2" Hidden="true" />
+      <Field Name="label3" Hidden="true" />
+      <Field Name="label4" Hidden="true" />
+      <Field Name="label5" Hidden="true" />
+      <Field Name="label6" Hidden="true" />
+      <Field Name="popular_panel" Hidden="true" />
+      <Field Name="ratings_panel" Hidden="true" />
+      <Field Name="recommendations_panel" Hidden="true" />
+      <Field Name="search_button" Hidden="true" />
+      <Field Name="searchBox" Hidden="true" />
+      <Field Name="sign_out_button" Hidden="true" />
+      <Method Name="UserHomepage" Hidden="true" />
+    </Members>
     <Compartments>
       <Compartment Name="Nested Types" Collapsed="false" />
     </Compartments>
     <TypeIdentifier>
-      <HashCode>AAAQCCCkQCAAABAAAQCAAAACACAEAUAQhAgEAACIAAA=</HashCode>
+      <HashCode>AAgQCASAQCAAABABAQCAAQADAAAGIEAQhCAEAACAAAA=</HashCode>
       <FileName>UserHomepage.cs</FileName>
     </TypeIdentifier>
     <ShowAsCollectionAssociation>
       <Field Name="genres" />
     </ShowAsCollectionAssociation>
   </Class>
-  <Class Name="Movies.moviedbDataSetTableAdapters.TableAdapterManager">
-    <Position X="13.25" Y="5" Width="1.5" />
-    <NestedTypes>
-      <Enum Name="Movies.moviedbDataSetTableAdapters.TableAdapterManager.UpdateOrderOption" Collapsed="true">
-        <TypeIdentifier />
-      </Enum>
-      <Class Name="Movies.moviedbDataSetTableAdapters.TableAdapterManager.SelfReferenceComparer" Collapsed="true">
-        <TypeIdentifier />
-        <Lollipop Position="0.2" />
-      </Class>
-    </NestedTypes>
+  <Class Name="Movies.moviedbDataSetTableAdapters.TableAdapterManager" Collapsed="true">
+    <Position X="2.25" Y="9.75" Width="2" />
     <TypeIdentifier>
       <HashCode>gQAAEiAAMABABAEBRAAEMIAoGCACgIAAABSAAAABDBY=</HashCode>
     </TypeIdentifier>
   </Class>
   <Class Name="Movies.Properties.Resources">
-    <Position X="6.25" Y="1" Width="1.5" />
+    <Position X="4.5" Y="8" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
     </TypeIdentifier>
   </Class>
   <Class Name="Movies.Properties.Settings">
-    <Position X="9.75" Y="3.75" Width="1.5" />
+    <Position X="2.5" Y="7.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAEAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
   <Class Name="Movies.Genre" Collapsed="true">
-    <Position X="2.25" Y="3.25" Width="1.5" />
+    <Position X="3.25" Y="1" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAABAAAAAAAgAAAAAEAAAAAAAAAAAAAAA=</HashCode>
       <FileName>UserHomepage.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="MySql.Data.MySqlClient.MySqlConnection" Collapsed="true">
-    <Position X="4.5" Y="1.75" Width="1.5" />
-    <TypeIdentifier />
-    <Lollipop Position="0.2" />
+  <Class Name="Movies.SearchSlot" Collapsed="true">
+    <Position X="8.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAAABAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SearchDisplay.cs</FileName>
+    </TypeIdentifier>
   </Class>
   <Class Name="Movies.ORM">
-    <Position X="2.25" Y="1.25" Width="1.5" />
+    <Position X="8.25" Y="6.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAEAAAAAAgAAAAAAAAAQAAAAAAAAIAAAAAAA=</HashCode>
       <FileName>ORM.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Field Name="conn" />
-    </ShowAsAssociation>
   </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

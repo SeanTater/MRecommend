@@ -12,14 +12,14 @@ using System.Data.Odbc;
 
 namespace Movies
 {
-    public partial class write_update_reviewForm : Form
+    public partial class ReviewEditor : Form
     {
         bool ratingAlreadyExists;
         String filmID;
         String SSN;
 
 
-        public write_update_reviewForm(String _filmID, String _SSN)
+        public ReviewEditor(String _filmID, String _SSN)
         {
             filmID = _filmID;
             SSN = _SSN;
@@ -42,7 +42,7 @@ namespace Movies
 
         }
 
-        private void save_btn_Click(object sender, EventArgs e)
+        private void save(object sender, EventArgs e)
         {
             //insert into database
             try { 
@@ -68,7 +68,7 @@ namespace Movies
             }
         }
 
-        private void cancel_btn_Click(object sender, EventArgs e)
+        private void cancel(object sender, EventArgs e)
         {
             this.Dispose();
         }

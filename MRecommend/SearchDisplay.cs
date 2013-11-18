@@ -13,22 +13,23 @@ using Movies;
 
 namespace Movies
 {
+    class SearchSlot
+    {
+        public SearchSlot(LinkLabel l, DataRow m)
+        {
+            label = l;
+            movie = m;
+        }
+        public LinkLabel label;
+        public DataRow movie;
+    }
     public partial class SearchDisplay : Form
     {
-        private Slot current;
-        private class Slot
-        {
-            public Slot(LinkLabel l, DataRow m) {
-                label = l;
-                movie = m;
-            }
-            public LinkLabel label;
-            public DataRow movie;
-        }
-        private List<Slot> display_slots;
+        private SearchSlot current;
+        private List<SearchSlot> display_slots;
 
 
-        private void display_image_n_desp(Slot slot)
+        private void display_image_n_desp(SearchSlot slot)
         {
             current = slot;
             byte[] image_bytes = (byte[])current.movie[5];
@@ -42,7 +43,7 @@ namespace Movies
         }
         public void display_details(int slot_index)
         {
-            Slot slot = display_slots[slot_index];
+            SearchSlot slot = display_slots[slot_index];
             slot.label.Visible = true;
             slot.label.Text = String.Format("{0} ({1})", slot.movie[1], slot.movie[2]);
             if (slot_index == 0)
@@ -53,20 +54,20 @@ namespace Movies
         {
             InitializeComponent();
 
-            display_slots = new List<Slot>() {
-                new Slot(display_slot_00, null),
-                new Slot(display_slot_01, null),
-                new Slot(display_slot_02, null),
-                new Slot(display_slot_03, null),
-                new Slot(display_slot_04, null),
-                new Slot(display_slot_05, null),
-                new Slot(display_slot_06, null),
-                new Slot(display_slot_07, null),
-                new Slot(display_slot_08, null),
-                new Slot(display_slot_09, null)
+            display_slots = new List<SearchSlot>() {
+                new SearchSlot(display_slot_00, null),
+                new SearchSlot(display_slot_01, null),
+                new SearchSlot(display_slot_02, null),
+                new SearchSlot(display_slot_03, null),
+                new SearchSlot(display_slot_04, null),
+                new SearchSlot(display_slot_05, null),
+                new SearchSlot(display_slot_06, null),
+                new SearchSlot(display_slot_07, null),
+                new SearchSlot(display_slot_08, null),
+                new SearchSlot(display_slot_09, null)
             };
             String sql;
-            foreach (Slot slot in display_slots) {
+            foreach (SearchSlot slot in display_slots) {
                 slot.label.Visible = false;
                 slot.label.Links[0].Tag = slot;
             }
@@ -127,7 +128,7 @@ namespace Movies
 
         private void slot_clicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            display_image_n_desp((Slot)e.Link.Tag);
+            display_image_n_desp((SearchSlot)e.Link.Tag);
         }
     }
 }

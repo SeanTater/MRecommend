@@ -9,14 +9,14 @@ using System.Windows.Forms;
 
 namespace Movies
 {
-    public partial class ShowTimeAndDatePanel : Form
+    public partial class TimeDatePanel : Form
     {
-        public ShowTimeAndDatePanel()
+        public TimeDatePanel()
         {
             InitializeComponent();
         }
 
-        private void ok_btn_Click(object sender, EventArgs e)
+        private void ok(object sender, EventArgs e)
         {
             this.Dispose();
         }

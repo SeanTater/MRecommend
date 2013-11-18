@@ -126,7 +126,7 @@
             this.cancel_button.TabIndex = 4;
             this.cancel_button.Text = "Cancel";
             this.cancel_button.UseVisualStyleBackColor = true;
-            this.cancel_button.Click += new System.EventHandler(this.cancelButton_Click);
+            this.cancel_button.Click += new System.EventHandler(this.do_cancel);
             // 
             // login_button
             // 
@@ -136,7 +136,7 @@
             this.login_button.TabIndex = 3;
             this.login_button.Text = "Login";
             this.login_button.UseVisualStyleBackColor = true;
-            this.login_button.Click += new System.EventHandler(this.loginButton_Click);
+            this.login_button.Click += new System.EventHandler(this.do_login);
             // 
             // password_label
             // 
@@ -259,7 +259,7 @@
             this.cancel_register_button.TabIndex = 10;
             this.cancel_register_button.Text = "cancel";
             this.cancel_register_button.UseVisualStyleBackColor = true;
-            this.cancel_register_button.Click += new System.EventHandler(this.cancelRegisterButton_Click);
+            this.cancel_register_button.Click += new System.EventHandler(this.do_cancel_register);
             // 
             // register_button
             // 
@@ -269,7 +269,7 @@
             this.register_button.TabIndex = 9;
             this.register_button.Text = "Register";
             this.register_button.UseVisualStyleBackColor = true;
-            this.register_button.Click += new System.EventHandler(this.registerButton_Click);
+            this.register_button.Click += new System.EventHandler(this.do_register);
             // 
             // confirm_register_password_label
             // 

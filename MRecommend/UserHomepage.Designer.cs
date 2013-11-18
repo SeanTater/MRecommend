@@ -62,7 +62,7 @@
             this.search_button.TabIndex = 1;
             this.search_button.Text = "Go";
             this.search_button.UseVisualStyleBackColor = true;
-            this.search_button.Click += new System.EventHandler(this.search_button_click);
+            this.search_button.Click += new System.EventHandler(this.search);
             // 
             // label2
             // 
@@ -99,7 +99,7 @@
             this.sign_out_button.TabIndex = 23;
             this.sign_out_button.Text = "sign out";
             this.sign_out_button.UseVisualStyleBackColor = true;
-            this.sign_out_button.Click += new System.EventHandler(this.signOutButtonClick);
+            this.sign_out_button.Click += new System.EventHandler(this.logout);
             // 
             // label5
             // 

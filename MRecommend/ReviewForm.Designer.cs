@@ -1,6 +1,6 @@
 ﻿namespace Movies
 {
-    partial class write_update_reviewForm
+    partial class ReviewEditor
     {
         /// <summary>
         /// Required designer variable.
@@ -45,7 +45,7 @@
             this.save_review_button.TabIndex = 0;
             this.save_review_button.Text = "Save";
             this.save_review_button.UseVisualStyleBackColor = true;
-            this.save_review_button.Click += new System.EventHandler(this.save_btn_Click);
+            this.save_review_button.Click += new System.EventHandler(this.save);
             // 
             // cancel_review_button
             // 
@@ -55,7 +55,7 @@
             this.cancel_review_button.TabIndex = 1;
             this.cancel_review_button.Text = "Cancel";
             this.cancel_review_button.UseVisualStyleBackColor = true;
-            this.cancel_review_button.Click += new System.EventHandler(this.cancel_btn_Click);
+            this.cancel_review_button.Click += new System.EventHandler(this.cancel);
             // 
             // review_textbox
             // 
